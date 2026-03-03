@@ -16,7 +16,7 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
         })
       },
       {
-        rootMargin: '300px', // Load 300px before visible
+        rootMargin: '150px', // Tighter margin for faster unload
         threshold: 0
       }
     )

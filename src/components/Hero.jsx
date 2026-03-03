@@ -1,9 +1,5 @@
 import { motion } from 'framer-motion'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Float, MeshDistortMaterial, Sphere } from '@react-three/drei'
-import { Suspense, useEffect, useState } from 'react'
-import RobotArm3D from './3D/RobotArm3D'
-import ParticleField from './3D/ParticleField'
+import { useEffect, useState } from 'react'
 import SplineViewer from './3D/SplineViewer'
 import './Hero.css'
 
@@ -32,38 +28,8 @@ const Hero = () => {
 
   return (
     <section className="hero" id="home">
-      <div className="hero-3d-bg">
-        <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
-          <Suspense fallback={null}>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[10, 10, 5]} intensity={1} />
-            <ParticleField />
-            <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-              <Sphere args={[1, 32, 32]} position={[-3, 2, 0]}>
-                <MeshDistortMaterial
-                  color="#2EA3D6"
-                  attach="material"
-                  distort={0.3}
-                  speed={2}
-                  roughness={0.2}
-                  metalness={0.8}
-                />
-              </Sphere>
-            </Float>
-            <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.8}>
-              <Sphere args={[0.7, 32, 32]} position={[3, -1, -2]}>
-                <MeshDistortMaterial
-                  color="#00C2FF"
-                  attach="material"
-                  distort={0.4}
-                  speed={1.5}
-                  roughness={0.3}
-                  metalness={0.7}
-                />
-              </Sphere>
-            </Float>
-          </Suspense>
-        </Canvas>
+      <div className="hero-3d-bg hero-3d-bg-optimized">
+        {/* Removed heavy Three.js Canvas for better performance */}
       </div>
 
       <div className="container hero-container">
