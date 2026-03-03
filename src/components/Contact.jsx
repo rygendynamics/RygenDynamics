@@ -170,6 +170,7 @@ const Contact = () => {
                   <option value="project">Project Inquiry</option>
                   <option value="investment">Investment Interest</option>
                   <option value="career">Career Opportunities</option>
+                  <option value="internship">Internship Opportunity</option>
                   <option value="other">Other</option>
                 </select>
               </div>
