@@ -2,22 +2,37 @@ import { useEffect, useRef, useState } from 'react'
 import './SplineViewer.css'
 
 const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/scene.splinecode", clipHeight = 60 }) => {
-  const viewerRef = useRef(null)
   const containerRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [viewerKey, setViewerKey] = useState(0) // For forcing remount
+  const [isMounted, setIsMounted] = useState(false)
+  const cleanupTimerRef = useRef(null)
 
-  // Lazy load based on visibility
+  // AGGRESSIVE lazy load: strict visibility with immediate cleanup
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsVisible(entry.isIntersecting)
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            setIsMounted(true)
+            // Clear any pending cleanup
+            if (cleanupTimerRef.current) {
+              clearTimeout(cleanupTimerRef.current)
+              cleanupTimerRef.current = null
+            }
+          } else {
+            // Immediately hide when out of view
+            setIsVisible(false)
+            // Unmount after 500ms to free memory
+            cleanupTimerRef.current = setTimeout(() => {
+              setIsMounted(false)
+            }, 500)
+          }
         })
       },
       {
-        rootMargin: '100px',
-        threshold: 0
+        rootMargin: '50px', // Tighter margin - only load when very close
+        threshold: 0.1 // Require 10% visibility
       }
     )
 
@@ -25,62 +40,18 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
       observer.observe(containerRef.current)
     }
 
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    if (!isVisible) return
-
-    let removalAttempts = 0
-
-    const hideSplineLogo = () => {
-      if (viewerRef.current) {
-        const shadowRoot = viewerRef.current.shadowRoot
-        if (shadowRoot) {
-          const selectors = ['#logo', '.logo', 'a[href*="spline"]']
-          
-          selectors.forEach(selector => {
-            const elements = shadowRoot.querySelectorAll(selector)
-            elements.forEach(el => {
-              const text = el.textContent?.toLowerCase() || ''
-              const href = el.getAttribute('href')?.toLowerCase() || ''
-              
-              if (text.includes('spline') || text.includes('built') || 
-                  href.includes('spline') || el.id === 'logo') {
-                el.remove()
-              }
-            })
-          })
-
-          removalAttempts++
-
-          // Stop after 10 attempts
-          if (removalAttempts >= 10) {
-            clearInterval(interval)
-          }
-        }
+    return () => {
+      observer.disconnect()
+      if (cleanupTimerRef.current) {
+        clearTimeout(cleanupTimerRef.current)
       }
     }
-    
-    const interval = setInterval(hideSplineLogo, 2000)
-    
-    // Force cleanup after 5 seconds
-    const timeout = setTimeout(() => {
-      clearInterval(interval)
-    }, 5000)
-    
-    return () => {
-      clearInterval(interval)
-      clearTimeout(timeout)
-    }
-  }, [isVisible])
+  }, [])
 
   return (
     <div ref={containerRef} className="spline-container">
-      {isVisible ? (
+      {isMounted && isVisible ? (
         <spline-viewer 
-          key={viewerKey}
-          ref={viewerRef} 
           url={sceneUrl}
           hide-controls="true"
           loading="lazy"
@@ -88,7 +59,7 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
         ></spline-viewer>
       ) : (
         <div className="spline-loading-placeholder">
-          <div className="spline-loading-spinner"></div>
+          {isVisible && <div className="spline-loading-spinner"></div>}
         </div>
       )}
     </div>
