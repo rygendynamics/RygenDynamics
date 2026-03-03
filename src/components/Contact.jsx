@@ -146,11 +146,12 @@ const Contact = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="company">Company / Organization</label>
+                <label htmlFor="company">Company / Organization / College</label>
                 <input
                   type="text"
                   id="company"
                   name="company"
+                  placeholder="Enter your company, organization, or college name"
                   value={formData.company}
                   onChange={handleChange}
                 />

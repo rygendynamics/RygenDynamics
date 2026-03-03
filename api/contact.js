@@ -72,7 +72,7 @@ const handler = async (req, res) => {
               <td style="padding: 15px 20px; color: #374151; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${email}" style="color: #2EA3D6; text-decoration: none;">${email}</a></td>
             </tr>
             <tr style="background: #f3f4f6;">
-              <td style="padding: 15px 20px; font-weight: 600; color: #0E2A47; border-bottom: 1px solid #e5e7eb;">Company</td>
+              <td style="padding: 15px 20px; font-weight: 600; color: #0E2A47; border-bottom: 1px solid #e5e7eb;">Company/Organization/College</td>
               <td style="padding: 15px 20px; color: #374151; border-bottom: 1px solid #e5e7eb;">${company || 'Not Provided'}</td>
             </tr>
             <tr style="background: white;">
@@ -153,7 +153,7 @@ ${message}
                 <td style="padding: 8px 0; color: #0E2A47; font-size: 13px;">${subject}</td>
               </tr>
               <tr>
-                <td style="padding: 8px 0; color: #6B7280; font-size: 13px;"><strong>Company:</strong></td>
+                <td style="padding: 8px 0; color: #6B7280; font-size: 13px;"><strong>Company/Organization/College:</strong></td>
                 <td style="padding: 8px 0; color: #0E2A47; font-size: 13px;">${company || 'Not Provided'}</td>
               </tr>
               <tr>
