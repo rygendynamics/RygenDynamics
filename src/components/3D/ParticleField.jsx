@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 const ParticleField = () => {
   const points = useRef()
-  const particleCount = 1000
+  const particleCount = 500 // Reduced from 1000 for better performance
 
   const [positions, colors] = useMemo(() => {
     const positions = new Float32Array(particleCount * 3)
@@ -33,8 +33,11 @@ const ParticleField = () => {
     return [positions, colors]
   }, [])
 
+  // Throttle animation to every other frame for performance
+  let frameCount = 0
   useFrame((state) => {
-    if (points.current) {
+    frameCount++
+    if (frameCount % 2 === 0 && points.current) {
       points.current.rotation.y = state.clock.getElapsedTime() * 0.05
       points.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.1) * 0.1
     }

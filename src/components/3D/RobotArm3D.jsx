@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Box, Cylinder, Sphere } from '@react-three/drei'
 import * as THREE from 'three'
@@ -9,7 +9,27 @@ const RobotArm3D = () => {
   const joint2 = useRef()
   const joint3 = useRef()
 
+  // Memoize materials to prevent memory leaks
+  const metalMaterial = useMemo(() => new THREE.MeshStandardMaterial({
+    color: '#0E2A47',
+    metalness: 0.8,
+    roughness: 0.2
+  }), [])
+
+  const accentMaterial = useMemo(() => new THREE.MeshStandardMaterial({
+    color: '#2EA3D6',
+    metalness: 0.9,
+    roughness: 0.1,
+    emissive: '#2EA3D6',
+    emissiveIntensity: 0.3
+  }), [])
+
+  // Throttle animation to every other frame for performance
+  let frameCount = 0
   useFrame((state) => {
+    frameCount++
+    if (frameCount % 2 !== 0) return // Run every other frame
+    
     const t = state.clock.getElapsedTime()
     
     // Animate robot arm joints
@@ -27,20 +47,6 @@ const RobotArm3D = () => {
     if (group.current) {
       group.current.rotation.y = Math.sin(t * 0.2) * 0.2
     }
-  })
-
-  const metalMaterial = new THREE.MeshStandardMaterial({
-    color: '#0E2A47',
-    metalness: 0.8,
-    roughness: 0.2
-  })
-
-  const accentMaterial = new THREE.MeshStandardMaterial({
-    color: '#2EA3D6',
-    metalness: 0.9,
-    roughness: 0.1,
-    emissive: '#2EA3D6',
-    emissiveIntensity: 0.3
   })
 
   return (
