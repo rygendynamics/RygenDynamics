@@ -7,21 +7,16 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
   const [isVisible, setIsVisible] = useState(false)
   const [viewerKey, setViewerKey] = useState(0) // For forcing remount
 
-  // Aggressive lazy load: mount/unmount based on visibility
+  // Lazy load based on visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           setIsVisible(entry.isIntersecting)
-          
-          // Force refresh viewer when coming back into view after being hidden
-          if (entry.isIntersecting) {
-            setViewerKey(prev => prev + 1)
-          }
         })
       },
       {
-        rootMargin: '100px', // Tighter margin
+        rootMargin: '100px',
         threshold: 0
       }
     )
@@ -67,12 +62,12 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
       }
     }
     
-    const interval = setInterval(hideSplineLogo, 500)
+    const interval = setInterval(hideSplineLogo, 2000)
     
-    // Force cleanup after 8 seconds
+    // Force cleanup after 5 seconds
     const timeout = setTimeout(() => {
       clearInterval(interval)
-    }, 8000)
+    }, 5000)
     
     return () => {
       clearInterval(interval)
