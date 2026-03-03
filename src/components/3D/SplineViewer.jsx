@@ -1,16 +1,43 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './SplineViewer.css'
 
 const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/scene.splinecode", clipHeight = 60 }) => {
   const viewerRef = useRef(null)
+  const containerRef = useRef(null)
+  const [shouldLoad, setShouldLoad] = useState(false)
+
+  // Lazy load: only initialize when component is near viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true)
+            observer.disconnect()
+          }
+        })
+      },
+      {
+        rootMargin: '200px' // Start loading 200px before visible
+      }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
+    if (!shouldLoad) return
+
     const hideSplineLogo = () => {
       if (viewerRef.current) {
         const shadowRoot = viewerRef.current.shadowRoot
         if (shadowRoot) {
           // Find and remove all logo elements
-          const selectors = ['#logo', '.logo', 'a', '[id*="logo"]', '[class*="logo"]', 'div', 'span']
+          const selectors = ['#logo', '.logo', 'a', '[id*="logo"]', '[class*="logo"]']
           selectors.forEach(selector => {
             const elements = shadowRoot.querySelectorAll(selector)
             elements.forEach(el => {
@@ -20,7 +47,7 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
               
               if (text.includes('spline') || text.includes('built') || 
                   href.includes('spline') || el.id === 'logo') {
-                el.remove() // Completely remove the element
+                el.remove()
               }
             })
           })
@@ -28,33 +55,26 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
       }
     }
     
-    // Continuously check and remove watermark
-    const interval = setInterval(hideSplineLogo, 100)
+    // Reduced frequency for better performance
+    const interval = setInterval(hideSplineLogo, 500)
     
-    // Also use MutationObserver to catch dynamic additions
-    let observer
-    if (viewerRef.current?.shadowRoot) {
-      observer = new MutationObserver(hideSplineLogo)
-      observer.observe(viewerRef.current.shadowRoot, { 
-        childList: true, 
-        subtree: true 
-      })
-    }
-    
-    return () => {
-      clearInterval(interval)
-      if (observer) observer.disconnect()
-    }
-  }, [])
+    return () => clearInterval(interval)
+  }, [shouldLoad])
 
   return (
-    <div className="spline-container">
-      <spline-viewer 
-        ref={viewerRef} 
-        url={sceneUrl}
-        hide-controls="true"
-        style={{ clipPath: `inset(0 0 ${clipHeight}px 0)` }}
-      ></spline-viewer>
+    <div ref={containerRef} className="spline-container">
+      {shouldLoad ? (
+        <spline-viewer 
+          ref={viewerRef} 
+          url={sceneUrl}
+          hide-controls="true"
+          style={{ clipPath: `inset(0 0 ${clipHeight}px 0)` }}
+        ></spline-viewer>
+      ) : (
+        <div className="spline-loading-placeholder">
+          <div className="spline-loading-spinner"></div>
+        </div>
+      )}
     </div>
   )
 }

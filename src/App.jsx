@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     // Simulate loading
-    setTimeout(() => setLoading(false), 1500)
+    setTimeout(() => setLoading(false), 800)
   }, [])
 
   if (loading) {
