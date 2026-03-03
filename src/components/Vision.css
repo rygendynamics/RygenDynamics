@@ -1,0 +1,109 @@
+.vision-section {
+  background: var(--bg-light);
+  padding: 8rem 0;
+  margin: 0;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 4rem;
+  margin: 3rem 0;
+}
+
+.vision-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(14, 42, 71, 0.1);
+  border: 1px solid rgba(14, 42, 71, 0.08);
+  transition: all 0.3s ease;
+}
+
+.vision-card:hover {
+  box-shadow: 0 20px 60px rgba(46, 163, 214, 0.15);
+}
+
+.vision-icon-large {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.vision-icon-large svg {
+  width: 36px;
+  height: 36px;
+  stroke-width: 2.5;
+}
+
+.vision-card:hover .vision-icon-large {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(46, 163, 214, 0.3);
+}
+
+.vision-title {
+  font-size: 1.85rem;
+  color: var(--deep-navy);
+  margin-bottom: 1.5rem;
+}
+
+.vision-text {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+}
+
+.mission-list {
+  list-style: none;
+  margin-top: 1.5rem;
+  padding: 0;
+}
+
+.mission-list li {
+  padding: 0.75rem 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.mission-list strong {
+  color: var(--deep-navy);
+  font-weight: 600;
+}
+
+.vision-3d-showcase {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: 4rem auto 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(46, 163, 214, 0.05), rgba(31, 138, 203, 0.05));
+  box-shadow: 0 20px 60px rgba(46, 163, 214, 0.15);
+}
+
+@media (max-width: 768px) {
+  .vision-section {
+    padding: 5rem 0;
+  }
+
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-card {
+    padding: 2rem;
+  }
+
+  .vision-3d-showcase {
+    height: 350px;
+    margin: 2rem auto 0;
+  }
+}

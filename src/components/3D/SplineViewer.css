@@ -1,0 +1,21 @@
+.spline-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.spline-container spline-viewer {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+}
+
+/* Hide Spline watermark */
+.spline-container spline-viewer::part(logo),
+.spline-container spline-viewer #logo {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
