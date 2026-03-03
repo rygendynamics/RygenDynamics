@@ -2,6 +2,9 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  /* Smooth scrolling optimization */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Loading Screen */
@@ -17,6 +20,9 @@
   justify-content: center;
   z-index: 9999;
   animation: fadeIn 0.3s ease;
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: opacity;
 }
 
 .loading-content {
@@ -59,6 +65,10 @@ section {
   position: relative;
   padding: 6rem 0;
   overflow: hidden;
+  /* Performance optimization */
+  contain: layout style paint;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* Buttons */
@@ -68,12 +78,16 @@ section {
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   text-decoration: none;
   display: inline-block;
   position: relative;
   overflow: hidden;
+  /* GPU acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .btn-primary {
@@ -83,7 +97,7 @@ section {
 
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-  transform: translateY(-2px);
+  transform: translateY(-2px) translateZ(0);
   box-shadow: 0 10px 25px rgba(46, 163, 214, 0.3);
 }
 
