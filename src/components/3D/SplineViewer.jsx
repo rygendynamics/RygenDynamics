@@ -73,18 +73,12 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
     const timeout = setTimeout(() => {
       clearInterval(interval)
     }, 8000)
-
-    // Auto-refresh viewer after 60 seconds to prevent memory buildup
-    const refreshTimeout = setTimeout(() => {
-      setViewerKey(prev => prev + 1)
-    }, 60000)
     
     return () => {
       clearInterval(interval)
       clearTimeout(timeout)
-      clearTimeout(refreshTimeout)
     }
-  }, [isVisible, viewerKey])
+  }, [isVisible])
 
   return (
     <div ref={containerRef} className="spline-container">
