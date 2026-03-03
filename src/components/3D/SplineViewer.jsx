@@ -5,18 +5,23 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
   const viewerRef = useRef(null)
   const containerRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [viewerKey, setViewerKey] = useState(0) // For forcing remount
 
   // Aggressive lazy load: mount/unmount based on visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Load when close to viewport, unload when far away
           setIsVisible(entry.isIntersecting)
+          
+          // Force refresh viewer when coming back into view after being hidden
+          if (entry.isIntersecting) {
+            setViewerKey(prev => prev + 1)
+          }
         })
       },
       {
-        rootMargin: '150px', // Tighter margin for faster unload
+        rootMargin: '100px', // Tighter margin
         threshold: 0
       }
     )
@@ -32,14 +37,12 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
     if (!isVisible) return
 
     let removalAttempts = 0
-    let successfulRemovals = 0
 
     const hideSplineLogo = () => {
       if (viewerRef.current) {
         const shadowRoot = viewerRef.current.shadowRoot
         if (shadowRoot) {
           const selectors = ['#logo', '.logo', 'a[href*="spline"]']
-          let removedCount = 0
           
           selectors.forEach(selector => {
             const elements = shadowRoot.querySelectorAll(selector)
@@ -50,46 +53,48 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
               if (text.includes('spline') || text.includes('built') || 
                   href.includes('spline') || el.id === 'logo') {
                 el.remove()
-                removedCount++
               }
             })
           })
 
-          if (removedCount > 0) {
-            successfulRemovals++
-          }
-
           removalAttempts++
 
-          // Stop checking after 20 attempts or 3 successful removals
-          if (removalAttempts >= 20 || successfulRemovals >= 3) {
+          // Stop after 10 attempts
+          if (removalAttempts >= 10) {
             clearInterval(interval)
           }
         }
       }
     }
     
-    // Check every 500ms, but will auto-stop after watermark is removed
     const interval = setInterval(hideSplineLogo, 500)
     
-    // Safety cleanup after 15 seconds max
+    // Force cleanup after 8 seconds
     const timeout = setTimeout(() => {
       clearInterval(interval)
-    }, 15000)
+    }, 8000)
+
+    // Auto-refresh viewer after 45 seconds to prevent memory buildup
+    const refreshTimeout = setTimeout(() => {
+      setViewerKey(prev => prev + 1)
+    }, 45000)
     
     return () => {
       clearInterval(interval)
       clearTimeout(timeout)
+      clearTimeout(refreshTimeout)
     }
-  }, [isVisible])
+  }, [isVisible, viewerKey])
 
   return (
     <div ref={containerRef} className="spline-container">
       {isVisible ? (
         <spline-viewer 
+          key={viewerKey}
           ref={viewerRef} 
           url={sceneUrl}
           hide-controls="true"
+          loading="lazy"
           style={{ clipPath: `inset(0 0 ${clipHeight}px 0)` }}
         ></spline-viewer>
       ) : (
