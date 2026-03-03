@@ -71,7 +71,7 @@ const Contact = () => {
             </p>
 
             <div className="contact-3d-viewer">
-              <SplineViewer sceneUrl="https://prod.spline.design/V-X5Ty2sZktcuHAP/scene.splinecode" clipHeight={50} />
+              <SplineViewer sceneUrl="https://prod.spline.design/V-X5Ty2sZktcuHAP/scene.splinecode" clipHeight={80} />
             </div>
 
             <div className="contact-methods">

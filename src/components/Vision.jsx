@@ -69,7 +69,7 @@ const Vision = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <SplineViewer sceneUrl="https://prod.spline.design/AcHKeA-bIkxPbGZ7/scene.splinecode" clipHeight={10} />
+          <SplineViewer sceneUrl="https://prod.spline.design/AcHKeA-bIkxPbGZ7/scene.splinecode" clipHeight={50} />
         </motion.div>
       </div>
     </section>
