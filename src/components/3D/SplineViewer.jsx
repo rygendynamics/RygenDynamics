@@ -4,21 +4,20 @@ import './SplineViewer.css'
 const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/scene.splinecode", clipHeight = 60 }) => {
   const viewerRef = useRef(null)
   const containerRef = useRef(null)
-  const [shouldLoad, setShouldLoad] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
-  // Lazy load: only initialize when component is near viewport
+  // Aggressive lazy load: mount/unmount based on visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShouldLoad(true)
-            observer.disconnect()
-          }
+          // Load when close to viewport, unload when far away
+          setIsVisible(entry.isIntersecting)
         })
       },
       {
-        rootMargin: '200px' // Start loading 200px before visible
+        rootMargin: '300px', // Load 300px before visible
+        threshold: 0
       }
     )
 
@@ -30,18 +29,16 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
   }, [])
 
   useEffect(() => {
-    if (!shouldLoad) return
+    if (!isVisible) return
 
     const hideSplineLogo = () => {
       if (viewerRef.current) {
         const shadowRoot = viewerRef.current.shadowRoot
         if (shadowRoot) {
-          // Find and remove all logo elements
-          const selectors = ['#logo', '.logo', 'a', '[id*="logo"]', '[class*="logo"]']
+          const selectors = ['#logo', '.logo', 'a[href*="spline"]']
           selectors.forEach(selector => {
             const elements = shadowRoot.querySelectorAll(selector)
             elements.forEach(el => {
-              // Check if element contains spline-related content
               const text = el.textContent?.toLowerCase() || ''
               const href = el.getAttribute('href')?.toLowerCase() || ''
               
@@ -55,15 +52,14 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
       }
     }
     
-    // Reduced frequency for better performance
     const interval = setInterval(hideSplineLogo, 500)
     
     return () => clearInterval(interval)
-  }, [shouldLoad])
+  }, [isVisible])
 
   return (
     <div ref={containerRef} className="spline-container">
-      {shouldLoad ? (
+      {isVisible ? (
         <spline-viewer 
           ref={viewerRef} 
           url={sceneUrl}
