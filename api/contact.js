@@ -50,47 +50,65 @@ const handler = async (req, res) => {
     to: 'rygendynamics@gmail.com',
     subject: `Rygen Dynamics Contact: ${subject}`,
     html: `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <div style="background: linear-gradient(135deg, #2EA3D6, #1F8ACB); padding: 20px; text-align: center;">
-          <h1 style="color: white; margin: 0;">Rygen Dynamics</h1>
-          <p style="color: white; margin: 5px 0;">New Contact Form Submission</p>
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 650px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e7eb;">
+        <!-- Header with Logo -->
+        <div style="background: linear-gradient(135deg, #0E2A47 0%, #2EA3D6 100%); padding: 40px 30px; text-align: center;">
+          <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 180px; height: auto; margin-bottom: 15px;" />
+          <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">New Contact Form Submission</h1>
+          <p style="color: #E0F2FE; margin: 8px 0 0 0; font-size: 14px;">Advanced Robotics & Intelligent Systems</p>
         </div>
         
-        <div style="padding: 30px; background: #f9f9f9;">
-          <h2 style="color: #0E2A47;">Contact Details</h2>
+        <!-- Main Content -->
+        <div style="padding: 40px 30px; background: #f9fafb;">
+          <h2 style="color: #0E2A47; margin: 0 0 25px 0; font-size: 20px; font-weight: 600; border-bottom: 3px solid #2EA3D6; padding-bottom: 10px;">Contact Information</h2>
           
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr>
-              <td style="padding: 10px; font-weight: bold; color: #0E2A47;">Name:</td>
-              <td style="padding: 10px;">${name}</td>
+          <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <tr style="background: #f3f4f6;">
+              <td style="padding: 15px 20px; font-weight: 600; color: #0E2A47; width: 30%; border-bottom: 1px solid #e5e7eb;">Full Name</td>
+              <td style="padding: 15px 20px; color: #374151; border-bottom: 1px solid #e5e7eb;">${name}</td>
             </tr>
             <tr style="background: white;">
-              <td style="padding: 10px; font-weight: bold; color: #0E2A47;">Email:</td>
-              <td style="padding: 10px;">${email}</td>
+              <td style="padding: 15px 20px; font-weight: 600; color: #0E2A47; border-bottom: 1px solid #e5e7eb;">Email Address</td>
+              <td style="padding: 15px 20px; color: #374151; border-bottom: 1px solid #e5e7eb;"><a href="mailto:${email}" style="color: #2EA3D6; text-decoration: none;">${email}</a></td>
             </tr>
-            <tr>
-              <td style="padding: 10px; font-weight: bold; color: #0E2A47;">Company:</td>
-              <td style="padding: 10px;">${company || 'N/A'}</td>
+            <tr style="background: #f3f4f6;">
+              <td style="padding: 15px 20px; font-weight: 600; color: #0E2A47; border-bottom: 1px solid #e5e7eb;">Company</td>
+              <td style="padding: 15px 20px; color: #374151; border-bottom: 1px solid #e5e7eb;">${company || 'Not Provided'}</td>
             </tr>
             <tr style="background: white;">
-              <td style="padding: 10px; font-weight: bold; color: #0E2A47;">Subject:</td>
-              <td style="padding: 10px;">${subject}</td>
+              <td style="padding: 15px 20px; font-weight: 600; color: #0E2A47;">Inquiry Type</td>
+              <td style="padding: 15px 20px; color: #374151;">${subject}</td>
             </tr>
           </table>
           
-          <h3 style="color: #0E2A47; margin-top: 20px;">Message:</h3>
-          <div style="background: white; padding: 15px; border-left: 4px solid #2EA3D6; white-space: pre-wrap;">
-            ${message}
+          <h3 style="color: #0E2A47; margin: 30px 0 15px 0; font-size: 18px; font-weight: 600;">Message Details:</h3>
+          <div style="background: white; padding: 20px; border-left: 5px solid #2EA3D6; border-radius: 4px; white-space: pre-wrap; line-height: 1.8; color: #374151; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+${message}
           </div>
           
-          <p style="margin-top: 20px; color: #6B7280; font-size: 14px;">
-            <strong>Submitted:</strong> ${new Date().toLocaleString()}
-          </p>
+          <div style="margin-top: 30px; padding: 15px; background: #E0F2FE; border-radius: 6px; border-left: 4px solid #2EA3D6;">
+            <p style="margin: 0; color: #0E2A47; font-size: 13px;">
+              <strong>📅 Submission Date:</strong> ${new Date().toLocaleString('en-IN', { dateStyle: 'full', timeStyle: 'short' })}
+            </p>
+          </div>
         </div>
         
-        <div style="background: #0E2A47; padding: 15px; text-align: center; color: white; font-size: 12px;">
-          <p style="margin: 0;">© ${new Date().getFullYear()} Rygen Dynamics. All rights reserved.</p>
-          <p style="margin: 5px 0;">Advanced Robotics & Intelligent Systems</p>
+        <!-- Footer -->
+        <div style="background: #0E2A47; padding: 30px; text-align: center; color: #E0F2FE;">
+          <div style="margin-bottom: 20px;">
+            <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 120px; height: auto; opacity: 0.9;" />
+          </div>
+          <p style="margin: 0 0 5px 0; font-size: 14px; color: #ffffff; font-weight: 600;">© ${new Date().getFullYear()} Rygen Dynamics. All Rights Reserved.</p>
+          <p style="margin: 0 0 15px 0; font-size: 12px; color: #94A3B8;">Building the Future with Advanced Robotics & AI</p>
+          <div style="border-top: 1px solid #1E3A5F; padding-top: 15px; margin-top: 15px;">
+            <p style="margin: 5px 0; font-size: 13px;"><strong>📧 Email:</strong> <a href="mailto:rygendynamics@gmail.com" style="color: #2EA3D6; text-decoration: none;">rygendynamics@gmail.com</a></p>
+            <p style="margin: 5px 0; font-size: 13px;"><strong>📞 Phone:</strong> <a href="tel:+918980005452" style="color: #2EA3D6; text-decoration: none;">+91 8980005452</a></p>
+            <p style="margin: 5px 0; font-size: 13px;"><strong>🌐 Website:</strong> <a href="https://rygendynamics-india.vercel.app" style="color: #2EA3D6; text-decoration: none;">rygendynamics-india.vercel.app</a></p>
+          </div>
+          <div style="margin-top: 20px;">
+            <a href="https://www.linkedin.com/company/rygendynamics-india" style="display: inline-block; margin: 0 10px; color: #2EA3D6; text-decoration: none; font-weight: 600; font-size: 13px;">🔗 LinkedIn</a>
+            <a href="https://github.com/rygendynamics" style="display: inline-block; margin: 0 10px; color: #2EA3D6; text-decoration: none; font-weight: 600; font-size: 13px;">💻 GitHub</a>
+          </div>
         </div>
       </div>
     `,
@@ -101,45 +119,104 @@ const handler = async (req, res) => {
   const autoReply = {
     from: process.env.EMAIL_USER,
     to: email,
-    subject: 'Thank you for contacting Rygen Dynamics',
+    subject: 'Thank You for Contacting Rygen Dynamics - We\'ll Be In Touch Soon!',
     html: `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <div style="background: linear-gradient(135deg, #2EA3D6, #1F8ACB); padding: 20px; text-align: center;">
-          <h1 style="color: white; margin: 0;">Rygen Dynamics</h1>
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 650px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e7eb;">
+        <!-- Header with Logo -->
+        <div style="background: linear-gradient(135deg, #0E2A47 0%, #2EA3D6 100%); padding: 40px 30px; text-align: center;">
+          <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 200px; height: auto; margin-bottom: 20px;" />
+          <h1 style="color: #ffffff; margin: 0; font-size: 26px; font-weight: 600; line-height: 1.3;">Thank You for Reaching Out!</h1>
+          <p style="color: #E0F2FE; margin: 12px 0 0 0; font-size: 15px;">Your message has been received successfully</p>
         </div>
         
-        <div style="padding: 30px; background: #f9f9f9;">
-          <h2 style="color: #0E2A47;">Thank you for reaching out!</h2>
+        <!-- Main Content -->
+        <div style="padding: 40px 30px; background: #ffffff;">
+          <p style="color: #0E2A47; font-size: 18px; margin: 0 0 20px 0; font-weight: 600;">Dear ${name},</p>
           
-          <p style="color: #6B7280; line-height: 1.6;">
-            Dear ${name},
+          <p style="color: #374151; line-height: 1.8; margin: 0 0 20px 0; font-size: 15px;">
+            Thank you for your interest in <strong style="color: #2EA3D6;">Rygen Dynamics</strong>! We have successfully received your inquiry and our team is reviewing your message.
           </p>
           
-          <p style="color: #6B7280; line-height: 1.6;">
-            We have received your message and our team will review it shortly. 
-            We typically respond within 24-48 hours during business days.
-          </p>
-          
-          <div style="background: white; padding: 20px; border-left: 4px solid #2EA3D6; margin: 20px 0;">
-            <h3 style="color: #0E2A47; margin-top: 0;">Your Message:</h3>
-            <p style="color: #6B7280; margin: 5px 0;"><strong>Subject:</strong> ${subject}</p>
-            <p style="color: #6B7280; white-space: pre-wrap;">${message}</p>
+          <div style="background: #F0F9FF; border-left: 5px solid #2EA3D6; padding: 20px; margin: 25px 0; border-radius: 4px;">
+            <p style="margin: 0 0 10px 0; color: #0E2A47; font-weight: 600; font-size: 14px;">⏱️ Response Time</p>
+            <p style="margin: 0; color: #374151; font-size: 14px; line-height: 1.6;">
+              We typically respond within <strong>24-48 hours</strong> during business days. Our team will carefully review your inquiry and get back to you with a detailed response.
+            </p>
           </div>
           
-          <p style="color: #6B7280; line-height: 1.6;">
+          <!-- Message Summary -->
+          <div style="background: #f9fafb; padding: 25px; border-radius: 8px; margin: 25px 0; border: 1px solid #e5e7eb;">
+            <h3 style="color: #0E2A47; margin: 0 0 15px 0; font-size: 16px; font-weight: 600;">📝 Your Message Summary:</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr>
+                <td style="padding: 8px 0; color: #6B7280; font-size: 13px; width: 30%;"><strong>Subject:</strong></td>
+                <td style="padding: 8px 0; color: #0E2A47; font-size: 13px;">${subject}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #6B7280; font-size: 13px;"><strong>Company:</strong></td>
+                <td style="padding: 8px 0; color: #0E2A47; font-size: 13px;">${company || 'Not Provided'}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; color: #6B7280; font-size: 13px; vertical-align: top;"><strong>Message:</strong></td>
+                <td style="padding: 8px 0; color: #0E2A47; font-size: 13px; line-height: 1.6;">${message.length > 150 ? message.substring(0, 150) + '...' : message}</td>
+              </tr>
+            </table>
+          </div>
+          
+          <div style="background: linear-gradient(135deg, #0E2A47 0%, #2EA3D6 100%); padding: 25px; border-radius: 8px; margin: 30px 0; text-align: center;">
+            <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">In the meantime, explore what we do:</p>
+            <a href="https://rygendynamics-india.vercel.app" style="display: inline-block; background: #ffffff; color: #0E2A47; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; margin-top: 10px; font-size: 14px;">Visit Our Website →</a>
+          </div>
+          
+          <p style="color: #374151; line-height: 1.8; margin: 25px 0 0 0; font-size: 14px;">
             Best regards,<br>
-            <strong>Rygen Dynamics Team</strong><br>
-            Advanced Robotics & Intelligent Systems
+            <strong style="color: #0E2A47; font-size: 15px;">Rygen Dynamics Team</strong><br>
+            <span style="color: #6B7280; font-size: 13px;">Advanced Robotics & Intelligent Systems</span>
           </p>
         </div>
         
-        <div style="background: #0E2A47; padding: 15px; text-align: center; color: white; font-size: 12px;">
-          <p style="margin: 0;">rygendynamics@gmail.com</p>
-          <p style="margin: 5px 0;">India</p>
-          <div style="margin-top: 10px;">
-            <a href="https://www.linkedin.com/company/rygendynamics-india" style="color: #2EA3D6; text-decoration: none; margin: 0 10px;">LinkedIn</a>
-            <a href="https://github.com/rygendynamics" style="color: #2EA3D6; text-decoration: none; margin: 0 10px;">GitHub</a>
+        <!-- Contact Information Section -->
+        <div style="background: #f9fafb; padding: 30px; border-top: 3px solid #2EA3D6;">
+          <h3 style="color: #0E2A47; margin: 0 0 20px 0; font-size: 16px; font-weight: 600; text-align: center;">📞 Get In Touch</h3>
+          <table style="width: 100%; max-width: 500px; margin: 0 auto;">
+            <tr>
+              <td style="padding: 10px; text-align: center;">
+                <div style="display: inline-block; text-align: left;">
+                  <p style="margin: 5px 0; color: #374151; font-size: 14px;">
+                    <strong style="color: #0E2A47;">📧 Email:</strong> 
+                    <a href="mailto:rygendynamics@gmail.com" style="color: #2EA3D6; text-decoration: none;">rygendynamics@gmail.com</a>
+                  </p>
+                  <p style="margin: 5px 0; color: #374151; font-size: 14px;">
+                    <strong style="color: #0E2A47;">📞 Phone:</strong> 
+                    <a href="tel:+918980005452" style="color: #2EA3D6; text-decoration: none;">+91 8980005452</a>
+                  </p>
+                  <p style="margin: 5px 0; color: #374151; font-size: 14px;">
+                    <strong style="color: #0E2A47;">🌐 Website:</strong> 
+                    <a href="https://rygendynamics-india.vercel.app" style="color: #2EA3D6; text-decoration: none;">rygendynamics-india.vercel.app</a>
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </table>
+          
+          <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+            <p style="margin: 0 0 15px 0; color: #6B7280; font-size: 13px; font-weight: 600;">Connect With Us:</p>
+            <a href="https://www.linkedin.com/company/rygendynamics-india" style="display: inline-block; margin: 0 12px; padding: 10px 20px; background: #0077B5; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 600;">🔗 LinkedIn</a>
+            <a href="https://github.com/rygendynamics" style="display: inline-block; margin: 0 12px; padding: 10px 20px; background: #24292e; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 600;">💻 GitHub</a>
           </div>
+        </div>
+        
+        <!-- Footer -->
+        <div style="background: #0E2A47; padding: 25px; text-align: center; color: #94A3B8;">
+          <div style="margin-bottom: 15px;">
+            <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 100px; height: auto; opacity: 0.8;" />
+          </div>
+          <p style="margin: 5px 0; font-size: 12px; color: #E0F2FE;">© ${new Date().getFullYear()} Rygen Dynamics. All Rights Reserved.</p>
+          <p style="margin: 5px 0; font-size: 11px;">Pioneering the Future of Robotics, AI & Autonomous Systems</p>
+          <p style="margin: 15px 0 5px 0; font-size: 11px; color: #64748B;">
+            You received this email because you contacted us through our website contact form.<br>
+            This is an automated confirmation message.
+          </p>
         </div>
       </div>
     `
