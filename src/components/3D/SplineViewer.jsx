@@ -74,10 +74,10 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
       clearInterval(interval)
     }, 8000)
 
-    // Auto-refresh viewer after 20 seconds to prevent memory buildup
+    // Auto-refresh viewer after 10 seconds to prevent memory buildup
     const refreshTimeout = setTimeout(() => {
       setViewerKey(prev => prev + 1)
-    }, 20000)
+    }, 10000)
     
     return () => {
       clearInterval(interval)
