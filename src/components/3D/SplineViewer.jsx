@@ -31,11 +31,16 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
   useEffect(() => {
     if (!isVisible) return
 
+    let removalAttempts = 0
+    let successfulRemovals = 0
+
     const hideSplineLogo = () => {
       if (viewerRef.current) {
         const shadowRoot = viewerRef.current.shadowRoot
         if (shadowRoot) {
           const selectors = ['#logo', '.logo', 'a[href*="spline"]']
+          let removedCount = 0
+          
           selectors.forEach(selector => {
             const elements = shadowRoot.querySelectorAll(selector)
             elements.forEach(el => {
@@ -45,16 +50,37 @@ const SplineViewer = ({ sceneUrl = "https://prod.spline.design/aDfKBg0AXx6XyNku/
               if (text.includes('spline') || text.includes('built') || 
                   href.includes('spline') || el.id === 'logo') {
                 el.remove()
+                removedCount++
               }
             })
           })
+
+          if (removedCount > 0) {
+            successfulRemovals++
+          }
+
+          removalAttempts++
+
+          // Stop checking after 20 attempts or 3 successful removals
+          if (removalAttempts >= 20 || successfulRemovals >= 3) {
+            clearInterval(interval)
+          }
         }
       }
     }
     
+    // Check every 500ms, but will auto-stop after watermark is removed
     const interval = setInterval(hideSplineLogo, 500)
     
-    return () => clearInterval(interval)
+    // Safety cleanup after 15 seconds max
+    const timeout = setTimeout(() => {
+      clearInterval(interval)
+    }, 15000)
+    
+    return () => {
+      clearInterval(interval)
+      clearTimeout(timeout)
+    }
   }, [isVisible])
 
   return (
