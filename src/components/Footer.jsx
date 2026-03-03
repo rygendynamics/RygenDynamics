@@ -14,13 +14,27 @@ const Footer = () => {
               Engineering intelligent systems for tomorrow's challenges.
             </p>
             <div className="social-links">
-              <motion.a href="#" className="social-link" whileHover={{ y: -5 }}>
+              <motion.a 
+                href="https://www.linkedin.com/company/rygendynamics-india" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="social-link" 
+                whileHover={{ y: -5 }}
+                title="LinkedIn"
+              >
                 <span>in</span>
               </motion.a>
               <motion.a href="#" className="social-link" whileHover={{ y: -5 }}>
                 <span>𝕏</span>
               </motion.a>
-              <motion.a href="#" className="social-link" whileHover={{ y: -5 }}>
+              <motion.a 
+                href="https://github.com/rygendynamics" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="social-link" 
+                whileHover={{ y: -5 }}
+                title="GitHub"
+              >
                 <span>GH</span>
               </motion.a>
             </div>

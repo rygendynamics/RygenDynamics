@@ -19,14 +19,38 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
     setSubmitted(true)
-    setTimeout(() => {
+    
+    // Use environment variable for API URL (falls back to local backend)
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+    
+    try {
+      const response = await fetch(`${apiUrl}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+      
+      const data = await response.json()
+      
+      if (data.success) {
+        alert('Thank you! Your message has been sent successfully. You will receive a confirmation email shortly.')
+        setFormData({ name: '', email: '', company: '', subject: '', message: '' })
+      } else {
+        alert('Failed to send message. Please try again or contact us directly at rygendynamics@gmail.com')
+        setSubmitted(false)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Network error. Please check that the backend server is running or contact us at rygendynamics@gmail.com')
       setSubmitted(false)
-      setFormData({ name: '', email: '', company: '', subject: '', message: '' })
-    }, 3000)
+    }
+    
+    setTimeout(() => setSubmitted(false), 2000)
   }
 
   return (
