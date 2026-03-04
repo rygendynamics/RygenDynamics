@@ -1,30 +1,35 @@
 .footer {
-  background: var(--deep-navy);
+  background: linear-gradient(180deg, #0E2A47 0%, #1B2F4B 100%);
   color: white;
-  padding: 6rem 0 3rem;
+  padding: 5rem 0 2.5rem;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand {
+  max-width: 400px;
 }
 
 .footer-logo {
-  height: 50px;
+  height: 55px;
   width: auto;
-  margin-bottom: 1.5rem;
-  /* Remove filter to show logo properly */
+  margin-bottom: 1.25rem;
   background: white;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .footer-tagline {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
   line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .social-links {
@@ -33,28 +38,45 @@
 }
 
 .social-link {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   transition: all 0.3s ease;
   color: white;
   text-decoration: none;
   font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-link:hover {
   background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(46, 163, 214, 0.4);
 }
 
 .footer-heading {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
   color: white;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-blue);
+  border-radius: 2px;
 }
 
 .footer-links ul {
@@ -65,20 +87,26 @@
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   font-size: 0.95rem;
+  display: inline-block;
 }
 
 .footer-links a:hover {
-  color: var(--electric-cyan);
+  color: var(--primary-blue);
+  transform: translateX(5px);
 }
 
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-contact-item {
@@ -88,23 +116,28 @@
 }
 
 .footer-contact-item strong {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
-  font-weight: 500;
+  color: var(--primary-blue);
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+  display: block;
 }
 
 .footer-contact-item a,
 .footer-contact-item span {
   color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .footer-contact-item a:hover {
   color: var(--primary-blue);
+  transform: translateX(3px);
+  display: inline-block;
 }
 
 .footer-cta-text {
@@ -148,9 +181,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.6);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.9rem;
 }
 
@@ -160,23 +194,23 @@
 }
 
 .footer-legal a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .footer-legal a:hover {
-  color: var(--electric-cyan);
+  color: var(--primary-blue);
 }
 
 @media (max-width: 1024px) {
   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .footer-brand {
-    grid-column: span 2;
+    max-width: 100%;
   }
 }
 
