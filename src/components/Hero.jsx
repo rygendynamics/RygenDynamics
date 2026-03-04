@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import { Suspense } from 'react'
+import RobotArm3D from './3D/RobotArm3D'
 import SplineViewer from './3D/SplineViewer'
 import './Hero.css'
 
@@ -9,7 +13,16 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-3d-bg hero-3d-bg-optimized">
-        {/* Removed heavy Three.js Canvas for better performance */}
+        <Canvas style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+          <Suspense fallback={null}>
+            <PerspectiveCamera makeDefault position={[0, 0, 8]} />
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} intensity={1} />
+            <pointLight position={[-10, -10, -10]} intensity={0.5} />
+            <RobotArm3D />
+            <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
+          </Suspense>
+        </Canvas>
       </div>
 
       <div className="container hero-container">

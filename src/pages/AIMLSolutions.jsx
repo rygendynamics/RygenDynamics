@@ -202,32 +202,32 @@ const AIMLSolutions = () => {
             <div className="industries-grid">
               {[
                 {
-                  icon: '🛡️',
+                  icon: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=100&h=100&fit=crop',
                   title: 'Defense',
                   description: 'Advanced AI solutions for military vehicles and strategic operations'
                 },
                 {
-                  icon: '⚡',
+                  icon: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=100&h=100&fit=crop',
                   title: 'Nuclear',
                   description: 'Predictive maintenance and safety monitoring systems'
                 },
                 {
-                  icon: '🚊',
+                  icon: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=100&h=100&fit=crop',
                   title: 'Railway',
                   description: 'AI-powered systems for loco pilots and metro operations'
                 },
                 {
-                  icon: '🚛',
+                  icon: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=100&h=100&fit=crop',
                   title: 'Transportation',
                   description: 'Driver monitoring and accident prevention solutions'
                 },
                 {
-                  icon: '🛢️',
+                  icon: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=100&h=100&fit=crop',
                   title: 'Oil & Gas',
                   description: 'Equipment monitoring and preventive maintenance'
                 },
                 {
-                  icon: '⚙️',
+                  icon: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=100&h=100&fit=crop',
                   title: 'Industrial',
                   description: 'Machine monitoring and operational efficiency solutions'
                 }
@@ -240,7 +240,9 @@ const AIMLSolutions = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="industry-icon">{industry.icon}</div>
+                  <div className="industry-icon">
+                    <img src={industry.icon} alt={industry.title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+                  </div>
                   <h3 className="industry-title">{industry.title}</h3>
                   <p className="industry-description">{industry.description}</p>
                 </motion.div>

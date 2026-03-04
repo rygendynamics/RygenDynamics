@@ -6,8 +6,8 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
-  gap: 5rem;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
   margin-bottom: 3rem;
 }
 
@@ -102,42 +102,39 @@
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0;
 }
 
 .footer-contact-item {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer-contact-item strong {
-  color: var(--primary-blue);
-  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.15rem;
   display: block;
 }
 
 .footer-contact-item a,
 .footer-contact-item span {
-  color: white;
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 400;
+  display: inline-block;
 }
 
 .footer-contact-item a:hover {
   color: var(--primary-blue);
-  transform: translateX(3px);
-  display: inline-block;
+  transform: translateX(5px);
 }
 
 .footer-cta-text {
@@ -205,7 +202,7 @@
 
 @media (max-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
 
