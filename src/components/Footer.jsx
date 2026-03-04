@@ -45,7 +45,6 @@ const Footer = () => {
             <h4 className="footer-heading">Company</h4>
             <ul>
               <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/about">Vision & Mission</Link></li>
               <li><Link to="/careers">Careers</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
             </ul>
@@ -61,23 +60,20 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-links">
-            <h4 className="footer-heading">Resources</h4>
-            <ul>
-              <li><Link to="/contact">Documentation</Link></li>
-              <li><Link to="/contact">Case Studies</Link></li>
-              <li><Link to="/contact">White Papers</Link></li>
-              <li><Link to="/contact">Blog</Link></li>
-            </ul>
-          </div>
-
-          <div className="footer-cta">
-            <h4 className="footer-heading">Stay Updated</h4>
-            <p className="footer-cta-text">Subscribe to our newsletter for the latest in robotics and AI.</p>
-            <form className="newsletter-form">
-              <input type="email" placeholder="Your email" required />
-              <button type="submit" className="btn btn-primary">Subscribe</button>
-            </form>
+          <div className="footer-contact">
+            <h4 className="footer-heading">Contact Information</h4>
+            <div className="footer-contact-item">
+              <strong>Email</strong>
+              <a href="mailto:rygendynamics@gmail.com">rygendynamics@gmail.com</a>
+            </div>
+            <div className="footer-contact-item">
+              <strong>Phone</strong>
+              <a href="tel:+918980005452">+91 8980005452</a>
+            </div>
+            <div className="footer-contact-item">
+              <strong>Location</strong>
+              <span>Surat, Gujarat</span>
+            </div>
           </div>
         </div>
 

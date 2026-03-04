@@ -75,6 +75,38 @@
   color: var(--electric-cyan);
 }
 
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-contact-item strong {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-contact-item a,
+.footer-contact-item span {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-contact-item a:hover {
+  color: var(--primary-blue);
+}
+
 .footer-cta-text {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1rem;

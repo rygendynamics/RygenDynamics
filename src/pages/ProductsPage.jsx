@@ -11,28 +11,28 @@ const ProductsPage = () => {
 
   const products = [
     {
-      icon: '🥽',
+      icon: 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=400&h=300&fit=crop',
       title: 'Virtual & Augmented Reality Simulations',
       description: 'VR & AR based simulations for Nuclear, Oil & Gas, Disaster Management & Defense Industries.',
       link: '/products/vr-ar',
       gradient: 'linear-gradient(135deg, #2EA3D6 0%, #1F8ACB 100%)'
     },
     {
-      icon: '🧠',
+      icon: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop',
       title: 'Artificial Intelligence and Machine Learning',
       description: 'AI & ML Based Solutions for Defense, Road safety & Preventive Maintenance.',
       link: '/products/ai-ml',
       gradient: 'linear-gradient(135deg, #2EA3D6 0%, #1F8ACB 100%)'
     },
     {
-      icon: '🤖',
+      icon: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop',
       title: 'Robotics',
       description: 'Diverse robotic portfolio catering to various applications such as CBRNE, NDT, Firefighting, Underwater ROV, VR Operated Robots.',
       link: '/products/robotics',
       gradient: 'linear-gradient(135deg, #2EA3D6 0%, #1F8ACB 100%)'
     },
     {
-      icon: '💣',
+      icon: 'https://images.unsplash.com/photo-1453847668862-487637052f8a?w=400&h=300&fit=crop',
       title: 'Bomb Detection & Disposal Equipment',
       description: 'Leading organization developing & delivering Bomb Detection & Disposal equipment to the Indian forces.',
       link: '/products/bdds',
@@ -75,7 +75,7 @@ const ProductsPage = () => {
                 >
                   <Link to={product.link} className="product-card">
                     <div className="product-card-header" style={{ background: product.gradient }}>
-                      <div className="product-icon">{product.icon}</div>
+                      <img src={product.icon} alt={product.title} className="product-icon-img" />
                     </div>
                     <div className="product-card-body">
                       <h3 className="product-title">{product.title}</h3>
