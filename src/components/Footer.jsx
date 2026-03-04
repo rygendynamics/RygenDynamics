@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => {
@@ -43,10 +44,10 @@ const Footer = () => {
           <div className="footer-links">
             <h4 className="footer-heading">Company</h4>
             <ul>
-              <li><a href="#about">About Us</a></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><a href="#vision">Vision & Mission</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press Kit</a></li>
+              <li><Link to="/careers">Careers</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
           </div>
 

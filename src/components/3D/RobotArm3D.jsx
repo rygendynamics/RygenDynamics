@@ -24,11 +24,11 @@ const RobotArm3D = () => {
     emissiveIntensity: 0.3
   }), [])
 
-  // Throttle animation to every other frame for performance
+  // Heavy throttle - every 4th frame for critical performance
   let frameCount = 0
   useFrame((state) => {
     frameCount++
-    if (frameCount % 2 !== 0) return // Run every other frame
+    if (frameCount % 4 !== 0) return // Run every 4th frame
     
     const t = state.clock.getElapsedTime()
     

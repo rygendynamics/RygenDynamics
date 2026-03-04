@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,12 +18,17 @@ const Navbar = () => {
   }, [])
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Capabilities', href: '#capabilities' },
-    { label: 'Innovation', href: '#innovation' },
-    { label: 'Vision', href: '#vision' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', to: '/' },
+    { label: 'About Us', to: '/about' },
+    { label: 'Contact Us', to: '/contact' },
+    { label: 'Careers', to: '/careers' },
+  ]
+
+  const productCategories = [
+    { label: 'Virtual & Augmented Reality', to: '/products/vr-ar' },
+    { label: 'Robotics', to: '/products/robotics' },
+    { label: 'Artificial Intelligence And Machine Learning', to: '/products/ai-ml' },
+    { label: 'Bomb Detection & Disposal Equipment', to: '/products/bdds' },
   ]
 
   return (
@@ -31,31 +39,74 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container nav-container">
-        <div className="logo">
+        <Link to="/" className="logo">
           <img src="/Rygen Dynamics.png" alt="Rygen Dynamics" className="logo-img" />
-        </div>
+        </Link>
         
         <div className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
           {navItems.map((item, index) => (
-            <motion.a
+            <motion.div
               key={item.label}
-              href={item.href}
-              className="nav-link"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              onClick={() => setMobileMenuOpen(false)}
             >
-              {item.label}
-            </motion.a>
+              <Link
+                to={item.to}
+                className="nav-link"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            </motion.div>
           ))}
-          <motion.button
-            className="btn btn-primary nav-cta"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          
+          {/* Products Dropdown */}
+          <motion.div
+            className="nav-dropdown"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            onMouseEnter={() => setProductsDropdownOpen(true)}
+            onMouseLeave={() => setProductsDropdownOpen(false)}
           >
-            Get Started
-          </motion.button>
+            <span 
+              className="nav-link dropdown-trigger"
+              onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+            >
+              Products
+              <svg 
+                className={`dropdown-arrow ${productsDropdownOpen ? 'open' : ''}`}
+                width="12" 
+                height="8" 
+                viewBox="0 0 12 8" 
+                fill="none"
+              >
+                <path 
+                  d="M1 1L6 6L11 1" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
+            <div className={`dropdown-menu ${productsDropdownOpen ? 'show' : ''}`}>
+              {productCategories.map((product) => (
+                <Link
+                  key={product.label}
+                  to={product.to}
+                  className="dropdown-item"
+                  onClick={() => {
+                    setProductsDropdownOpen(false)
+                    setMobileMenuOpen(false)
+                  }}
+                >
+                  {product.label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         <div

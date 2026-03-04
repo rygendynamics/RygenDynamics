@@ -11,12 +11,25 @@ const Contact = () => {
     email: '',
     company: '',
     subject: '',
-    message: ''
+    message: '',
+    attachment: null
   })
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]
+    if (file) {
+      // Limit file size to 10MB
+      if (file.size > 10 * 1024 * 1024) {
+        alert('File size must be less than 10MB')
+        return
+      }
+      setFormData({ ...formData, attachment: file })
+    }
   }
 
   const handleSubmit = async (e) => {
@@ -39,7 +52,10 @@ const Contact = () => {
       
       if (data.success) {
         alert('Thank you! Your message has been sent successfully. You will receive a confirmation email shortly.')
-        setFormData({ name: '', email: '', company: '', subject: '', message: '' })
+        setFormData({ name: '', email: '', company: '', subject: '', message: '', attachment: null })
+        // Clear file input
+        const fileInput = document.getElementById('attachment')
+        if (fileInput) fileInput.value = ''
       } else {
         alert('Failed to send message. Please try again or contact us directly at rygendynamics@gmail.com')
         setSubmitted(false)
@@ -184,6 +200,22 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 ></textarea>
+              </div>
+              <div className="form-group">
+                <label htmlFor="attachment">Attachment (Optional)</label>
+                <input
+                  type="file"
+                  id="attachment"
+                  name="attachment"
+                  onChange={handleFileChange}
+                  accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg"
+                />
+                <small className="file-hint">Max file size: 10MB. Accepted formats: PDF, DOC, DOCX, TXT, PNG, JPG</small>
+                {formData.attachment && (
+                  <div className="file-selected">
+                    Selected: {formData.attachment.name} ({(formData.attachment.size / 1024).toFixed(2)} KB)
+                  </div>
+                )}
               </div>
               <motion.button
                 type="submit"

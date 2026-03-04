@@ -76,11 +76,16 @@
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  color: #1B2F4B !important;
   margin-bottom: 2rem;
   max-width: 600px;
   line-height: 1.8;
+  font-weight: 400;
+}
+
+.hero .hero-subtitle {
+  color: #1B2F4B !important;
 }
 
 .hero-cta {
@@ -95,31 +100,115 @@
   font-size: 1rem;
 }
 
-.hero-stats {
+.hero-mission {
+  margin-top: 2rem;
+}
+
+.mission-badge {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.05), rgba(19, 136, 8, 0.05));
+  border: 2px solid rgba(46, 163, 214, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.mission-flag {
+  min-width: 80px;
+  width: 80px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.flag-stripe {
+  height: 33.33%;
+  position: relative;
+}
+
+.flag-stripe.saffron {
+  background: linear-gradient(135deg, #FF9933, #f58b1f);
+}
+
+.flag-stripe.white {
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-stripe.green {
+  background: linear-gradient(135deg, #138808, #0d5e06);
+}
+
+.ashoka-chakra {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000080;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ashoka-chakra::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: #000080;
+  border-radius: 50%;
+}
+
+.mission-text {
+  flex: 1;
+}
+
+.mission-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.stat-item {
-  text-align: left;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--deep-navy);
-  font-family: 'Space Grotesk', sans-serif;
-  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+.hindi-text {
+  background: linear-gradient(135deg, #FF9933, #138808);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 700;
 }
 
-.stat-label {
-  font-size: 0.875rem;
+.divider {
+  color: rgba(46, 163, 214, 0.4);
+  font-weight: 300;
+}
+
+.mission-subtitle {
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.dot {
+  color: rgba(46, 163, 214, 0.5);
+  font-weight: 300;
+}
+
+.mission-description {
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-top: 0.25rem;
+  line-height: 1.7;
+  max-width: 600px;
 }
 
 .hero-visual {
@@ -185,9 +274,27 @@
     flex-direction: column;
   }
 
-  .hero-stats {
+  .mission-badge {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .mission-flag {
+    width: 100%;
+    height: 80px;
+  }
+
+  .mission-title {
+    font-size: 1.2rem;
+  }
+
+  .mission-subtitle {
+    font-size: 1rem;
+  }
+
+  .mission-description {
+    font-size: 0.9rem;
   }
 
   .hero-visual {

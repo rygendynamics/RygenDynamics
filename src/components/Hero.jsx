@@ -1,30 +1,10 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import SplineViewer from './3D/SplineViewer'
 import './Hero.css'
 
 const Hero = () => {
-  const [stats, setStats] = useState([
-    { target: 50, current: 0, label: 'Projects Delivered' },
-    { target: 15, current: 0, label: 'Technology Partners' },
-    { target: 98, current: 0, label: 'Uptime Reliability' }
-  ])
-
-  useEffect(() => {
-    const animateCounters = () => {
-      setStats(prevStats =>
-        prevStats.map(stat => ({
-          ...stat,
-          current: stat.current < stat.target
-            ? Math.min(stat.current + Math.ceil(stat.target / 50), stat.target)
-            : stat.target
-        }))
-      )
-    }
-
-    const interval = setInterval(animateCounters, 50)
-    return () => clearInterval(interval)
-  }, [])
 
   return (
     <section className="hero" id="home">
@@ -47,6 +27,7 @@ const Hero = () => {
 
           <motion.p
             className="hero-subtitle"
+            style={{ fontSize: '0.9rem', color: '#1B2F4B', textShadow: 'none' }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -61,34 +42,53 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <motion.button
-              className="btn btn-primary btn-large"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Explore Our Technology
-            </motion.button>
-            <motion.button
-              className="btn btn-secondary btn-large"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Projects
-            </motion.button>
+            <Link to="/products">
+              <motion.button
+                className="btn btn-primary btn-large"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Explore Our Technology
+              </motion.button>
+            </Link>
+            <a href="#capabilities">
+              <motion.button
+                className="btn btn-secondary btn-large"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View Capabilities
+              </motion.button>
+            </a>
           </motion.div>
 
+          {/* Aatma-Nirbhar Bharat Section */}
           <motion.div
-            className="hero-stats"
+            className="hero-mission"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {stats.map((stat, index) => (
-              <div key={index} className="stat-item">
-                <div className="stat-number">{stat.current}+</div>
-                <div className="stat-label">{stat.label}</div>
+            <div className="mission-badge">
+              <div className="mission-flag">
+                <img src="/flag.webp" alt="Indian Flag" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-            ))}
+              <div className="mission-text">
+                <h3 className="mission-title">
+                  <span className="hindi-text">नवनिर्मित भारत</span>
+                  <span className="divider">|</span>
+                  <span className="hindi-text">आत्मनिर्भर भारत</span>
+                </h3>
+                <h4 className="mission-subtitle">
+                  New India <span className="dot">•</span> Self-Reliant India
+                </h4>
+                <p className="mission-description">
+                  We are dedicated to becoming a prominent company in the defense and nuclear sectors, 
+                  contributing to India's journey towards becoming a hub for cutting-edge, high-tech 
+                  robotics and automation solutions in line with the <strong>MAKE IN INDIA</strong> initiative.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
 
