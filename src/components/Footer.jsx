@@ -45,7 +45,7 @@ const Footer = () => {
             <h4 className="footer-heading">Company</h4>
             <ul>
               <li><Link to="/about">About Us</Link></li>
-              <li><a href="#vision">Vision & Mission</a></li>
+              <li><Link to="/about">Vision & Mission</Link></li>
               <li><Link to="/careers">Careers</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
             </ul>
@@ -54,20 +54,20 @@ const Footer = () => {
           <div className="footer-links">
             <h4 className="footer-heading">Solutions</h4>
             <ul>
-              <li><a href="#capabilities">Advanced Robotics</a></li>
-              <li><a href="#capabilities">AI Integration</a></li>
-              <li><a href="#capabilities">Embedded Systems</a></li>
-              <li><a href="#capabilities">Defense Systems</a></li>
+              <li><Link to="/products/robotics">Advanced Robotics</Link></li>
+              <li><Link to="/products/ai-ml">AI Integration</Link></li>
+              <li><Link to="/products">Embedded Systems</Link></li>
+              <li><Link to="/products/bdds">Defense Systems</Link></li>
             </ul>
           </div>
 
           <div className="footer-links">
             <h4 className="footer-heading">Resources</h4>
             <ul>
-              <li><a href="#">Documentation</a></li>
-              <li><a href="#">Case Studies</a></li>
-              <li><a href="#">White Papers</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><Link to="/contact">Documentation</Link></li>
+              <li><Link to="/contact">Case Studies</Link></li>
+              <li><Link to="/contact">White Papers</Link></li>
+              <li><Link to="/contact">Blog</Link></li>
             </ul>
           </div>
 
@@ -84,9 +84,9 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>&copy; {currentYear} Rygen Dynamics. All rights reserved.</p>
           <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
+            <Link to="/contact">Privacy Policy</Link>
+            <Link to="/contact">Terms of Service</Link>
+            <Link to="/contact">Cookie Policy</Link>
           </div>
         </div>
       </div>

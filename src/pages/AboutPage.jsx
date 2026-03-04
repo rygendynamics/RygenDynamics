@@ -198,22 +198,22 @@ const AboutPage = () => {
             <div className="values-grid">
               {[
                 {
-                  icon: '🎯',
+                  icon: '',
                   title: 'Excellence',
                   description: 'Delivering world-class solutions that exceed industry standards'
                 },
                 {
-                  icon: '🔬',
+                  icon: '',
                   title: 'Innovation',
                   description: 'Pioneering cutting-edge technologies for tomorrow\'s challenges'
                 },
                 {
-                  icon: '🛡️',
+                  icon: '',
                   title: 'Integrity',
                   description: 'Upholding the highest ethical standards in all our operations'
                 },
                 {
-                  icon: '🇮🇳',
+                  icon: '',
                   title: 'National Pride',
                   description: 'Contributing to India\'s technological self-reliance and growth'
                 }
@@ -226,7 +226,6 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="value-icon">{value.icon}</div>
                   <h3 className="value-title">{value.title}</h3>
                   <p className="value-description">{value.description}</p>
                 </motion.div>

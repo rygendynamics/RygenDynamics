@@ -28,16 +28,6 @@ const CareersPage = () => {
     },
     {
       icon: '',
-      title: 'Competitive Compensation',
-      description: 'Industry-leading salaries and comprehensive benefits package'
-    },
-    {
-      icon: '',
-      title: 'Health & Wellness',
-      description: 'Medical insurance, wellness programs, and work-life balance'
-    },
-    {
-      icon: '',
       title: 'Career Growth',
       description: 'Clear career paths and opportunities for advancement'
     }
@@ -179,7 +169,9 @@ const CareersPage = () => {
                         <span className="position-type">{position.type}</span>
                       </div>
                     </div>
-                    <button className="apply-btn">Apply Now</button>
+                    <Link to="/contact">
+                      <button className="apply-btn">Apply Now</button>
+                    </Link>
                   </div>
                   <p className="position-description">{position.description}</p>
                 </motion.div>

@@ -215,11 +215,6 @@
   border-color: var(--primary-blue);
 }
 
-.value-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
 .value-title {
   font-size: 1.5rem;
   font-weight: 700;
