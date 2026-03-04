@@ -12,32 +12,32 @@ const CareersPage = () => {
 
   const benefits = [
     {
-      icon: '🚀',
+      icon: '',
       title: 'Innovation-Driven Culture',
       description: 'Work on cutting-edge projects in robotics, AI/ML, and automation'
     },
     {
-      icon: '📚',
+      icon: '',
       title: 'Continuous Learning',
       description: 'Access to training programs, workshops, and skill development opportunities'
     },
     {
-      icon: '🤝',
+      icon: '',
       title: 'Collaborative Environment',
       description: 'Work with talented professionals from diverse backgrounds'
     },
     {
-      icon: '💰',
+      icon: '',
       title: 'Competitive Compensation',
       description: 'Industry-leading salaries and comprehensive benefits package'
     },
     {
-      icon: '🏥',
+      icon: '',
       title: 'Health & Wellness',
       description: 'Medical insurance, wellness programs, and work-life balance'
     },
     {
-      icon: '🌟',
+      icon: '',
       title: 'Career Growth',
       description: 'Clear career paths and opportunities for advancement'
     }
@@ -135,7 +135,6 @@ const CareersPage = () => {
                   animate={inView1 ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="benefit-icon">{benefit.icon}</div>
                   <h3 className="benefit-title">{benefit.title}</h3>
                   <p className="benefit-description">{benefit.description}</p>
                 </motion.div>
