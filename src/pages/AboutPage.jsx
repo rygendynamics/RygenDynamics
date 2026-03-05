@@ -43,24 +43,20 @@ const AboutPage = () => {
                 animate={inView1 ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="section-title">Leading the Future of Defense & Nuclear Technology</h2>
+                <h2 className="section-title">Leading India's Defense & Nuclear Technology</h2>
                 <p className="section-paragraph">
-                  Welcome to <strong>Rygen Dynamics</strong>, a pioneering entity in India's defense and nuclear sectors, 
-                  established with the vision to revolutionize the technological landscape. Based in India, we are at the 
-                  forefront of delivering advanced robotics, AI/ML solutions, AR/VR simulations, and automation systems 
-                  that address the most pressing challenges in critical industries.
+                  <strong>Rygen Dynamics</strong> is India's emerging leader in advanced defense and nuclear technologies. 
+                  We deliver robotics, AI/ML solutions, AR/VR simulations, and automation systems that address critical 
+                  challenges in national security and industrial operations.
                 </p>
                 <p className="section-paragraph">
-                  Our expertise spans a comprehensive spectrum—from developing heavy-duty industrial equipment and 
-                  sophisticated robotic systems to implementing cutting-edge IT solutions focused on homeland security, 
-                  defense applications, and nuclear safety. Rygen Dynamics excels as a key provider of specialized 
-                  machinery, autonomous robots, and comprehensive engineering design services, transforming complex 
-                  operational challenges into efficient, reliable solutions.
+                  Our expertise spans heavy-duty equipment, autonomous robotics, and specialized IT solutions for 
+                  homeland security, defense, and nuclear safety. We transform complex operational challenges into 
+                  reliable, intelligent solutions.
                 </p>
                 <p className="section-paragraph">
-                  Choosing Rygen Dynamics means partnering with a company dedicated to excellence, innovation, and 
-                  unwavering commitment to national security. Every solution we deliver contributes to building a 
-                  safer, more sustainable, and technologically advanced future for India and beyond.
+                  Partnering with Rygen Dynamics means collaborating with experts committed to excellence, innovation, 
+                  and national security—building a safer, technologically advanced future for India.  
                 </p>
               </motion.div>
               
@@ -110,22 +106,18 @@ const AboutPage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <span className="content-tag">Our Vision</span>
-                <h2 className="section-title">Solution for a Smarter World</h2>
+                <h2 className="section-title">Solutions for a Smarter World</h2>
                 <p className="section-paragraph">
-                  At Rygen Dynamics, our vision is encapsulated in our motto: <strong>'Solution for a Smarter World.'</strong> 
-                  We are committed to enhancing operational efficiency, safety, and security through the deployment of 
-                  cutting-edge technologies including robotics, artificial intelligence and machine learning (AI/ML), 
-                  augmented and virtual reality (AR/VR), and comprehensive automation solutions.
+                  Our vision: <strong>'Solutions for a Smarter World.'</strong> We enhance safety, security, and 
+                  operational efficiency through cutting-edge robotics, AI/ML, AR/VR, and automation technologies.
                 </p>
                 <p className="section-paragraph">
-                  In alignment with the <strong>'Atmanirbhar Bharat'</strong> (Self-Reliant India) initiative, we seamlessly 
-                  integrate traditional Indian values with modern technological innovation. Our approach is rooted in 
-                  creating sustainable, ethical, and impactful solutions that not only serve national interests but also 
-                  contribute to improving quality of life on a global scale.
+                  Aligned with <strong>'Atmanirbhar Bharat',</strong> we integrate traditional values with modern 
+                  innovation, creating sustainable solutions that serve national interests and advance global progress.
                 </p>
                 <p className="section-paragraph">
-                  We envision a future where technology and tradition converge to create a more secure, efficient, and 
-                  prosperous society for all.
+                  We envision a future where technology and tradition converge to build a more secure, efficient, 
+                  and prosperous society.
                 </p>
               </motion.div>
             </div>
@@ -145,20 +137,17 @@ const AboutPage = () => {
                 <span className="content-tag">Our Mission</span>
                 <h2 className="section-title">Leading Innovation in Critical Technologies</h2>
                 <p className="section-paragraph">
-                  At Rygen Dynamics, our mission is to achieve global leadership in the development and deployment of 
-                  advanced technologies—Robotics, AI/ML, AR/VR, and Automation—that reshape industries and position 
-                  India as a beacon of innovation and technological excellence on the world stage.
+                  Our mission is to achieve global leadership in advanced technologies—Robotics, AI/ML, AR/VR, and 
+                  Automation—positioning India as a center of innovation and technological excellence.
                 </p>
                 <p className="section-paragraph">
-                  Built on a foundation of <strong>integrity, innovation, and cultural respect</strong>, we are dedicated 
-                  to delivering solutions that address the most critical challenges in defense, nuclear energy, and 
-                  industrial automation. Our work ensures that technology serves as a force for positive transformation, 
-                  enhancing safety, security, and operational efficiency across sectors.
+                  Built on <strong>integrity, innovation, and cultural respect,</strong> we deliver solutions for 
+                  the most critical challenges in defense, nuclear energy, and industrial automation, ensuring 
+                  technology serves as a catalyst for safety, security, and operational efficiency.
                 </p>
                 <p className="section-paragraph">
-                  We are committed to crafting a future where cutting-edge technology and time-honored traditions unite 
-                  to empower societies worldwide, driving progress while upholding the highest standards of ethical 
-                  responsibility and national pride.
+                  We unite cutting-edge innovation with time-honored values to empower societies worldwide, driving 
+                  progress with ethical responsibility and national pride.
                 </p>
               </motion.div>
               

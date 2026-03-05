@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="footer-brand">
             <img src="/Rygen Dynamics.png" alt="Rygen Dynamics" className="footer-logo" />
             <p className="footer-tagline">
-              Engineering intelligent systems for tomorrow's challenges.
+              Advanced solutions for defense, nuclear, and critical industries.
             </p>
             <div className="social-links">
               <motion.a 

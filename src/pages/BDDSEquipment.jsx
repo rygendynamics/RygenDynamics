@@ -123,14 +123,12 @@ const BDDSEquipment = () => {
                 <span className="content-tag">EOD Solution</span>
                 <h2 className="section-title">EOD Robot</h2>
                 <p className="section-paragraph">
-                  EOD Robotic Solutions, engineered to confront and mitigate the risks posed by explosive threats. 
-                  Designed for precision, safety, and efficiency, these robotic systems enable first responders and 
-                  defense teams to tackle hazardous environments head-on, ensuring public safety and environmental 
-                  protection with minimal human exposure.
+                  Advanced EOD robotic system engineered for explosive threat mitigation. Designed for precision and safety, 
+                  enabling defense teams to handle hazardous environments with minimal human exposure.
                 </p>
                 <p className="section-paragraph highlight-text">
-                  EOD Robot is battery operated land rover that can undertake multiple missions to scan, locate and 
-                  dispose of/ destroy hazardous objects safely.
+                  Battery-operated land rover capable of scanning, locating, and safely disposing of explosive hazards 
+                  through remote operations.
                 </p>
               </motion.div>
             </div>
@@ -165,10 +163,9 @@ const BDDSEquipment = () => {
                 <span className="content-tag">Manipulation Equipment</span>
                 <h2 className="section-title">Telescopic Manipulator</h2>
                 <p className="section-paragraph">
-                  The Telescopic Manipulator can handle & manipulate unknown suspicious objects such as IEDs from a safe 
-                  distance. This advanced tool aligns with modernization efforts, enhancing officer safety during critical 
-                  operations. We can manipulate objects from tree, and Dustbin, to Grip objects under vehicles. Also, we 
-                  can grip objects as light as egg, water bottles without breakage and deformity.
+                  Advanced telescopic manipulator for safe handling of suspicious objects and IEDs from a secure distance. 
+                  Features precise grip control capable of manipulating delicate objects (eggs, water bottles) and heavy 
+                  items from various locations including under vehicles, trees, and containers.
                 </p>
               </motion.div>
 
@@ -220,7 +217,7 @@ const BDDSEquipment = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/crot.png" 
                     alt="CROT"
                     className="equipment-image"
                   />
@@ -320,9 +317,9 @@ const BDDSEquipment = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="cta-title">Protect Your Forces with Advanced BDDS Equipment</h2>
+              <h2 className="cta-title">Secure Your Operations</h2>
               <p className="cta-description">
-                Contact us to learn more about our bomb detection and disposal solutions tailored for your requirements.
+                Learn how our bomb detection and disposal solutions protect personnel and assets.
               </p>
               <Link to="/contact">
                 <button className="btn btn-primary btn-large">Request Information</button>

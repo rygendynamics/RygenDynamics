@@ -11,25 +11,25 @@ const Capabilities = () => {
     {
       image: '/Photos/HomePage/VR.png',
       title: 'Virtual & Augmented Reality Simulations',
-      description: 'VR & AR based simulations for Nuclear, Oil & Gas, Disaster Management & Defense Industries.',
+      description: 'Immersive VR/AR training and operational simulations for nuclear, defense, and industrial applications.',
       link: '/products/vr-ar'
     },
     {
       image: '/Photos/HomePage/Artificial-Intelligence and Machine-Learning.png',
       title: 'Artificial Intelligence and Machine Learning',
-      description: 'Artificial Intelligence & Machine Learning Based Solutions for Defense, Road safety & Preventive Maintenance.',
+      description: 'AI-powered solutions for predictive maintenance, road safety, and intelligent surveillance systems.',
       link: '/products/ai-ml'
     },
     {
       image: '/Photos/HomePage/Robotics.jpeg',
       title: 'Robotics',
-      description: 'Diverse robotic portfolio catering to various applications such as CBRNE, NDT, Firefighting, Underwater ROV, VR Operated Robots',
+      description: 'Specialized robots for CBRNE detection, NDT inspection, firefighting, underwater operations, and hazardous environments.',
       link: '/products/robotics'
     },
     {
       image: '/Photos/HomePage/Bomb Disposal.png',
       title: 'Bomb Detection & Disposal Equipment',
-      description: 'Leading organization developing & delivering Bomb Detection & Disposal equipment to the Indian forces.',
+      description: 'Advanced EOD robotic systems and bomb disposal equipment engineered for Indian defense forces.',
       link: '/products/bdds'
     }
   ]
@@ -44,9 +44,9 @@ const Capabilities = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="section-tag">Our Capabilities</span>
-          <h2 className="section-title">Cutting-Edge Technology Solutions</h2>
+          <h2 className="section-title">Advanced Technology Solutions</h2>
           <p className="section-description">
-            Delivering innovative solutions across defense, nuclear, and industrial sectors with advanced robotics, AI, and VR/AR technologies.
+            Innovative robotics, AI/ML, and VR/AR solutions for defense, nuclear, and critical industries.
           </p>
         </motion.div>
 

@@ -11,16 +11,16 @@ const AIMLSolutions = () => {
   const [ref2, inView2] = useInView({ threshold: 0.2, triggerOnce: true })
 
   const accidentPreventionFeatures = [
-    'Smart Eye Monitoring: AI algorithms track eye movements, alerting against driver fatigue',
-    'Drink & Drive Identifier: Detects whether the driver has consumed alcohol, and gives auditory feedback accordingly',
-    'Adaptable in any light: Performs seamlessly in low light conditions, ensuring 24/7 vigilance',
-    'Ethnicity Calibration: Tailored for diverse driver personnel for precise assessments',
-    'Distraction Detection: Warns against mobile phone use, smoking cigarettes, and consuming any drink to maintain focus on driving',
-    'Data Logging: Can get details about the sleeping history of the driver while driving',
-    'Alert duration: Continuous till appropriate action is taken by the individual',
-    'Rugged & Ergonomic: Lightweight and rugged enclosure',
-    'Vibration Proof system: The system is certified by NABL Accredited lab that in case of high vibration system will run as usual',
-    'Buzzer tunes change based on Sleepiness Alert, It also warns against Anti-infrared glasses'
+    'Smart Eye Monitoring: Real-time eye-tracking algorithms detect driver fatigue',
+    'Alcohol Detection: Identifies alcohol consumption with auditory alerts',
+    'All-Conditions Operation: Functions effectively in low-light and 24/7 conditions',
+    'Ethnicity Calibration: Optimized for diverse driver demographics',
+    'Distraction Alerts: Detects mobile phone use, smoking, and other distractions',
+    'Data Logging: Records driver fatigue patterns and incident history',
+    'Continuous Alerts: Persistent warnings until corrective action taken',
+    'Rugged Design: Lightweight, durable enclosure for field deployment',
+    'Vibration Resistant: NABL-certified for high-vibration environments',
+    'Advanced Detection: Warns against anti-infrared glasses and varying alert tones'
   ]
 
   const predictiveMaintenanceFeatures = [
@@ -117,11 +117,10 @@ const AIMLSolutions = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <span className="content-tag">Safety Solution</span>
-                <h2 className="section-title">AI Based Accident Prevention System</h2>
+                <h2 className="section-title">AI-Based Accident Prevention System</h2>
                 <p className="section-paragraph">
-                  Elevate road safety with AI-based Accident Prevention system, crafted for the Indian Army vehicles, 
-                  Loco pilots, Bus drivers etc. Designed to monitor driver fatigue through advanced eye-tracking 
-                  technology, ensuring a vigilant & secure journey.
+                  Advanced driver fatigue monitoring system designed for Indian Army vehicles, locomotives, and commercial 
+                  transport. Utilizes real-time eye-tracking technology to detect drowsiness and prevent accidents.
                 </p>
               </motion.div>
             </div>
@@ -156,13 +155,11 @@ const AIMLSolutions = () => {
                 transition={{ duration: 0.6 }}
               >
                 <span className="content-tag">Maintenance Solution</span>
-                <h2 className="section-title">AI Based Predictive Maintenance</h2>
+                <h2 className="section-title">AI-Based Predictive Maintenance</h2>
                 <p className="section-paragraph">
-                  Revolutionizing maintenance practices across various industries, our predictive maintenance systems 
-                  leverage advanced AI algorithms to forecast and prevent potential breakdowns in vehicles, machinery, 
-                  oil and gas vessels, and more. By harnessing real-time data analytics, we ensure optimal operational 
-                  performance, minimize downtime, and maximize asset lifespan, empowering businesses to stay ahead in a 
-                  rapidly evolving landscape.
+                  Advanced AI algorithms forecast equipment failures and optimize maintenance schedules across industries. 
+                  Real-time data analytics minimize downtime, maximize asset lifespan, and ensure operational continuity 
+                  for vehicles, machinery, and industrial equipment.
                 </p>
               </motion.div>
 
@@ -294,9 +291,9 @@ const AIMLSolutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="cta-title">Transform Your Operations with AI</h2>
+              <h2 className="cta-title">Implement Intelligent Solutions</h2>
               <p className="cta-description">
-                Ready to implement cutting-edge AI/ML solutions in your organization? Contact us today to learn more.
+                Deploy cutting-edge AI/ML systems to optimize operations and enhance safety.
               </p>
               <Link to="/contact">
                 <button className="btn btn-primary btn-large">Get Started</button>

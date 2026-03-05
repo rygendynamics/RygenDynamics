@@ -14,22 +14,22 @@ const CareersPage = () => {
     {
       icon: '',
       title: 'Innovation-Driven Culture',
-      description: 'Work on cutting-edge projects in robotics, AI/ML, and automation'
+      description: 'Work on cutting-edge projects in robotics, AI/ML, and autonomous systems'
     },
     {
       icon: '',
-      title: 'Continuous Learning',
-      description: 'Access to training programs, workshops, and skill development opportunities'
+      title: 'Professional Development',
+      description: 'Access training programs, workshops, and continuous skill enhancement'
     },
     {
       icon: '',
-      title: 'Collaborative Environment',
-      description: 'Work with talented professionals from diverse backgrounds'
+      title: 'Collaborative Team',
+      description: 'Collaborate with talented professionals across diverse disciplines'
     },
     {
       icon: '',
-      title: 'Career Growth',
-      description: 'Clear career paths and opportunities for advancement'
+      title: 'Career Advancement',
+      description: 'Clear career progression paths and growth opportunities'
     }
   ]
 
@@ -39,42 +39,42 @@ const CareersPage = () => {
       department: 'Engineering',
       location: 'On-site',
       type: 'Full-time',
-      description: 'Design and develop advanced robotic systems for defense and industrial applications.'
+      description: 'Design and develop advanced robotic systems for defense, nuclear, and industrial applications.'
     },
     {
       title: 'AI/ML Engineer',
       department: 'Technology',
       location: 'Hybrid',
       type: 'Full-time',
-      description: 'Develop AI-based solutions for accident prevention, predictive maintenance, and surveillance.'
+      description: 'Develop intelligent systems for accident prevention, predictive maintenance, and autonomous operations.'
     },
     {
       title: 'VR/AR Developer',
       department: 'Technology',
       location: 'On-site',
       type: 'Full-time',
-      description: 'Create immersive VR/AR simulations for training and operational applications.'
+      description: 'Create immersive training simulations for defense, nuclear, and industrial sectors.'
     },
     {
       title: 'Embedded Systems Engineer',
       department: 'Engineering',
       location: 'On-site',
       type: 'Full-time',
-      description: 'Develop embedded software and hardware solutions for robotic systems.'
+      description: 'Design embedded software and hardware for autonomous robotic platforms.'
     },
     {
       title: 'Mechanical Design Engineer',
       department: 'Engineering',
       location: 'On-site',
       type: 'Full-time',
-      description: 'Design mechanical components and systems for specialized machinery.'
+      description: 'Engineer mechanical systems and components for specialized robotics and equipment.'
     },
     {
       title: 'Business Development Manager',
       department: 'Sales',
       location: 'Hybrid',
       type: 'Full-time',
-      description: 'Drive business growth in defense, nuclear, and industrial sectors.'
+      description: 'Drive growth in defense, nuclear, and industrial technology sectors.'
     }
   ]
 
@@ -111,8 +111,7 @@ const CareersPage = () => {
               <span className="section-tag">Why Rygen Dynamics</span>
               <h2 className="section-title">Why Work With Us?</h2>
               <p className="section-description">
-                We offer more than just a job – we provide a platform to make meaningful contributions 
-                to national security and technological advancement.
+                Contribute to national security and technological advancement through meaningful work.
               </p>
             </motion.div>
 
@@ -146,7 +145,7 @@ const CareersPage = () => {
               <h2 className="section-title">Current Openings</h2>
               <p className="section-description">
                 Explore exciting opportunities to work on groundbreaking projects in robotics, AI, and automation.
-              </p>
+              </Join groundbreaking projects in robotics, AI/ML, and autonomous systems
             </motion.div>
 
             <div className="positions-list">
@@ -192,8 +191,7 @@ const CareersPage = () => {
             >
               <h2 className="cta-title">Don't See Your Role?</h2>
               <p className="cta-description">
-                We're always looking for talented individuals. Send us your resume and we'll keep you 
-                in mind for future opportunities.
+                We're always seeking talented professionals. Submit your resume for future opportunities.
               </p>
               <Link to="/contact">
                 <button className="btn btn-primary btn-large">Send Your Resume</button>

@@ -123,10 +123,9 @@ const RoboticsSolutions = () => {
                 <h2 className="section-title">MiniROV – EOD Robot</h2>
                 <p className="section-subtitle">Explosive Ordnance Disposal (EOD)</p>
                 <p className="section-paragraph">
-                  The MiniROV is a compact, battery-operated land-based EOD robotic system designed for safe detection, 
-                  identification, and neutralization of hazardous objects. It enables remote operations in high-risk 
-                  environments, significantly reducing operator exposure. The platform offers robust mobility, modular 
-                  payload integration, and dual communication modes for flexible deployment.
+                  Compact, battery-operated EOD robot designed for safe remote detection, identification, and neutralization 
+                  of explosive hazards. Features robust mobility, modular payloads, and dual communication modes for 
+                  high-risk operations.
                 </p>
               </motion.div>
             </div>
@@ -164,9 +163,8 @@ const RoboticsSolutions = () => {
                 <h2 className="section-title">VIGILBOT – AI Security & Surveillance Robot</h2>
                 <p className="section-subtitle">Autonomous Security & Surveillance</p>
                 <p className="section-paragraph">
-                  VIGILBOT is an AI-powered security and surveillance robot designed for autonomous patrolling and 
-                  real-time threat detection at forward bases, ammunition depots, and LAC posts. Leveraging advanced 
-                  computer vision and AI analytics, it ensures continuous perimeter monitoring in both day and night conditions.
+                  AI-powered autonomous security robot for perimeter patrolling and real-time threat detection at forward 
+                  bases, ammunition depots, and border posts. Advanced computer vision enables 24/7 monitoring in all conditions.
                 </p>
               </motion.div>
 
@@ -236,10 +234,9 @@ const RoboticsSolutions = () => {
                 <h2 className="section-title">CBRNE Robots</h2>
                 <p className="section-subtitle">Nuclear Decontamination</p>
                 <p className="section-paragraph">
-                  Our robots are equipped with precise decontamination tools and autonomous navigation systems, enabling 
-                  them to perform critical cleanup tasks in radioactive environments, reducing human exposure to hazardous 
-                  conditions. We have specially designed & successfully commissioned various robots for Department of 
-                  Atomic Energy, Government of India.
+                  Specialized robots equipped with precision decontamination tools and autonomous navigation for radioactive 
+                  cleanup operations. Successfully deployed for Department of Atomic Energy, Government of India, reducing 
+                  human exposure in hazardous nuclear environments.
                 </p>
                 <div className="applications">
                   <h4 className="applications-title">Some of the applications for our Nuclear Decontamination Robots are:</h4>
@@ -268,10 +265,8 @@ const RoboticsSolutions = () => {
                 <h2 className="section-title">VR Controlled Robots</h2>
                 <p className="section-subtitle">VR-Operated Systems</p>
                 <p className="section-paragraph">
-                  With immersive control environments, our VR-operated robots offer operators a first-person perspective, 
-                  enhancing the precision of operations in inaccessible or dangerous areas, all while maintaining operator 
-                  safety. We have specially designed & successfully commissioned & tested for various Government of India 
-                  research organizations.
+                  Immersive VR control systems provide operators with first-person perspective for enhanced precision in 
+                  hazardous or inaccessible areas. Successfully deployed for Government of India research organizations.
                 </p>
                 <div className="applications">
                   <h4 className="applications-title">Some of the applications for our VR Robots are:</h4>
@@ -332,10 +327,9 @@ const RoboticsSolutions = () => {
                 <h2 className="section-title">NDT Robots</h2>
                 <p className="section-subtitle">NDT Applications</p>
                 <p className="section-paragraph">
-                  Incorporating advanced inspection technologies, our NDT robots facilitate early flaw detection in 
-                  infrastructure and machinery, accessing hard-to-reach areas with flexible and precise manipulation, 
-                  ensuring the integrity of critical systems and structures. We have specially designed & successfully 
-                  commissioned systems for prestigious organizations of Government of India.
+                  Advanced non-destructive testing robots for early flaw detection in infrastructure and machinery. 
+                  Precise manipulation enables access to hard-to-reach areas, ensuring integrity of critical systems. 
+                  Successfully deployed for Government of India organizations.
                 </p>
                 <div className="applications">
                   <h4 className="applications-title">Some of the applications for our NDT Robots are:</h4>
@@ -364,9 +358,9 @@ const RoboticsSolutions = () => {
                 <h2 className="section-title">Underwater ROV</h2>
                 <p className="section-subtitle">Underwater ROVs</p>
                 <p className="section-paragraph">
-                  Our advanced Underwater ROVs deliver precise inspections in challenging environments. With high-resolution 
-                  sensors and flexible manipulation, they ensure the integrity of underwater infrastructure. Perfect for 
-                  hull, pipeline, and structure evaluations, these ROVs offer unmatched reliability and precision.
+                  High-precision underwater inspection robots with advanced sensors and manipulation capabilities. 
+                  Designed for hull, pipeline, and structure evaluations with unmatched reliability in challenging 
+                  subsea environments.
                 </p>
                 <div className="applications">
                   <h4 className="applications-title">Some of the applications for our Underwater ROVs are:</h4>
@@ -428,9 +422,7 @@ const RoboticsSolutions = () => {
                 <span className="content-tag">Firefighting Solution</span>
                 <h2 className="section-title">Firefighting Robot</h2>
                 <p className="section-paragraph">
-                  Our firefighting robots enhance safety and efficiency in fire response. Built for extreme conditions, 
-                  they navigate hazardous environments, support fire suppression, and conduct search and rescue operations.
-                </p>
+                  Autonomous firefighting robots engineered for extreme conditions. Navigate hazardous environments, \n                  support fire suppression operations, and conduct search and rescue missions while protecting personnel.\n                </p>
                 <div className="applications">
                   <h4 className="applications-title">Key applications include:</h4>
                   <ul className="applications-list">
@@ -454,9 +446,9 @@ const RoboticsSolutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="cta-title">Deploy Advanced Robotics in Your Operations</h2>
+              <h2 className="cta-title">Deploy Advanced Robotics</h2>
               <p className="cta-description">
-                Explore how our robotic solutions can enhance safety and efficiency in your critical operations.
+                Enhance operational safety and efficiency with our specialized robotic systems.
               </p>
               <Link to="/contact">
                 <button className="btn btn-primary btn-large">Contact Us</button>

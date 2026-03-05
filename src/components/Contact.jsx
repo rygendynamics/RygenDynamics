@@ -80,10 +80,9 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="section-tag">Get In Touch</span>
-            <h2 className="section-title">Let's Build the Future Together</h2>
+            <h2 className="section-title">Connect With Us</h2>
             <p className="contact-description">
-              Whether you're looking to collaborate, explore partnership opportunities,
-              or discuss a project, we'd love to hear from you.
+              Discuss partnerships, projects, or collaboration opportunities with our team.
             </p>
 
             <div className="contact-3d-viewer">

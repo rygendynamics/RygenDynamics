@@ -31,9 +31,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Engineering Tomorrow's
+            Intelligent Engineering
             <br />
-            <span className="gradient-text">Intelligent Solutions</span>
+            <span className="gradient-text">For Tomorrow</span>
           </motion.h1>
 
           <motion.p
@@ -43,8 +43,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Pioneering advanced robotics, AI integration, and autonomous technologies
-            that transform industries and shape tomorrow's world.
+            Advanced robotics, AI/ML, and automation systems engineered for defense, nuclear, and critical industries.
           </motion.p>
 
           <motion.div
@@ -94,9 +93,8 @@ const Hero = () => {
                   New India <span className="dot">•</span> Self-Reliant India
                 </h4>
                 <p className="mission-description">
-                  We are dedicated to becoming a prominent company in the defense and nuclear sectors, 
-                  contributing to India's journey towards becoming a hub for cutting-edge, high-tech 
-                  robotics and automation solutions in line with the <strong>MAKE IN INDIA</strong> initiative.
+                  Empowering India's defense and nuclear sectors with cutting-edge robotics and automation 
+                  solutions, aligned with the <strong>MAKE IN INDIA</strong> initiative.
                 </p>
               </div>
             </div>

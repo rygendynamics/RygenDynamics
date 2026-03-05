@@ -17,22 +17,22 @@ const VRARSolutions = () => {
     {
       icon: '',
       title: 'Immersive Learning',
-      description: 'Dive into realistic, interactive scenarios that boost skill retention and readiness, transforming the way your team trains.'
+      description: 'Realistic simulations that enhance skill retention and operational readiness.'
     },
     {
       icon: '',
-      title: 'Customized for You',
-      description: 'Each solution is crafted to meet your industry\'s unique demands, ensuring relevance and effectiveness.'
+      title: 'Custom Solutions',
+      description: 'Tailored to your industry\'s specific operational and training requirements.'
     },
     {
       icon: '',
-      title: 'Safety First',
-      description: 'Our risk-free virtual environments allow for safe practice of critical operations, minimizing real-world accidents.'
+      title: 'Risk-Free Training',
+      description: 'Practice critical operations in safe virtual environments without real-world risks.'
     },
     {
       icon: '',
-      title: 'Scalable & Integrative',
-      description: 'Our flexible solutions grow with your needs, seamlessly integrating into your existing training framework.'
+      title: 'Scalable & Flexible',
+      description: 'Adaptable solutions that grow with your organization and integrate seamlessly.'
     }
   ]
 
@@ -136,8 +136,8 @@ const VRARSolutions = () => {
                 <span className="content-tag">Industry Solution</span>
                 <h2 className="section-title">Nuclear & Thermal Industry</h2>
                 <p className="section-paragraph">
-                  Enhance safety protocols and reduce risk with VR simulations that replicate critical procedures and 
-                  emergency scenarios, offering a hands-on learning experience without the inherent dangers.
+                  VR simulations replicate critical procedures and emergency scenarios, providing hands-on training 
+                  without inherent risks. Enhance safety protocols and reduce operational hazards.
                 </p>
                 <div className="use-cases">
                   <h4 className="use-cases-title">Some of the use cases are:</h4>
@@ -165,22 +165,19 @@ const VRARSolutions = () => {
                 <span className="content-tag">Industry Solution</span>
                 <h2 className="section-title">Education Sector</h2>
                 <p className="section-paragraph">
-                  Virtual Reality (VR) modules redefine education and training for engineering and medical disciplines, 
-                  preparing students for the demands of modern workplaces. Our immersive simulations cover civil, 
-                  electrical, electronics, IT, and mechanical fields, offering hands-on experiences in diverse environments.
-                </p>
+                  Our VR modules revolutionize engineering and medical education through immersive, hands-on experiences. \n                  Students engage with realistic simulations across civil, electrical, electronics, IT, and mechanical disciplines.\n                </p>
                 <div className="features-list">
                   <div className="feature-item">
-                    <span className="feature-icon">🔧</span>
-                    <span>Explore machine modules for in-depth understanding of machinery functions</span>
+                    <span className="feature-icon">✓</span>
+                    <span>Machine module exploration for equipment operation training</span>
                   </div>
                   <div className="feature-item">
-                    <span className="feature-icon">🧪</span>
-                    <span>Experiment simulations for safe scientific exploration</span>
+                    <span className="feature-icon">✓</span>
+                    <span>Laboratory experiment simulations for safe scientific practice</span>
                   </div>
                   <div className="feature-item">
-                    <span className="feature-icon">🏭</span>
-                    <span>Industrial environments for virtual tours of operational facilities</span>
+                    <span className="feature-icon">✓</span>
+                    <span>Virtual industrial facility tours and operational walkthroughs</span>
                   </div>
                 </div>
               </motion.div>
@@ -233,11 +230,9 @@ const VRARSolutions = () => {
                 <span className="content-tag">Industry Solution</span>
                 <h2 className="section-title">Supply Chain/Logistics Sector</h2>
                 <p className="section-paragraph">
-                  Revolutionize supply chain management with immersive VR experiences. Explore our cutting-edge solutions 
-                  for storage and inventory optimization, from ensuring fire safety in LPG cylinder storage to implementing 
-                  the first in first out principle for dry ration supplies. Our VR simulations provide hands-on training 
-                  and visualization, allowing users to learn best practices for efficient stacking, rotation, and emergency 
-                  response protocols within a virtual warehouse environment.
+                  Optimize warehouse and inventory management through immersive VR training. Simulations cover fire safety 
+                  protocols, inventory rotation (FIFO), efficient stacking methods, and emergency response procedures in 
+                  virtual warehouse environments.
                 </p>
               </motion.div>
             </div>
@@ -258,11 +253,9 @@ const VRARSolutions = () => {
                 <span className="content-tag">Industry Solution</span>
                 <h2 className="section-title">Oil & Gas Industry</h2>
                 <p className="section-paragraph">
-                  Virtual Reality (VR) modules revolutionize training and operations in the oil and gas sector by 
-                  providing immersive simulations for hazardous environment training, complex equipment handling, and 
-                  detailed maintenance procedures. This technology enhances safety, improves operational efficiency, 
-                  and reduces downtime by allowing personnel to practice and perfect their skills in a controlled, 
-                  risk-free setting.
+                  Immersive VR training modules for hazardous environment operations, complex equipment handling, and 
+                  maintenance procedures. Enhance safety protocols and operational efficiency through risk-free practice 
+                  environments.
                 </p>
                 <div className="use-cases">
                   <h4 className="use-cases-title">Some of the use cases are:</h4>
@@ -323,12 +316,9 @@ const VRARSolutions = () => {
                 <span className="content-tag">Industry Solution</span>
                 <h2 className="section-title">Defense and Public Safety</h2>
                 <p className="section-paragraph">
-                  Prepare your forces with our AR & VR combat and strategic planning simulations. Experience hyper-realistic 
-                  battlefield scenarios that improve decision-making, strategy, and teamwork, all while ensuring the safety 
-                  of your personnel.
-                </p>
+                  Realistic AR/VR combat and tactical simulations for defense forces. Enhance decision-making, strategy, \n                  and operational readiness through immersive battlefield scenarios without personnel risk.\n                </p>
                 <div className="use-cases">
-                  <h4 className="use-cases-title">Some of the use cases for Armed forces such as Air Force, Navy, Army and Paramilitary are:</h4>
+                  <h4 className="use-cases-title">Applications for Armed Forces (Air Force, Navy, Army, Paramilitary):</h4>
                   <ul className="use-cases-list">
                     {defenseUseCases.map((useCase, index) => (
                       <li key={index}>{useCase}</li>
@@ -350,9 +340,9 @@ const VRARSolutions = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="cta-title">Ready to Transform Your Operations?</h2>
+              <h2 className="cta-title">Transform Your Training Operations</h2>
               <p className="cta-description">
-                Contact us today to learn how our VR/AR solutions can revolutionize your training and operations.
+                Discover how our VR/AR solutions can enhance operational readiness and safety protocols.
               </p>
               <Link to="/contact">
                 <button className="btn btn-primary btn-large">Get in Touch</button>
