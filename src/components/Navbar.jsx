@@ -39,12 +39,14 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container nav-container">
-        <Link to="/" className="logo">
-          <img src="/Rygen Dynamics.png" alt="Rygen Dynamics" className="logo-img" />
-        </Link>
-        
-        <div className="make-in-india-badge">
-          <img src="/Photos/HomePage/MakeInIndia-logo.avif" alt="Make in India" className="make-in-india-logo" />
+        <div className="logo-area">
+          <Link to="/" className="logo">
+            <img src="/Rygen Dynamics.png" alt="Rygen Dynamics" className="logo-img" />
+          </Link>
+          
+          <div className="make-in-india-badge">
+            <img src="/Photos/HomePage/MakeInIndia-logo.avif" alt="Make in India" className="make-in-india-logo" />
+          </div>
         </div>
         
         <div className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
