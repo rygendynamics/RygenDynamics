@@ -410,7 +410,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1560340055-5e92df0a0d9d?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/Firefighting robot.png" 
                     alt="Firefighting Robot"
                     className="robot-image"
                   />

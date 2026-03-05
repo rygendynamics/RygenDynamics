@@ -106,7 +106,7 @@ const BDDSEquipment = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1563207153-f403bf289096?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/EOD.png" 
                     alt="EOD Robot"
                     className="equipment-image"
                   />
@@ -180,7 +180,7 @@ const BDDSEquipment = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/Telescopic Manipulator.png" 
                     alt="Telescopic Manipulator"
                     className="equipment-image"
                   />
@@ -247,41 +247,38 @@ const BDDSEquipment = () => {
                 <div className="info-boxes">
                   <div className="info-box search">
                     <h4 className="info-box-title">
-                      <span className="info-icon">🔍</span>
+                      <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style={{ width: '20px', height: '20px' }}>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
                       Search & Safety
                     </h4>
                     <p className="info-box-text">
-                      Discovering a suspicious car without definitive identification can pose risks. Our Car Remote Opening 
-                      Tool Kit (CROT) ensures safe access when facing potential booby traps. Certain Improvised Explosive 
-                      Devices (IEDs) are designed to detonate upon car access or ignition.
+                      CROT ensures safe access to suspicious vehicles facing potential booby traps, as certain IEDs detonate upon car access or ignition.
                     </p>
                   </div>
 
                   <div className="info-box warning">
                     <h4 className="info-box-title">
-                      <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style={{ width: '24px', height: '24px' }}>
+                      <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style={{ width: '20px', height: '20px' }}>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                       </svg>
                       Warning
                     </h4>
                     <p className="info-box-text">
-                      Improvised Explosive Devices (IEDs) are inherently unstable. To prevent accidental detonation, 
-                      always handle suspect objects with the utmost care and avoid any rough treatment. CROT is an ideal 
-                      option in situations like this.
+                      IEDs are inherently unstable. Handle suspect objects with utmost care to prevent accidental detonation. CROT is ideal for such situations.
                     </p>
                   </div>
 
                   <div className="info-box flexibility">
                     <h4 className="info-box-title">
-                      <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style={{ width: '24px', height: '24px' }}>
+                      <svg className="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style={{ width: '20px', height: '20px' }}>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                       Flexibility
                     </h4>
                     <p className="info-box-text">
-                      This kit can be used for all vehicles, providing comprehensive coverage for various emergency 
-                      scenarios and vehicle types.
+                      Compatible with all vehicle types, providing comprehensive coverage for various emergency scenarios.
                     </p>
                   </div>
                 </div>

@@ -57,6 +57,39 @@ const AIMLSolutions = () => {
           </div>
         </section>
 
+        {/* Key Features Section */}
+        <section className="key-features-section">
+          <div className="container">
+            <motion.div
+              className="features-highlight"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="features-highlight-title">Key Features</h3>
+              <div className="features-highlight-grid">
+                <div className="highlight-item">
+                  <h4>Smart Monitoring</h4>
+                  <p>Real-time AI-powered tracking and analysis</p>
+                </div>
+                <div className="highlight-item">
+                  <h4>Predictive Analytics</h4>
+                  <p>Forecast failures before they occur</p>
+                </div>
+                <div className="highlight-item">
+                  <h4>24/7 Operation</h4>
+                  <p>Continuous monitoring in all conditions</p>
+                </div>
+                <div className="highlight-item">
+                  <h4>Cost Efficient</h4>
+                  <p>Reduce downtime and maintenance costs</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* AI Based Accident Prevention System */}
         <section className="solution-section" ref={ref1}>
           <div className="container">
@@ -141,7 +174,7 @@ const AIMLSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/AiBased Predictive.png" 
                     alt="Predictive Maintenance"
                     className="solution-image"
                   />
