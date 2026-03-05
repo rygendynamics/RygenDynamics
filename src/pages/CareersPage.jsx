@@ -144,8 +144,8 @@ const CareersPage = () => {
               <span className="section-tag">Open Positions</span>
               <h2 className="section-title">Current Openings</h2>
               <p className="section-description">
-                Explore exciting opportunities to work on groundbreaking projects in robotics, AI, and automation.
-              </Join groundbreaking projects in robotics, AI/ML, and autonomous systems
+                Join groundbreaking projects in robotics, AI/ML, and autonomous systems.
+              </p>
             </motion.div>
 
             <div className="positions-list">
