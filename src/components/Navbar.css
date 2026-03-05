@@ -33,6 +33,25 @@
   padding: 1rem 0;
 }
 
+.make-in-india-badge {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.make-in-india-logo {
+  height: 50px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.make-in-india-logo:hover {
+  opacity: 1;
+}
+
 .nav-cta.btn {
   padding: 0.75rem 1.5rem;
   font-size: 0.9rem;

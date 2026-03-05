@@ -144,7 +144,6 @@ const BDDSEquipment = () => {
               <div className="features-grid-large">
                 {eodFeatures.map((feature, index) => (
                   <div key={index} className="feature-card">
-                    <div className="feature-card-icon">✓</div>
                     <p className="feature-card-text">{feature}</p>
                   </div>
                 ))}

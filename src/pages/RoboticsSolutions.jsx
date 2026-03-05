@@ -314,7 +314,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1581092160607-ee67e39c0c2d?w=800&h=600&fit=crop" 
+                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop" 
                     alt="NDT Robots"
                     className="robot-image"
                   />
@@ -410,7 +410,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1509099652299-30938b0aeb63?w=800&h=600&fit=crop" 
+                    src="https://images.unsplash.com/photo-1560340055-5e92df0a0d9d?w=800&h=600&fit=crop" 
                     alt="Firefighting Robot"
                     className="robot-image"
                   />

@@ -43,6 +43,10 @@ const Navbar = () => {
           <img src="/Rygen Dynamics.png" alt="Rygen Dynamics" className="logo-img" />
         </Link>
         
+        <div className="make-in-india-badge">
+          <img src="/Photos/HomePage/MakeInIndia-logo.avif" alt="Make in India" className="make-in-india-logo" />
+        </div>
+        
         <div className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
           {navItems.map((item, index) => (
             <motion.div
