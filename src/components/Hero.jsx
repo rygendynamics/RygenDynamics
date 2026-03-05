@@ -108,7 +108,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="robot-3d-container">
-            <SplineViewer />
+            <SplineViewer clipHeight={80} />
           </div>
         </motion.div>
       </div>
