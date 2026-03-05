@@ -27,12 +27,6 @@
   display: inline-block;
 }
 
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
 .logo-img {
   height: 70px;
   width: auto;
@@ -42,7 +36,7 @@
 .make-in-india-badge {
   display: flex;
   align-items: center;
-  margin-left: 1.5rem;
+  margin-left: 2rem;
 }
 
 .make-in-india-logo {
