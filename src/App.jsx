@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Capabilities from './components/Capabilities'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
+import ScrollToTop from './components/ScrollToTop'
 import AboutPage from './pages/AboutPage'
 import ProductsPage from './pages/ProductsPage'
 import ContactPage from './pages/ContactPage'
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollToTop />
       <ScrollProgress />
       <Routes>
         <Route path="/" element={<HomePage />} />
