@@ -180,7 +180,7 @@ const BDDSEquipment = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="/Photos/HomePage/Telescopic Manipulator.png" 
+                    src="/Photos/HomePage/Bomb Disposal.png" 
                     alt="Telescopic Manipulator"
                     className="equipment-image"
                   />

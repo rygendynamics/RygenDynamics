@@ -105,7 +105,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1563207153-f403bf289096?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/Mini ROV ROD.png" 
                     alt="MiniROV EOD Robot"
                     className="robot-image"
                   />
@@ -178,7 +178,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/VIGILBOT.png" 
                     alt="VIGILBOT"
                     className="robot-image"
                   />
@@ -218,7 +218,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/CBRNE.png" 
                     alt="CBRNE Robots"
                     className="robot-image"
                   />
@@ -314,7 +314,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/NDT.png" 
                     alt="NDT Robots"
                     className="robot-image"
                   />
@@ -386,7 +386,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/Underwater.png" 
                     alt="Underwater ROV"
                     className="robot-image"
                   />
