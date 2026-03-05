@@ -3,7 +3,6 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-  contain: layout style paint; /* Performance optimization */
 }
 
 .spline-container spline-viewer {
@@ -11,38 +10,4 @@
   height: 100%;
   display: block;
   background: transparent;
-  transform: translateZ(0); /* Force GPU acceleration */
-  will-change: transform;
-}
-
-/* Hide Spline watermark */
-.spline-container spline-viewer::part(logo),
-.spline-container spline-viewer #logo {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-/* Loading placeholder */
-.spline-loading-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, rgba(46, 163, 214, 0.05), rgba(31, 138, 203, 0.05));
-  border-radius: 16px;
-}
-
-.spline-loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid rgba(46, 163, 214, 0.2);
-  border-top-color: var(--primary-blue);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
 }
