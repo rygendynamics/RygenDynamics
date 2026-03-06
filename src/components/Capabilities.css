@@ -65,8 +65,7 @@
 
 .capability-icon-img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
+  height: 200px;
   margin-bottom: 1.5rem;
   border-radius: 12px 12px 0 0;
   overflow: hidden;
