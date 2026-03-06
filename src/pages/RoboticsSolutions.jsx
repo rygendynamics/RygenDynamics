@@ -286,7 +286,7 @@ const RoboticsSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/VR.png" 
                     alt="VR Controlled Robots"
                     className="robot-image"
                   />

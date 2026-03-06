@@ -119,7 +119,7 @@ const VRARSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/VR.png" 
                     alt="Nuclear & Thermal Industry"
                     className="industry-image"
                   />
@@ -190,7 +190,7 @@ const VRARSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/VR.png" 
                     alt="Education Sector"
                     className="industry-image"
                   />
@@ -213,7 +213,7 @@ const VRARSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/VR.png" 
                     alt="Supply Chain & Logistics"
                     className="industry-image"
                   />
@@ -276,7 +276,7 @@ const VRARSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/VR.png" 
                     alt="Oil & Gas Industry"
                     className="industry-image"
                   />
@@ -299,7 +299,7 @@ const VRARSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1568667256549-094345857637?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/VR.png" 
                     alt="Defense and Public Safety"
                     className="industry-image"
                   />

@@ -11,28 +11,28 @@ const ProductsPage = () => {
 
   const products = [
     {
-      icon: 'https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=400&h=300&fit=crop',
+      icon: '/Photos/HomePage/VR.png',
       title: 'Virtual & Augmented Reality Simulations',
       description: 'Immersive VR/AR training and operational simulations for nuclear, defense, and industrial applications.',
       link: '/products/vr-ar',
       gradient: 'linear-gradient(135deg, #2EA3D6 0%, #1F8ACB 100%)'
     },
     {
-      icon: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop',
+      icon: '/Photos/HomePage/Artificial-Intelligence and Machine-Learning.png',
       title: 'Artificial Intelligence and Machine Learning',
       description: 'AI-powered solutions for predictive maintenance, road safety, and intelligent surveillance systems.',
       link: '/products/ai-ml',
       gradient: 'linear-gradient(135deg, #2EA3D6 0%, #1F8ACB 100%)'
     },
     {
-      icon: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop',
+      icon: '/Photos/HomePage/Robotics.jpeg',
       title: 'Robotics',
       description: 'Specialized robots for CBRNE detection, NDT inspection, firefighting, underwater operations, and hazardous environments.',
       link: '/products/robotics',
       gradient: 'linear-gradient(135deg, #2EA3D6 0%, #1F8ACB 100%)'
     },
     {
-      icon: 'https://images.unsplash.com/photo-1453847668862-487637052f8a?w=400&h=300&fit=crop',
+      icon: '/Photos/HomePage/Bomb Disposal.png',
       title: 'Bomb Detection & Disposal Equipment',
       description: 'Advanced EOD robotic systems and bomb disposal equipment engineered for Indian defense forces.',
       link: '/products/bdds',

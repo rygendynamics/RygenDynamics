@@ -102,7 +102,7 @@ const AIMLSolutions = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/Artificial-Intelligence and Machine-Learning.png" 
                     alt="AI Accident Prevention"
                     className="solution-image"
                   />
@@ -232,32 +232,32 @@ const AIMLSolutions = () => {
             <div className="industries-grid">
               {[
                 {
-                  icon: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=100&h=100&fit=crop',
+                  icon: '/Photos/HomePage/Bomb Disposal.png',
                   title: 'Defense',
                   description: 'Advanced AI solutions for military vehicles and strategic operations'
                 },
                 {
-                  icon: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=100&h=100&fit=crop',
+                  icon: '/Photos/HomePage/CBRNE.png',
                   title: 'Nuclear',
                   description: 'Predictive maintenance and safety monitoring systems'
                 },
                 {
-                  icon: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=100&h=100&fit=crop',
+                  icon: '/Photos/HomePage/Robotics.jpeg',
                   title: 'Railway',
                   description: 'AI-powered systems for loco pilots and metro operations'
                 },
                 {
-                  icon: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=100&h=100&fit=crop',
+                  icon: '/Photos/HomePage/Artificial-Intelligence and Machine-Learning.png',
                   title: 'Transportation',
                   description: 'Driver monitoring and accident prevention solutions'
                 },
                 {
-                  icon: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=100&h=100&fit=crop',
+                  icon: '/Photos/HomePage/Underwater.png',
                   title: 'Oil & Gas',
                   description: 'Equipment monitoring and preventive maintenance'
                 },
                 {
-                  icon: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=100&h=100&fit=crop',
+                  icon: '/Photos/HomePage/NDT.png',
                   title: 'Industrial',
                   description: 'Machine monitoring and operational efficiency solutions'
                 }

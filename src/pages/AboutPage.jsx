@@ -68,7 +68,7 @@ const AboutPage = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/Artificial-Intelligence and Machine-Learning.png" 
                     alt="Advanced Technology"
                     className="about-image"
                   />
@@ -91,7 +91,7 @@ const AboutPage = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/Robotics.jpeg" 
                     alt="Our Vision"
                     className="about-image"
                   />
@@ -159,7 +159,7 @@ const AboutPage = () => {
               >
                 <div className="image-wrapper">
                   <img 
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" 
+                    src="/Photos/HomePage/AiBased Predictive.png" 
                     alt="Our Mission"
                     className="about-image"
                   />

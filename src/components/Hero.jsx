@@ -1,11 +1,59 @@
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 
 const Hero = () => {
+  const [currentVideo, setCurrentVideo] = useState(0)
+  const videoRef = useRef(null)
+  
+  const videos = [
+    '/Photos/HomePage/Video/6156511-hd_1920_1080_24fps.mp4',
+    '/Photos/HomePage/Video/8566611-uhd_3840_2160_30fps.mp4',
+    '/Photos/HomePage/Video/8979514-uhd_3840_2160_30fps.mp4'
+  ]
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleVideoEnd = () => {
+      setCurrentVideo((prev) => (prev + 1) % videos.length)
+    }
+
+    video.addEventListener('ended', handleVideoEnd)
+    
+    return () => {
+      video.removeEventListener('ended', handleVideoEnd)
+    }
+  }, [currentVideo, videos.length])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.load()
+      video.play().catch(err => console.log('Video autoplay failed:', err))
+    }
+  }, [currentVideo])
+
   return (
     <section className="hero" id="home">
-      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '6rem 2rem', textAlign: 'center' }}>
+      {/* Video Background */}
+      <div className="hero-video-background">
+        <video
+          ref={videoRef}
+          className="hero-video"
+          autoPlay
+          muted
+          playsInline
+          key={currentVideo}
+        >
+          <source src={videos[currentVideo]} type="video/mp4" />
+        </video>
+        <div className="hero-video-overlay"></div>
+      </div>
+
+      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '6rem 2rem', textAlign: 'center', position: 'relative', zIndex: 2 }}>
         <motion.h1
           className="hero-title"
           initial={{ opacity: 0, y: 30 }}
