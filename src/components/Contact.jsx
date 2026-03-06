@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import SplineViewer from './3D/SplineViewer'
 import './Contact.css'
 
 const Contact = () => {
@@ -80,13 +79,31 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="section-tag">Get In Touch</span>
-            <h2 className="section-title">Connect With Us</h2>
-            <p className="contact-description">
-              Discuss partnerships, projects, or collaboration opportunities with our team.
+            <h2 className="section-title" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Connect With Us</h2>
+            <p className="contact-description" style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+              Discuss partnerships, projects, or collaboration opportunities with our team. 
+              We're here to help transform your vision into reality with cutting-edge robotics and AI solutions.
             </p>
-
-            <div className="contact-3d-viewer">
-              <SplineViewer sceneUrl="https://prod.spline.design/V-X5Ty2sZktcuHAP/scene.splinecode" clipHeight={120} />
+            <div style={{ padding: '2rem', background: 'linear-gradient(135deg, #0A1628 0%, #1B2F4B 100%)', borderRadius: '12px', color: 'white' }}>
+              <h3 style={{ color: '#2EA3D6', marginBottom: '1rem' }}>Why Partner With Us?</h3>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                <li style={{ marginBottom: '0.8rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6' }}>✓</span>
+                  Expert engineering team with proven experience
+                </li>
+                <li style={{ marginBottom: '0.8rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6' }}>✓</span>
+                  Custom solutions tailored to your needs
+                </li>
+                <li style={{ marginBottom: '0.8rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6' }}>✓</span>
+                  Rapid prototyping and deployment
+                </li>
+                <li style={{ paddingLeft: '1.5rem', position: 'relative' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6' }}>✓</span>
+                  Ongoing support and maintenance
+                </li>
+              </ul>
             </div>
           </motion.div>
 

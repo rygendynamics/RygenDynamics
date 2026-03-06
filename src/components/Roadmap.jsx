@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import SplineViewer from './3D/SplineViewer'
 import './Roadmap.css'
 
 const Roadmap = () => {
@@ -61,15 +60,6 @@ const Roadmap = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="roadmap-3d-showcase"
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <SplineViewer sceneUrl="https://prod.spline.design/H2Faic80MYUrJkda/scene.splinecode" clipHeight={70} />
-        </motion.div>
       </div>
     </section>
   )

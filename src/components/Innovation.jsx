@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import SplineViewer from './3D/SplineViewer'
 import './Innovation.css'
 
 const Innovation = () => {
@@ -56,15 +55,6 @@ const Innovation = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="innovation-3d-showcase"
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <SplineViewer sceneUrl="https://prod.spline.design/tVJT9PBa1JrLp1tI/scene.splinecode" />
-        </motion.div>
       </div>
     </section>
   )
