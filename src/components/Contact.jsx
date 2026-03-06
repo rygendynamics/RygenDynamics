@@ -79,28 +79,69 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="section-tag">Get In Touch</span>
-            <h2 className="section-title" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Connect With Us</h2>
-            <p className="contact-description" style={{ fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+            <h2 className="section-title" style={{ 
+              fontSize: 'clamp(2rem, 4vw, 2.5rem)', 
+              marginBottom: '1.5rem' 
+            }}>
+              Connect With Us
+            </h2>
+            <p className="contact-description" style={{ 
+              fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', 
+              lineHeight: '1.8', 
+              marginBottom: '2rem',
+              color: '#495057'
+            }}>
               Discuss partnerships, projects, or collaboration opportunities with our team. 
               We're here to help transform your vision into reality with cutting-edge robotics and AI solutions.
             </p>
-            <div style={{ padding: '2rem', background: 'linear-gradient(135deg, #0A1628 0%, #1B2F4B 100%)', borderRadius: '12px', color: 'white' }}>
-              <h3 style={{ color: '#2EA3D6', marginBottom: '1rem' }}>Why Partner With Us?</h3>
+            <div style={{ 
+              padding: '2rem', 
+              background: 'linear-gradient(135deg, #0A1628 0%, #1B2F4B 100%)', 
+              borderRadius: '12px', 
+              color: 'white',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h3 style={{ 
+                color: '#2EA3D6', 
+                marginBottom: '1.5rem',
+                fontSize: 'clamp(1.1rem, 2vw, 1.3rem)'
+              }}>
+                Why Partner With Us?
+              </h3>
               <ul style={{ listStyle: 'none', padding: 0 }}>
-                <li style={{ marginBottom: '0.8rem', paddingLeft: '1.5rem', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6' }}>✓</span>
+                <li style={{ 
+                  marginBottom: '1rem', 
+                  paddingLeft: '1.8rem', 
+                  position: 'relative',
+                  fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)'
+                }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6', fontWeight: 'bold' }}>✓</span>
                   Expert engineering team with proven experience
                 </li>
-                <li style={{ marginBottom: '0.8rem', paddingLeft: '1.5rem', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6' }}>✓</span>
+                <li style={{ 
+                  marginBottom: '1rem', 
+                  paddingLeft: '1.8rem', 
+                  position: 'relative',
+                  fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)'
+                }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6', fontWeight: 'bold' }}>✓</span>
                   Custom solutions tailored to your needs
                 </li>
-                <li style={{ marginBottom: '0.8rem', paddingLeft: '1.5rem', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6' }}>✓</span>
+                <li style={{ 
+                  marginBottom: '1rem', 
+                  paddingLeft: '1.8rem', 
+                  position: 'relative',
+                  fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)'
+                }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6', fontWeight: 'bold' }}>✓</span>
                   Rapid prototyping and deployment
                 </li>
-                <li style={{ paddingLeft: '1.5rem', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6' }}>✓</span>
+                <li style={{ 
+                  paddingLeft: '1.8rem', 
+                  position: 'relative',
+                  fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)'
+                }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#2EA3D6', fontWeight: 'bold' }}>✓</span>
                   Ongoing support and maintenance
                 </li>
               </ul>

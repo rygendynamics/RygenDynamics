@@ -41,11 +41,19 @@ const Capabilities = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: '4rem' }}
+          style={{ marginBottom: '4rem', textAlign: 'center' }}
         >
           <span className="section-tag">Our Capabilities</span>
-          <h2 className="section-title" style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>Advanced Technology Solutions</h2>
-          <p className="section-description" style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', lineHeight: '1.8' }}>
+          <h2 className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', marginBottom: '1.5rem' }}>
+            Advanced Technology Solutions
+          </h2>
+          <p className="section-description" style={{ 
+            fontSize: 'clamp(1rem, 2vw, 1.2rem)', 
+            maxWidth: '850px', 
+            margin: '0 auto', 
+            lineHeight: '1.8',
+            color: '#495057'
+          }}>
             Innovative robotics, AI/ML, and VR/AR solutions for defense, nuclear, and critical industries. 
             We deliver cutting-edge technology that transforms operational efficiency and enhances security across critical sectors.
           </p>
