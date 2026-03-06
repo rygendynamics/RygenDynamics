@@ -163,9 +163,9 @@ ${message}
             </table>
           </div>
           
-          <div style="background: linear-gradient(135deg, #0E2A47 0%, #2EA3D6 100%); padding: 25px; border-radius: 8px; margin: 30px 0; text-align: center;">
-            <p style="color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">In the meantime, explore what we do:</p>
-            <a href="https://rygendynamics-india.vercel.app" style="display: inline-block; background: #ffffff; color: #0E2A47; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; margin-top: 10px; font-size: 14px;">Visit Our Website →</a>
+          <div style="background: #ffffff; padding: 25px; border-radius: 8px; margin: 30px 0; text-align: center; border: 2px solid #2EA3D6;">
+            <p style="color: #0E2A47; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">In the meantime, explore what we do:</p>
+            <a href="https://rygendynamics-india.vercel.app" style="display: inline-block; background: #2EA3D6; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; margin-top: 10px; font-size: 14px;">Visit Our Website →</a>
           </div>
           
           <p style="color: #374151; line-height: 1.8; margin: 25px 0 0 0; font-size: 14px;">

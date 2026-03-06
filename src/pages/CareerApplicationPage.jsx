@@ -154,23 +154,23 @@ const CareerApplicationPage = () => {
                   <h3>What We Look For:</h3>
                   <ul>
                     <li>
-                      <span>✓</span>
+                      <span>-</span>
                       Strong technical skills and problem-solving abilities
                     </li>
                     <li>
-                      <span>✓</span>
+                      <span>-</span>
                       Passion for robotics, AI/ML, or software development
                     </li>
                     <li>
-                      <span>✓</span>
+                      <span>-</span>
                       Team collaboration and communication skills
                     </li>
                     <li>
-                      <span>✓</span>
+                      <span>-</span>
                       Willingness to learn and adapt to new technologies
                     </li>
                     <li>
-                      <span>✓</span>
+                      <span>-</span>
                       Commitment to excellence and innovation
                     </li>
                   </ul>
