@@ -121,17 +121,30 @@ ${message}
     to: email,
     subject: 'Thank You for Contacting Rygen Dynamics - We\'ll Be In Touch Soon!',
     html: `
-      <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 650px; margin: 0 auto; background-color: #ffffff !important; border: 1px solid #e5e7eb;">
-        <!-- Header with Logo -->
-        <div style="background-color: #ffffff !important; padding: 40px 30px; text-align: center; border-bottom: 3px solid #2EA3D6;" bgcolor="#ffffff">
-          <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 200px; height: auto; margin-bottom: 20px;" />
-          <h1 style="color: #0E2A47; margin: 0; font-size: 26px; font-weight: 600; line-height: 1.3;">Thank You for Reaching Out!</h1>
-          <p style="color: #6B7280; margin: 12px 0 0 0; font-size: 15px;">Your message has been received successfully</p>
-        </div>
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta name="color-scheme" content="light only">
+        <meta name="supported-color-schemes" content="light only">
+      </head>
+      <body style="margin: 0; padding: 0; background-color: #f3f4f6;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f3f4f6;">
+          <tr>
+            <td align="center" style="padding: 20px 0;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="650" style="background-color: #ffffff; border: 1px solid #e5e7eb; max-width: 100%;">
+                <!-- Header with Logo -->
+                <tr>
+                  <td style="background-color: #ffffff; padding: 40px 30px; text-align: center; border-bottom: 3px solid #2EA3D6;" bgcolor="#ffffff">
+                    <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 200px; height: auto; margin-bottom: 20px;" />
+                    <h1 style="color: #0E2A47; margin: 0; font-size: 26px; font-weight: 600; line-height: 1.3;">Thank You for Reaching Out!</h1>
+                    <p style="color: #6B7280; margin: 12px 0 0 0; font-size: 15px;">Your message has been received successfully</p>
+                  </td>
+                </tr>
         
-        <!-- Main Content -->
-        <div style="padding: 40px 30px; background-color: #ffffff !important;" bgcolor="#ffffff">
-          <p style="color: #0E2A47; font-size: 18px; margin: 0 0 20px 0; font-weight: 600;">Dear ${name},</p>
+                <!-- Main Content -->
+                <tr>
+                  <td style="padding: 40px 30px; background-color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;" bgcolor="#ffffff">
+                    <p style="color: #0E2A47; font-size: 18px; margin: 0 0 20px 0; font-weight: 600;">Dear ${name},</p>
           
           <p style="color: #374151; line-height: 1.8; margin: 0 0 20px 0; font-size: 15px;">
             Thank you for your interest in <strong style="color: #2EA3D6;">Rygen Dynamics</strong>! We have successfully received your inquiry and our team is reviewing your message.
@@ -163,7 +176,7 @@ ${message}
             </table>
           </div>
           
-          <div style="background-color: #ffffff !important; padding: 25px; border-radius: 8px; margin: 30px 0; text-align: center; border: 2px solid #2EA3D6;" bgcolor="#ffffff">
+          <div style="background-color: #ffffff; padding: 25px; border-radius: 8px; margin: 30px 0; text-align: center; border: 2px solid #2EA3D6;">
             <p style="color: #0E2A47; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">In the meantime, explore what we do:</p>
             <a href="https://rygendynamics-india.vercel.app" style="display: inline-block; background: #2EA3D6; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; margin-top: 10px; font-size: 14px;">Visit Our Website →</a>
           </div>
@@ -173,10 +186,12 @@ ${message}
             <strong style="color: #0E2A47; font-size: 15px;">Rygen Dynamics Team</strong><br>
             <span style="color: #6B7280; font-size: 13px;">Advanced Robotics & Intelligent Systems</span>
           </p>
-        </div>
+                  </td>
+                </tr>
         
-        <!-- Contact Information Section -->
-        <div style="background: #f9fafb; padding: 30px; border-top: 3px solid #2EA3D6;">
+                <!-- Contact Information Section -->
+                <tr>
+                  <td style="background: #f9fafb; padding: 30px; border-top: 3px solid #2EA3D6; font-family: 'Segoe UI', Arial, sans-serif;" bgcolor="#f9fafb">
           <h3 style="color: #0E2A47; margin: 0 0 20px 0; font-size: 16px; font-weight: 600; text-align: center;">📞 Get In Touch</h3>
           <table style="width: 100%; max-width: 500px; margin: 0 auto;">
             <tr>
@@ -204,21 +219,29 @@ ${message}
             <a href="https://www.linkedin.com/company/rygendynamics-india" style="display: inline-block; margin: 0 12px; padding: 10px 20px; background: #0077B5; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 600;">🔗 LinkedIn</a>
             <a href="https://github.com/rygendynamics" style="display: inline-block; margin: 0 12px; padding: 10px 20px; background: #24292e; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 600;">💻 GitHub</a>
           </div>
-        </div>
+                  </td>
+                </tr>
         
-        <!-- Footer -->
-        <div style="background: #0E2A47; padding: 25px; text-align: center; color: #94A3B8;">
-          <div style="margin-bottom: 15px;">
-            <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 100px; height: auto; opacity: 0.8;" />
-          </div>
-          <p style="margin: 5px 0; font-size: 12px; color: #E0F2FE;">© ${new Date().getFullYear()} Rygen Dynamics. All Rights Reserved.</p>
-          <p style="margin: 5px 0; font-size: 11px;">Pioneering the Future of Robotics, AI & Autonomous Systems</p>
-          <p style="margin: 15px 0 5px 0; font-size: 11px; color: #64748B;">
-            You received this email because you contacted us through our website contact form.<br>
-            This is an automated confirmation message.
-          </p>
-        </div>
-      </div>
+                <!-- Footer -->
+                <tr>
+                  <td style="background: #0E2A47; padding: 25px; text-align: center; color: #94A3B8; font-family: 'Segoe UI', Arial, sans-serif;" bgcolor="#0E2A47">
+                    <div style="margin-bottom: 15px;">
+                      <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 100px; height: auto; opacity: 0.8;" />
+                    </div>
+                    <p style="margin: 5px 0; font-size: 12px; color: #E0F2FE;">© ${new Date().getFullYear()} Rygen Dynamics. All Rights Reserved.</p>
+                    <p style="margin: 5px 0; font-size: 11px;">Pioneering the Future of Robotics, AI & Autonomous Systems</p>
+                    <p style="margin: 15px 0 5px 0; font-size: 11px; color: #64748B;">
+                      You received this email because you contacted us through our website contact form.<br>
+                      This is an automated confirmation message.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </body>
+      </html>
     `
   }
 
