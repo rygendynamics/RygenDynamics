@@ -121,16 +121,16 @@ ${message}
     to: email,
     subject: 'Thank You for Contacting Rygen Dynamics - We\'ll Be In Touch Soon!',
     html: `
-      <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 650px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e5e7eb;">
+      <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 650px; margin: 0 auto; background-color: #ffffff !important; border: 1px solid #e5e7eb;">
         <!-- Header with Logo -->
-        <div style="background-color: #ffffff; padding: 40px 30px; text-align: center; border-bottom: 3px solid #2EA3D6;" bgcolor="#ffffff">
+        <div style="background-color: #ffffff !important; padding: 40px 30px; text-align: center; border-bottom: 3px solid #2EA3D6;" bgcolor="#ffffff">
           <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 200px; height: auto; margin-bottom: 20px;" />
           <h1 style="color: #0E2A47; margin: 0; font-size: 26px; font-weight: 600; line-height: 1.3;">Thank You for Reaching Out!</h1>
           <p style="color: #6B7280; margin: 12px 0 0 0; font-size: 15px;">Your message has been received successfully</p>
         </div>
         
         <!-- Main Content -->
-        <div style="padding: 40px 30px; background-color: #ffffff;" bgcolor="#ffffff">
+        <div style="padding: 40px 30px; background-color: #ffffff !important;" bgcolor="#ffffff">
           <p style="color: #0E2A47; font-size: 18px; margin: 0 0 20px 0; font-weight: 600;">Dear ${name},</p>
           
           <p style="color: #374151; line-height: 1.8; margin: 0 0 20px 0; font-size: 15px;">
@@ -163,7 +163,7 @@ ${message}
             </table>
           </div>
           
-          <div style="background-color: #ffffff; padding: 25px; border-radius: 8px; margin: 30px 0; text-align: center; border: 2px solid #2EA3D6;" bgcolor="#ffffff">
+          <div style="background-color: #ffffff !important; padding: 25px; border-radius: 8px; margin: 30px 0; text-align: center; border: 2px solid #2EA3D6;" bgcolor="#ffffff">
             <p style="color: #0E2A47; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">In the meantime, explore what we do:</p>
             <a href="https://rygendynamics-india.vercel.app" style="display: inline-block; background: #2EA3D6; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; margin-top: 10px; font-size: 14px;">Visit Our Website →</a>
           </div>
