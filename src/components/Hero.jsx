@@ -85,7 +85,7 @@ const Hero = () => {
           </Link>
           <a href="#capabilities">
             <motion.button
-              className="btn btn-secondary btn-large"
+              className="btn btn-primary btn-large"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
