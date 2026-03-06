@@ -55,8 +55,24 @@ const Capabilities = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
+          style={{
+            background: 'linear-gradient(135deg, #0A1628 0%, #1B2F4B 100%)',
+            minHeight: '400px',
+            borderRadius: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '3rem'
+          }}
         >
-          <SplineViewer sceneUrl="https://prod.spline.design/cbTjMLRrPzMk5j1a/scene.splinecode" />
+          {/* SplineViewer removed to prevent multiple concurrent 3D scenes */}
+          <div style={{ color: '#2EA3D6', fontSize: '1.2rem', textAlign: 'center', padding: '2rem' }}>
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4M12 8h.01"/>
+            </svg>
+            <p style={{ marginTop: '1rem', opacity: 0.7 }}>3D visualization available in individual product pages</p>
+          </div>
         </motion.div>
 
         <div className="capabilities-grid">

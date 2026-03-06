@@ -2,10 +2,9 @@ import { useRef, useMemo, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const ParticleField = ({ lowPerformance = false }) => {
+const ParticleField = () => {
   const points = useRef()
-  // Adjust particle count based on device capability
-  const particleCount = lowPerformance ? 80 : 150
+  const particleCount = 100 // Reduced for performance
   const frameCountRef = useRef(0)
   const isActiveRef = useRef(true)
 
@@ -46,17 +45,15 @@ const ParticleField = ({ lowPerformance = false }) => {
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
   }, [])
 
-  // Ultra-heavy throttle - update every 6th/8th frame based on performance
+  // Throttle animation - update every 8th frame
   useFrame((state) => {
     if (!isActiveRef.current) return // Don't animate when page is hidden
     
     frameCountRef.current++
-    const frameSkip = lowPerformance ? 8 : 6
-    if (frameCountRef.current % frameSkip === 0 && points.current) {
+    if (frameCountRef.current % 8 === 0 && points.current) {
       const time = state.clock.getElapsedTime()
-      const speed = lowPerformance ? 0.02 : 0.03
-      points.current.rotation.y = time * speed // Slower rotation on low-end
-      points.current.rotation.x = Math.sin(time * 0.08) * 0.08
+      points.current.rotation.y = time * 0.025
+      points.current.rotation.x = Math.sin(time * 0.06) * 0.06
     }
   })
 

@@ -49,22 +49,20 @@ const Hero = () => {
 
   return (
     <section className="hero" id="home">
-      {enableParticles && (
-        <div className="hero-3d-bg hero-3d-bg-optimized">
-          <Canvas 
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-            dpr={[1, 1.5]} // Limit pixel ratio for performance
-            performance={{ min: 0.5 }} // Allow frame rate to drop for performance
-          >
-            <Suspense fallback={null}>
-              <PerspectiveCamera makeDefault position={[0, 0, 25]} />
-              <ambientLight intensity={0.3} />
-              <pointLight position={[10, 10, 10]} intensity={0.5} />
-              <ParticleField lowPerformance={isLowPerformance} />
-            </Suspense>
-          </Canvas>
-        </div>
-      )}
+      <div className="hero-3d-bg hero-3d-bg-optimized">
+        <Canvas 
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+          dpr={[1, 1.5]}
+          performance={{ min: 0.5 }}
+        >
+          <Suspense fallback={null}>
+            <PerspectiveCamera makeDefault position={[0, 0, 25]} />
+            <ambientLight intensity={0.3} />
+            <pointLight position={[10, 10, 10]} intensity={0.5} />
+            <ParticleField />
+          </Suspense>
+        </Canvas>
+      </div>
 
       <div className="container hero-container">
         <div className="hero-content">
