@@ -158,10 +158,10 @@ ${coverLetter}
     html: `
       <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 650px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e7eb;">
         <!-- Header with Logo -->
-        <div style="background: linear-gradient(135deg, #0E2A47 0%, #2EA3D6 100%); padding: 40px 30px; text-align: center;">
+        <div style="background: #ffffff; padding: 40px 30px; text-align: center; border-bottom: 3px solid #2EA3D6;">
           <img src="https://rygendynamics-india.vercel.app/Rygen%20Dynamics.png" alt="Rygen Dynamics" style="max-width: 200px; height: auto; margin-bottom: 20px;" />
-          <h1 style="color: #ffffff; margin: 0; font-size: 26px; font-weight: 600; line-height: 1.3;">Application Received Successfully!</h1>
-          <p style="color: #E0F2FE; margin: 12px 0 0 0; font-size: 15px;">Thank you for applying to Rygen Dynamics</p>
+          <h1 style="color: #0E2A47; margin: 0; font-size: 26px; font-weight: 600; line-height: 1.3;">Application Received Successfully!</h1>
+          <p style="color: #6B7280; margin: 12px 0 0 0; font-size: 15px;">Thank you for applying to Rygen Dynamics</p>
         </div>
         
         <!-- Main Content -->
