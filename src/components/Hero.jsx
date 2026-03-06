@@ -1,50 +1,17 @@
-import { useState, useEffect, useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 
 const Hero = () => {
-  const [currentVideo, setCurrentVideo] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
   const videoRef = useRef(null)
-  
-  const videos = [
-    '/Photos/HomePage/Video/6156511-hd_1920_1080_24fps.mp4',
-    '/Photos/HomePage/Video/8566611-uhd_3840_2160_30fps.mp4',
-    '/Photos/HomePage/Video/8979514-uhd_3840_2160_30fps.mp4'
-  ]
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const handleVideoEnd = () => {
-      setIsTransitioning(true)
-      setTimeout(() => {
-        setCurrentVideo((prev) => (prev + 1) % videos.length)
-        setIsTransitioning(false)
-      }, 100)
-    }
-
-    const handleCanPlay = () => {
-      video.play().catch(err => console.log('Video autoplay failed:', err))
-    }
-
-    video.addEventListener('ended', handleVideoEnd)
-    video.addEventListener('canplay', handleCanPlay)
-    
-    return () => {
-      video.removeEventListener('ended', handleVideoEnd)
-      video.removeEventListener('canplay', handleCanPlay)
-    }
-  }, [currentVideo, videos.length])
 
   useEffect(() => {
     const video = videoRef.current
     if (video) {
-      video.load()
+      video.play().catch(err => console.log('Video autoplay failed:', err))
     }
-  }, [currentVideo])
+  }, [])
 
   return (
     <section className="hero" id="home">
@@ -52,14 +19,14 @@ const Hero = () => {
       <div className="hero-video-background">
         <video
           ref={videoRef}
-          className={`hero-video ${isTransitioning ? 'transitioning' : ''}`}
+          className="hero-video"
           autoPlay
           muted
+          loop
           playsInline
           preload="auto"
-          key={currentVideo}
         >
-          <source src={videos[currentVideo]} type="video/mp4" />
+          <source src="/Photos/HomePage/Video/6156511-hd_1920_1080_24fps - MERGE - Videobolt.net.mp4" type="video/mp4" />
         </video>
         <div className="hero-video-overlay"></div>
       </div>
@@ -84,7 +51,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{ 
             fontSize: 'clamp(1rem, 2vw, 1.25rem)', 
-            color: '#1B2F4B', 
+            color: 'white', 
             maxWidth: '800px', 
             margin: '0 auto 2.5rem', 
             lineHeight: '1.8',
@@ -137,9 +104,9 @@ const Hero = () => {
             maxWidth: '900px', 
             margin: '0 auto',
             padding: '2.5rem',
-            background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+            background: 'rgba(255, 255, 255, 0.95)',
             borderRadius: '16px',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
           }}
         >
           <div style={{ marginBottom: '1.5rem' }}>
