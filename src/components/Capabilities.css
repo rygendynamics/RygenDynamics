@@ -22,58 +22,51 @@
 }
 
 .capability-card {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
+  background: white;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 2px solid transparent;
+  position: relative;
 }
 
 .capability-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.capability-card:hover::before {
-  transform: scaleX(1);
+  display: none;
 }
 
 .capability-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 1.5rem;
-  color: var(--primary-blue);
-  background: linear-gradient(135deg, rgba(46, 163, 214, 0.1), rgba(31, 138, 203, 0.05));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.capability-icon svg {
-  width: 32px;
-  height: 32px;
+  display: none;
 }
 
 .capability-icon-img {
   width: 100%;
   height: 200px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   border-radius: 12px 12px 0 0;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  margin: 0;
+  background: linear-gradient(135deg, #2EA3D6 0%, #1F8ACB 100%);
+  position: relative;
+}
+
+.capability-icon-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .capability-icon-img img {
@@ -81,15 +74,18 @@
   height: 100%;
   object-fit: contain;
   object-position: center;
-  background: #f8f9fa;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-.capability-card:hover .capability-icon-img img {
-  transform: scale(1.05);
+.capability-card-link:hover .capability-card {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-blue);
 }
 
-.capability-card:hover .capability-icon {
-  background: linear-gradient(135deg, rgba(46, 163, 214, 0.2), rgba(31, 138, 203, 0.1));
+.capability-card-link:hover .capability-icon-img img {
   transform: scale(1.1);
 }
 
@@ -97,31 +93,36 @@
   font-size: 1.5rem;
   color: var(--deep-navy);
   margin-bottom: 1rem;
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .capability-description {
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
-  line-height: 1.7;
   flex: 1;
+  padding: 0 1.5rem;
 }
 
 .learn-more-btn {
-  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-blue);
   font-weight: 600;
+  font-size: 1rem;
+  background: none;
+  border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  align-self: flex-start;
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
 .learn-more-btn:hover {
+  color: var(--secondary-blue);
   transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(46, 163, 214, 0.3);
 }
 
 .capabilities-3d-showcase {
