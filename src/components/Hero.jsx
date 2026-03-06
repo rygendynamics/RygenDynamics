@@ -5,6 +5,7 @@ import './Hero.css'
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
   const videoRef = useRef(null)
   
   const videos = [
@@ -18,13 +19,23 @@ const Hero = () => {
     if (!video) return
 
     const handleVideoEnd = () => {
-      setCurrentVideo((prev) => (prev + 1) % videos.length)
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setCurrentVideo((prev) => (prev + 1) % videos.length)
+        setIsTransitioning(false)
+      }, 100)
+    }
+
+    const handleCanPlay = () => {
+      video.play().catch(err => console.log('Video autoplay failed:', err))
     }
 
     video.addEventListener('ended', handleVideoEnd)
+    video.addEventListener('canplay', handleCanPlay)
     
     return () => {
       video.removeEventListener('ended', handleVideoEnd)
+      video.removeEventListener('canplay', handleCanPlay)
     }
   }, [currentVideo, videos.length])
 
@@ -32,7 +43,6 @@ const Hero = () => {
     const video = videoRef.current
     if (video) {
       video.load()
-      video.play().catch(err => console.log('Video autoplay failed:', err))
     }
   }, [currentVideo])
 
@@ -42,10 +52,11 @@ const Hero = () => {
       <div className="hero-video-background">
         <video
           ref={videoRef}
-          className="hero-video"
+          className={`hero-video ${isTransitioning ? 'transitioning' : ''}`}
           autoPlay
           muted
           playsInline
+          preload="auto"
           key={currentVideo}
         >
           <source src={videos[currentVideo]} type="video/mp4" />
