@@ -10,6 +10,7 @@ import AboutPage from './pages/AboutPage'
 import ProductsPage from './pages/ProductsPage'
 import ContactPage from './pages/ContactPage'
 import CareersPage from './pages/CareersPage'
+import CareerApplicationPage from './pages/CareerApplicationPage'
 import VRARSolutions from './pages/VRARSolutions'
 import AIMLSolutions from './pages/AIMLSolutions'
 import RoboticsSolutions from './pages/RoboticsSolutions'
@@ -62,6 +63,7 @@ function App() {
         <Route path="/products/bdds" element={<BDDSEquipment />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/careers" element={<CareersPage />} />
+        <Route path="/apply" element={<CareerApplicationPage />} />
       </Routes>
     </div>
   )

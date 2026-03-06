@@ -49,6 +49,13 @@ const CareersPage = () => {
       description: 'Develop intelligent systems for accident prevention, predictive maintenance, and autonomous operations.'
     },
     {
+      title: 'Software Developer',
+      department: 'Technology',
+      location: 'Hybrid',
+      type: 'Full-time',
+      description: 'Build and maintain software applications, web platforms, and system integrations for advanced technology solutions.'
+    },
+    {
       title: 'VR/AR Developer',
       department: 'Technology',
       location: 'On-site',
@@ -168,7 +175,7 @@ const CareersPage = () => {
                         <span className="position-type">{position.type}</span>
                       </div>
                     </div>
-                    <Link to="/contact">
+                    <Link to={`/apply?position=${encodeURIComponent(position.title)}`}>
                       <button className="apply-btn">Apply Now</button>
                     </Link>
                   </div>
