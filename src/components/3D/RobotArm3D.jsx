@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Box, Cylinder, Sphere } from '@react-three/drei'
 import * as THREE from 'three'
@@ -8,6 +8,8 @@ const RobotArm3D = () => {
   const joint1 = useRef()
   const joint2 = useRef()
   const joint3 = useRef()
+  const frameCountRef = useRef(0)
+  const isActiveRef = useRef(true)
 
   // Memoize materials to prevent memory leaks
   const metalMaterial = useMemo(() => new THREE.MeshStandardMaterial({
@@ -24,28 +26,47 @@ const RobotArm3D = () => {
     emissiveIntensity: 0.3
   }), [])
 
-  // Heavy throttle - every 4th frame for critical performance
-  let frameCount = 0
+  // Cleanup materials on unmount
+  useEffect(() => {
+    return () => {
+      metalMaterial.dispose()
+      accentMaterial.dispose()
+    }
+  }, [metalMaterial, accentMaterial])
+
+  // Pause animation when page is hidden
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      isActiveRef.current = !document.hidden
+    }
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
+  }, [])
+
+  // Ultra-heavy throttle - every 6th frame for better performance
   useFrame((state) => {
-    frameCount++
-    if (frameCount % 4 !== 0) return // Run every 4th frame
+    if (!isActiveRef.current) return // Don't animate when page is hidden
+    
+    frameCountRef.current++
+    if (frameCountRef.current % 6 !== 0) return // Run every 6th frame
     
     const t = state.clock.getElapsedTime()
     
     // Animate robot arm joints
     if (joint1.current) {
-      joint1.current.rotation.z = Math.sin(t * 0.5) * 0.3
+      joint1.current.rotation.z = Math.sin(t * 0.4) * 0.25 // Slower
     }
     if (joint2.current) {
-      joint2.current.rotation.z = Math.sin(t * 0.7) * 0.4
+      joint2.current.rotation.z = Math.sin(t * 0.5) * 0.3
     }
     if (joint3.current) {
-      joint3.current.rotation.z = Math.sin(t * 0.9) * 0.5
+      joint3.current.rotation.z = Math.sin(t * 0.7) * 0.4
     }
 
     // Rotate the entire group slowly
     if (group.current) {
-      group.current.rotation.y = Math.sin(t * 0.2) * 0.2
+      group.current.rotation.y = Math.sin(t * 0.15) * 0.15
     }
   })
 

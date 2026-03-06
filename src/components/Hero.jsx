@@ -9,19 +9,62 @@ import SplineViewer from './3D/SplineViewer'
 import './Hero.css'
 
 const Hero = () => {
+  const [enableParticles, setEnableParticles] = useState(true)
+  const [isLowPerformance, setIsLowPerformance] = useState(false)
+
+  useEffect(() => {
+    // Check device capabilities
+    const checkPerformance = () => {
+      const memory = navigator.deviceMemory || 4
+      const cpuCores = navigator.hardwareConcurrency || 2
+            // Set low performance mode for devices with less resources
+      if (memory < 4 || cpuCores < 4) {
+        setIsLowPerformance(true)
+      }
+            // Only disable particles on very low-end devices
+      if (memory < 2 || cpuCores < 2) {
+        setEnableParticles(false)
+      }
+    }
+
+    checkPerformance()
+
+    // Monitor memory usage if available
+    if (performance.memory) {
+      const checkMemory = () => {
+        const usedMemoryMB = performance.memory.usedJSHeapSize / 1048576
+        const totalMemoryMB = performance.memory.jsHeapSizeLimit / 1048576
+        
+        // If using more than 85% of available memory, disable effects
+        if (usedMemoryMB / totalMemoryMB > 0.85) {
+          setEnableParticles(false)
+        }
+      }
+
+      const memoryCheckInterval = setInterval(checkMemory, 10000) // Check less frequently
+      
+      return () => clearInterval(memoryCheckInterval)
+    }
+  }, [])
 
   return (
     <section className="hero" id="home">
-      <div className="hero-3d-bg hero-3d-bg-optimized">
-        <Canvas style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
-          <Suspense fallback={null}>
-            <PerspectiveCamera makeDefault position={[0, 0, 25]} />
-            <ambientLight intensity={0.3} />
-            <pointLight position={[10, 10, 10]} intensity={0.5} />
-            <ParticleField />
-          </Suspense>
-        </Canvas>
-      </div>
+      {enableParticles && (
+        <div className="hero-3d-bg hero-3d-bg-optimized">
+          <Canvas 
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            dpr={[1, 1.5]} // Limit pixel ratio for performance
+            performance={{ min: 0.5 }} // Allow frame rate to drop for performance
+          >
+            <Suspense fallback={null}>
+              <PerspectiveCamera makeDefault position={[0, 0, 25]} />
+              <ambientLight intensity={0.3} />
+              <pointLight position={[10, 10, 10]} intensity={0.5} />
+              <ParticleField lowPerformance={isLowPerformance} />
+            </Suspense>
+          </Canvas>
+        </div>
+      )}
 
       <div className="container hero-container">
         <div className="hero-content">

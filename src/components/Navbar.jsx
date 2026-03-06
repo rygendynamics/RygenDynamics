@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
@@ -8,13 +8,29 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false)
   const location = useLocation()
+  const rafRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      // Cancel previous animation frame
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+      }
+
+      // Use requestAnimationFrame for better performance
+      rafRef.current = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 50)
+      })
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+      }
+    }
   }, [])
 
   const navItems = [

@@ -31,18 +31,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  /* Hardware acceleration for smooth scrolling */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
-  /* GPU acceleration */
-  transform: translate3d(0, 0, 0);
-  will-change: scroll-position;
 }
 
 /* Custom Scrollbar */

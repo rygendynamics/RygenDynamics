@@ -1,10 +1,13 @@
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const ParticleField = () => {
+const ParticleField = ({ lowPerformance = false }) => {
   const points = useRef()
-  const particleCount = 250 // Drastically reduced for performance
+  // Adjust particle count based on device capability
+  const particleCount = lowPerformance ? 80 : 150
+  const frameCountRef = useRef(0)
+  const isActiveRef = useRef(true)
 
   const [positions, colors] = useMemo(() => {
     const positions = new Float32Array(particleCount * 3)
@@ -33,13 +36,27 @@ const ParticleField = () => {
     return [positions, colors]
   }, [])
 
-  // Heavy throttle - update every 4th frame for minimal CPU usage
-  let frameCount = 0
+  // Pause animation when page is hidden to save resources
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      isActiveRef.current = !document.hidden
+    }
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
+  }, [])
+
+  // Ultra-heavy throttle - update every 6th/8th frame based on performance
   useFrame((state) => {
-    frameCount++
-    if (frameCount % 4 === 0 && points.current) {
-      points.current.rotation.y = state.clock.getElapsedTime() * 0.05
-      points.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.1) * 0.1
+    if (!isActiveRef.current) return // Don't animate when page is hidden
+    
+    frameCountRef.current++
+    const frameSkip = lowPerformance ? 8 : 6
+    if (frameCountRef.current % frameSkip === 0 && points.current) {
+      const time = state.clock.getElapsedTime()
+      const speed = lowPerformance ? 0.02 : 0.03
+      points.current.rotation.y = time * speed // Slower rotation on low-end
+      points.current.rotation.x = Math.sin(time * 0.08) * 0.08
     }
   })
 
