@@ -87,13 +87,13 @@ export default function AboutPage() {
           <Section>
             <span className="section-label mb-6 inline-flex">Our Mission</span>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-6">
-              Empowering every student to build the future
+              Building an ecosystem for technology-driven education
             </h2>
             <p className="text-white/50 leading-relaxed mb-5">
-              We believe the greatest investment any school can make is in preparing students for the world they'll actually inhabit — one driven by AI, automation, and digital innovation.
+              Our mission is to build an ecosystem focused on leveraging technology in education where Robotics, Coding, Artificial Intelligence and AR/VR are utilized as powerful tools to help students think smarter, learn better and solve real-world problems with confidence.
             </p>
             <p className="text-white/50 leading-relaxed mb-8">
-              By deploying world-class labs, training dedicated teachers, and delivering industry-relevant curriculum, Rygen Dynamics ensures that every student — regardless of background — has the opportunity to become a builder, a creator, and an innovator.
+              Through practical labs, educator support, and project-based experiences, we help schools build future-ready learning environments for K-12 students.
             </p>
             <Link to="/labs" className="btn-primary inline-flex items-center gap-2">
               <span>Explore Our Labs</span>

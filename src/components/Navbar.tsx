@@ -5,14 +5,14 @@ import { Menu, X } from 'lucide-react';
 import logo from '../../Logo.png';
 
 const navLinks = [
-  { label: 'Products', path: '#' },
-  { label: 'School Programs', path: '/programs' },
-  { label: 'Books', path: '#' },
-  { label: 'Impact', path: '#' },
-  { label: 'Education', path: '#' },
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Labs & Programs', path: '/labs' },
   { label: 'Projects', path: '/projects' },
-  { label: 'Shop', path: '#' },
+  { label: 'Gallery', path: '/gallery' },
   { label: 'Blog', path: '/blog' },
+  { label: 'Careers', path: '/careers' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 export default function Navbar() {
@@ -22,14 +22,13 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-sky-400/15 bg-white/90 shadow-[0_12px_30px_rgba(2,9,17,0.08)] backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center group">
           <img src={logo} alt="Rygen Dynamics" className="h-12 w-auto object-contain" />
-          <span className="font-bold text-xl text-stem-navy hidden sm:block tracking-[0.18em]">RYGEN</span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-8">
-          {navLinks.slice(0, 4).map((link) => (
+        <div className="hidden lg:flex items-center gap-6">
+          {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
@@ -42,14 +41,8 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="hidden lg:flex items-center gap-4">
-          <button className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
+          <Link to="/contact" className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
             📞 Book a Demo
-          </button>
-          <Link to="#" className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
-            🛒 Shop
-          </Link>
-          <Link to="#" className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
-            👤 Account
           </Link>
         </div>
 

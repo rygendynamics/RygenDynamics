@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import logo from '../../Logo.png';
 
 export default function Footer() {
@@ -13,7 +14,9 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <img src={logo} alt="Rygen Dynamics" className="h-12 w-auto object-contain mb-4" />
+            <div className="inline-flex items-center rounded-xl bg-white px-3 py-2 mb-4 shadow-md">
+              <img src={logo} alt="Rygen Dynamics" className="h-10 w-auto object-contain" />
+            </div>
             <h3 className="font-bold text-lg mb-2">Rygen Dynamics</h3>
             <p className="text-white/70 text-sm mb-4">
               Future-ready learning solutions for schools
@@ -35,9 +38,33 @@ export default function Footer() {
 
           {/* Quick Links */}
           {[
-            { title: 'Products', links: ['AI Lab', 'Robotics', 'Coding', 'IoT & VR'] },
-            { title: 'Company', links: ['About Us', 'Blog', 'Careers', 'Contact'] },
-            { title: 'Support', links: ['Documentation', 'FAQ', 'Resources', 'Contact Us'] },
+            {
+              title: 'Explore',
+              links: [
+                { label: 'Home', path: '/' },
+                { label: 'About Us', path: '/about' },
+                { label: 'Labs & Programs', path: '/labs' },
+                { label: 'Projects', path: '/projects' },
+              ],
+            },
+            {
+              title: 'Company',
+              links: [
+                { label: 'Gallery', path: '/gallery' },
+                { label: 'Blog', path: '/blog' },
+                { label: 'Careers', path: '/careers' },
+                { label: 'Contact', path: '/contact' },
+              ],
+            },
+            {
+              title: 'Programs',
+              links: [
+                { label: 'Robotics', path: '/labs' },
+                { label: 'AI & ML', path: '/labs' },
+                { label: 'AR & VR', path: '/labs' },
+                { label: 'Lab Setup', path: '/labs' },
+              ],
+            },
           ].map((column, i) => (
             <motion.div
               key={column.title}
@@ -49,10 +76,10 @@ export default function Footer() {
               <h4 className="font-bold mb-4">{column.title}</h4>
               <ul className="space-y-2">
                 {column.links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-white/70 hover:text-stem-yellow transition-colors text-sm">
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    <Link to={link.path} className="text-white/70 hover:text-stem-light-blue transition-colors text-sm">
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -66,13 +93,13 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Rygen Dynamics. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="text-white/60 hover:text-stem-light-blue transition-colors text-sm">
+            <Link to="/contact" className="text-white/60 hover:text-stem-light-blue transition-colors text-sm">
               Privacy Policy
-            </a>
+            </Link>
             <span className="text-white/30">|</span>
-            <a href="#" className="text-white/60 hover:text-stem-light-blue transition-colors text-sm">
+            <Link to="/contact" className="text-white/60 hover:text-stem-light-blue transition-colors text-sm">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
 
