@@ -1,0 +1,181 @@
+import { useRef, useState } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { MapPin, Clock, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import CTA from '../components/sections/CTA';
+
+const perks = [
+  { title: 'Mission-Driven Work', desc: 'You\'re not building software for software\'s sake. Every feature you ship shapes thousands of students\' futures.', icon: '🎯' },
+  { title: 'Global Team', desc: 'Work with passionate people across India, Southeast Asia, the Middle East, and beyond.', icon: '🌍' },
+  { title: 'Learning First', desc: 'Annual learning budget, conference tickets, and a culture that prizes curiosity above all.', icon: '📚' },
+  { title: 'Flexible Work', desc: 'Hybrid-first culture with flexible hours. We measure outcomes, not hours logged.', icon: '⚡' },
+  { title: 'Health & Wellness', desc: 'Comprehensive health coverage for you and your family, plus wellness allowance.', icon: '💪' },
+  { title: 'Equity Package', desc: 'Meaningful equity so everyone shares in the success we build together.', icon: '💎' },
+];
+
+const jobs = [
+  { title: 'Senior AI Curriculum Designer', department: 'Education', location: 'Bangalore / Remote', type: 'Full-time', desc: 'Design cutting-edge AI learning modules for K-12 students. You\'ll bridge the gap between industry-level AI concepts and accessible classroom experiences.', requirements: ['3+ years in curriculum design or instructional design', 'Strong understanding of ML/AI concepts', 'Experience with Python, TensorFlow or similar', 'Passion for education and student outcomes'] },
+  { title: 'Robotics Lab Engineer', department: 'Engineering', location: 'Bangalore', type: 'Full-time', desc: 'Design, build, and maintain robotics hardware and software systems for our lab deployments across partner schools.', requirements: ['2+ years with Arduino, Raspberry Pi, ROS', 'Experience with servo systems, sensors, actuators', 'Strong Python or C++ skills', 'Ability to translate tech to non-technical educators'] },
+  { title: 'School Partnership Manager', department: 'Partnerships', location: 'Multiple Cities', type: 'Full-time', desc: 'Build and nurture relationships with school principals, administrators, and education boards. You\'ll be the face of Rygen to our partner schools.', requirements: ['3+ years in B2B sales or school partnerships', 'Excellent communication and relationship skills', 'Track record of hitting growth targets', 'Bonus: experience in EdTech or education sector'] },
+  { title: 'Full-Stack Developer', department: 'Product', location: 'Bangalore / Remote', type: 'Full-time', desc: 'Build the software platform that powers Rygen\'s lab management, student analytics, and educator tools used by 50,000+ students.', requirements: ['3+ years with React, TypeScript, Node.js', 'Experience with Supabase or similar databases', 'Strong UX sensibility', 'Passion for clean, performant code'] },
+  { title: 'IoT Systems Specialist', department: 'Engineering', location: 'Remote-friendly', type: 'Full-time', desc: 'Design connected systems and IoT lab setups for our school partners. You\'ll spec hardware, write firmware, and create deployment guides.', requirements: ['2+ years in IoT or embedded systems', 'ESP32/ESP8266, MQTT experience', 'Familiarity with cloud IoT platforms (AWS, GCP)', 'Strong problem-solving under real-world constraints'] },
+  { title: 'Content & Community Lead', department: 'Marketing', location: 'Remote', type: 'Full-time', desc: 'Own Rygen\'s content strategy — from blog and social to educator community forums. Help us become the voice of innovation education globally.', requirements: ['3+ years in content marketing or community building', 'Strong writing and editing skills', 'Interest in STEM and education', 'Experience growing online communities'] },
+];
+
+function JobCard({ job }: { job: typeof jobs[0] }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-40px' });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5 }}
+      className="glass-card rounded-2xl overflow-hidden"
+    >
+      <button
+        className="w-full text-left p-6 group"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <span className="text-xs font-mono text-electric-blue/80 bg-electric-blue/10 border border-electric-blue/20 px-2.5 py-0.5 rounded-full">
+                {job.department}
+              </span>
+              <span className="text-xs font-mono text-white/30">{job.type}</span>
+            </div>
+            <h3 className="font-display font-semibold text-white text-lg group-hover:text-electric-blue transition-colors">{job.title}</h3>
+            <div className="flex items-center gap-3 mt-1.5 text-white/35 text-xs">
+              <span className="flex items-center gap-1"><MapPin size={11} />{job.location}</span>
+              <span className="flex items-center gap-1"><Clock size={11} />{job.type}</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="btn-outline text-xs px-4 py-2 hidden sm:inline-flex">Apply Now</span>
+            {open ? <ChevronUp size={18} className="text-white/40" /> : <ChevronDown size={18} className="text-white/40" />}
+          </div>
+        </div>
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <div className="px-6 pb-6 border-t border-white/5 pt-5">
+              <p className="text-white/55 leading-relaxed mb-5">{job.desc}</p>
+              <h4 className="text-xs font-mono uppercase tracking-widest text-white/30 mb-3">Requirements</h4>
+              <ul className="space-y-2 mb-6">
+                {job.requirements.map((r) => (
+                  <li key={r} className="flex items-start gap-2 text-sm text-white/55">
+                    <span className="text-electric-blue mt-1 shrink-0">→</span>
+                    {r}
+                  </li>
+                ))}
+              </ul>
+              <button className="btn-primary flex items-center gap-2 text-sm">
+                <span>Apply for this Role</span>
+                <ArrowRight size={14} />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
+export default function CareersPage() {
+  return (
+    <div className="bg-navy-950 pt-16">
+      {/* Hero */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-electric-blue/6 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
+            <span className="section-label">
+              <span className="w-1.5 h-1.5 rounded-full bg-neon-green animate-pulse" />
+              We're Hiring
+            </span>
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6">
+            Help us build
+            <br />
+            <span className="text-gradient">the future of education</span>
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/50 text-xl max-w-2xl mx-auto">
+            We're looking for passionate builders, educators, and innovators to join our mission of transforming schools globally.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Perks */}
+      <section className="pb-24 max-w-7xl mx-auto px-6">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-12">
+          <span className="section-label mb-5 inline-flex">Why Rygen</span>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-white">
+            Work that <span className="text-gradient">matters</span>
+          </h2>
+        </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+          {perks.map((perk, i) => (
+            <motion.div
+              key={perk.title}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: 0.06 * i }}
+              className="glass-card rounded-2xl p-6"
+            >
+              <div className="text-2xl mb-4">{perk.icon}</div>
+              <h3 className="font-display font-semibold text-white text-base mb-2">{perk.title}</h3>
+              <p className="text-white/40 text-sm leading-relaxed">{perk.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Open roles */}
+        <div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-10">
+            <span className="section-label mb-5 inline-flex">Open Positions</span>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-white">
+              {jobs.length} open <span className="text-gradient">roles</span>
+            </h2>
+          </motion.div>
+          <div className="space-y-4">
+            {jobs.map((job) => (
+              <JobCard key={job.title} job={job} />
+            ))}
+          </div>
+        </div>
+
+        {/* Speculative */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.6 }}
+          className="mt-10 glass-blue rounded-3xl p-8 text-center"
+        >
+          <h3 className="font-display font-bold text-xl text-white mb-2">Don't see the right role?</h3>
+          <p className="text-white/50 mb-5 max-w-md mx-auto text-sm">
+            We're always looking for exceptional people. Send us your story and what you'd like to build at Rygen.
+          </p>
+          <a href="mailto:careers@rygendynamics.com" className="btn-outline inline-flex items-center gap-2 text-sm">
+            Send Speculative Application
+            <ArrowRight size={14} />
+          </a>
+        </motion.div>
+      </section>
+
+      <CTA />
+    </div>
+  );
+}
