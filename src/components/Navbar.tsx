@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logo from '../../Logo.png';
 
 const navLinks = [
   { label: 'Products', path: '#' },
@@ -18,14 +19,12 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-b-4 border-stem-light-blue sticky top-0 z-50 shadow-md">
+    <nav className="sticky top-0 z-50 border-b border-sky-400/15 bg-white/90 shadow-[0_12px_30px_rgba(2,9,17,0.08)] backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-12 h-12 bg-gradient-to-br from-stem-blue to-stem-light-blue rounded-lg flex items-center justify-center text-white font-bold text-xl">
-            RD
-          </div>
-          <span className="font-bold text-xl text-stem-navy hidden sm:block">RYGEN</span>
+          <img src={logo} alt="Rygen Dynamics" className="h-12 w-auto object-contain" />
+          <span className="font-bold text-xl text-stem-navy hidden sm:block tracking-[0.18em]">RYGEN</span>
         </Link>
 
         {/* Desktop nav */}
@@ -34,7 +33,7 @@ export default function Navbar() {
             <Link
               key={link.path}
               to={link.path}
-              className="text-stem-dark font-medium hover:text-stem-blue transition-colors text-sm"
+              className="text-slate-700 font-medium hover:text-stem-blue transition-colors text-sm"
             >
               {link.label}
             </Link>
@@ -43,13 +42,13 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="hidden lg:flex items-center gap-4">
-          <button className="text-stem-blue font-semibold flex items-center gap-1 hover:opacity-80">
+          <button className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
             📞 Book a Demo
           </button>
-          <Link to="#" className="text-stem-blue font-semibold flex items-center gap-1 hover:opacity-80">
+          <Link to="#" className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
             🛒 Shop
           </Link>
-          <Link to="#" className="text-stem-blue font-semibold flex items-center gap-1 hover:opacity-80">
+          <Link to="#" className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
             👤 Account
           </Link>
         </div>
@@ -69,14 +68,14 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="lg:hidden bg-stem-light-gray border-t-2 border-stem-light-blue"
+          className="lg:hidden border-t border-sky-400/15 bg-white/95"
         >
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="block text-stem-dark font-medium hover:text-stem-blue transition-colors"
+                className="block text-slate-700 font-medium hover:text-stem-blue transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}

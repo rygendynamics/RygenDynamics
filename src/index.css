@@ -14,8 +14,10 @@
   }
 
   body {
-    background-color: #ffffff;
-    color: #333333;
+    background:
+      radial-gradient(circle at top, rgba(31, 164, 232, 0.12), transparent 34%),
+      linear-gradient(180deg, #06131f 0%, #081521 100%);
+    color: #dbe7f2;
     font-family: 'Poppins', system-ui, sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -25,12 +27,12 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', system-ui, sans-serif;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #f4f9fd;
   }
 
   ::selection {
-    background: rgba(0, 153, 216, 0.3);
-    color: #1a1a1a;
+    background: rgba(31, 164, 232, 0.28);
+    color: #f4f9fd;
   }
 
   ::-webkit-scrollbar {
@@ -38,40 +40,40 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #0b1d2d;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #0099D8;
+    background: #1fa4e8;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #0078b8;
+    background: #67c7f4;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 rounded-full font-semibold text-white bg-stem-yellow hover:bg-yellow-500 transition-all duration-300 text-center inline-block;
-    box-shadow: 0 4px 15px rgba(255, 213, 0, 0.3);
+    @apply px-6 py-3 rounded-full font-semibold text-white bg-stem-blue hover:bg-stem-light-blue transition-all duration-300 text-center inline-block;
+    box-shadow: 0 8px 24px rgba(31, 164, 232, 0.28);
   }
 
   .btn-secondary {
-    @apply px-6 py-3 rounded-full font-semibold text-white bg-stem-pink hover:bg-pink-600 transition-all duration-300 text-center inline-block;
-    box-shadow: 0 4px 15px rgba(233, 30, 140, 0.3);
+    @apply px-6 py-3 rounded-full font-semibold text-white bg-stem-navy hover:bg-stem-teal transition-all duration-300 text-center inline-block;
+    box-shadow: 0 8px 24px rgba(10, 31, 54, 0.28);
   }
 
   .btn-outline {
-    @apply px-6 py-3 rounded-full font-semibold text-stem-blue border-2 border-stem-blue hover:bg-stem-blue hover:text-white transition-all duration-300;
+    @apply px-6 py-3 rounded-full font-semibold text-stem-light-blue border-2 border-stem-light-blue hover:bg-stem-light-blue hover:text-stem-navy transition-all duration-300;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold text-stem-navy mb-4;
+    @apply text-4xl md:text-5xl font-bold text-white mb-4;
   }
 
   .section-subtitle {
-    @apply text-lg text-stem-gray mb-8;
+    @apply text-lg text-slate-300 mb-8;
   }
 
   .card-rounded {
@@ -80,6 +82,55 @@
 
   .badge-circle {
     @apply flex items-center justify-center rounded-full font-bold text-white;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #67c7f4 0%, #1fa4e8 45%, #0a1f36 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-sky-200;
+  }
+
+  .glass-card {
+    background: linear-gradient(180deg, rgba(8, 21, 33, 0.78), rgba(8, 21, 33, 0.58));
+    border: 1px solid rgba(103, 199, 244, 0.14);
+    box-shadow: 0 24px 80px rgba(2, 9, 17, 0.35);
+    backdrop-filter: blur(18px);
+  }
+
+  .glass-blue {
+    background: linear-gradient(180deg, rgba(31, 164, 232, 0.18), rgba(10, 31, 54, 0.72));
+    border: 1px solid rgba(103, 199, 244, 0.16);
+    box-shadow: 0 24px 80px rgba(31, 164, 232, 0.16);
+    backdrop-filter: blur(18px);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(103, 199, 244, 0.6), transparent);
+  }
+
+  .shadow-glow-blue {
+    box-shadow: 0 0 0 1px rgba(103, 199, 244, 0.14), 0 0 32px rgba(31, 164, 232, 0.24);
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 2.8s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 16s linear infinite;
   }
 }
 
@@ -131,16 +182,28 @@
 
 /* Utility classes */
 .text-gradient-blue {
-  background: linear-gradient(135deg, #0099D8, #4DB8E8);
+  background: linear-gradient(135deg, #67c7f4, #1fa4e8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .bg-gradient-blue {
-  background: linear-gradient(135deg, #0099D8, #4DB8E8);
+  background: linear-gradient(135deg, #67c7f4, #1fa4e8);
 }
 
 .bg-light-blue {
-  background: #E8F4FB;
+  background: #eaf4fb;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 8px 24px rgba(31, 164, 232, 0.24);
+  }
+  50% {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 36px rgba(31, 164, 232, 0.34);
+  }
 }

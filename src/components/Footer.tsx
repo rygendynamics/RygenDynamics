@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import logo from '../../Logo.png';
 
 export default function Footer() {
   return (
@@ -12,9 +13,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-stem-blue to-stem-light-blue rounded-lg flex items-center justify-center text-white font-bold text-xl mb-4">
-              RD
-            </div>
+            <img src={logo} alt="Rygen Dynamics" className="h-12 w-auto object-contain mb-4" />
             <h3 className="font-bold text-lg mb-2">Rygen Dynamics</h3>
             <p className="text-white/70 text-sm mb-4">
               Future-ready learning solutions for schools
@@ -23,7 +22,7 @@ export default function Footer() {
               {['f', 'in', 'ig', 'yt'].map((icon) => (
                 <button
                   key={icon}
-                  className="w-8 h-8 rounded-full bg-white/20 hover:bg-stem-blue transition-colors flex items-center justify-center"
+                  className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center"
                 >
                   {icon === 'f' && '📘'}
                   {icon === 'in' && '🔗'}
@@ -67,11 +66,11 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Rygen Dynamics. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="text-white/60 hover:text-stem-yellow transition-colors text-sm">
+            <a href="#" className="text-white/60 hover:text-stem-light-blue transition-colors text-sm">
               Privacy Policy
             </a>
             <span className="text-white/30">|</span>
-            <a href="#" className="text-white/60 hover:text-stem-yellow transition-colors text-sm">
+            <a href="#" className="text-white/60 hover:text-stem-light-blue transition-colors text-sm">
               Terms of Service
             </a>
           </div>
