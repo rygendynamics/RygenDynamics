@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import logo from '../../Logo.png';
 
 const navLinks = [
@@ -42,7 +42,7 @@ export default function Navbar() {
         {/* Right side */}
         <div className="hidden lg:flex items-center gap-4">
           <Link to="/contact" className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
-            📞 Book a Demo
+            <Phone size={14} /> Book a Demo
           </Link>
         </div>
 

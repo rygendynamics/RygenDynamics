@@ -1,23 +1,23 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { MapPin, Clock, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import { MapPin, Clock, ChevronDown, ChevronUp, ArrowRight, Target, Globe, BookOpen, Zap, Heart, Award } from 'lucide-react';
 import CTA from '../components/sections/CTA';
 
 const perks = [
-  { title: 'Mission-Driven Work', desc: 'You\'re not building software for software\'s sake. Every feature you ship shapes thousands of students\' futures.', icon: '🎯' },
-  { title: 'Global Team', desc: 'Work with passionate people across India, Southeast Asia, the Middle East, and beyond.', icon: '🌍' },
-  { title: 'Learning First', desc: 'Annual learning budget, conference tickets, and a culture that prizes curiosity above all.', icon: '📚' },
-  { title: 'Flexible Work', desc: 'Hybrid-first culture with flexible hours. We measure outcomes, not hours logged.', icon: '⚡' },
-  { title: 'Health & Wellness', desc: 'Comprehensive health coverage for you and your family, plus wellness allowance.', icon: '💪' },
-  { title: 'Equity Package', desc: 'Meaningful equity so everyone shares in the success we build together.', icon: '💎' },
+  { title: 'Mission-Driven Work', desc: 'You\'re not building software for software\'s sake. Every feature you ship shapes future learners\' experiences.', Icon: Target },
+  { title: 'Global Team', desc: 'Work with passionate people across regions and timezones.', Icon: Globe },
+  { title: 'Learning First', desc: 'Annual learning budget, conference tickets, and a culture that prizes curiosity above all.', Icon: BookOpen },
+  { title: 'Flexible Work', desc: 'Hybrid and remote-friendly roles with flexible hours.', Icon: Zap },
+  { title: 'Health & Wellness', desc: 'Wellness benefits and support to keep you healthy.', Icon: Heart },
+  { title: 'Equity Package', desc: 'Meaningful equity so everyone shares in the success we build together.', Icon: Award },
 ];
 
 const jobs = [
-  { title: 'Senior AI Curriculum Designer', department: 'Education', location: 'Bangalore / Remote', type: 'Full-time', desc: 'Design cutting-edge AI learning modules for K-12 students. You\'ll bridge the gap between industry-level AI concepts and accessible classroom experiences.', requirements: ['3+ years in curriculum design or instructional design', 'Strong understanding of ML/AI concepts', 'Experience with Python, TensorFlow or similar', 'Passion for education and student outcomes'] },
-  { title: 'Robotics Lab Engineer', department: 'Engineering', location: 'Bangalore', type: 'Full-time', desc: 'Design, build, and maintain robotics hardware and software systems for our lab deployments across partner schools.', requirements: ['2+ years with Arduino, Raspberry Pi, ROS', 'Experience with servo systems, sensors, actuators', 'Strong Python or C++ skills', 'Ability to translate tech to non-technical educators'] },
-  { title: 'School Partnership Manager', department: 'Partnerships', location: 'Multiple Cities', type: 'Full-time', desc: 'Build and nurture relationships with school principals, administrators, and education boards. You\'ll be the face of Rygen to our partner schools.', requirements: ['3+ years in B2B sales or school partnerships', 'Excellent communication and relationship skills', 'Track record of hitting growth targets', 'Bonus: experience in EdTech or education sector'] },
-  { title: 'Full-Stack Developer', department: 'Product', location: 'Bangalore / Remote', type: 'Full-time', desc: 'Build the software platform that powers Rygen\'s lab management, student analytics, and educator tools used by 50,000+ students.', requirements: ['3+ years with React, TypeScript, Node.js', 'Experience with Supabase or similar databases', 'Strong UX sensibility', 'Passion for clean, performant code'] },
-  { title: 'IoT Systems Specialist', department: 'Engineering', location: 'Remote-friendly', type: 'Full-time', desc: 'Design connected systems and IoT lab setups for our school partners. You\'ll spec hardware, write firmware, and create deployment guides.', requirements: ['2+ years in IoT or embedded systems', 'ESP32/ESP8266, MQTT experience', 'Familiarity with cloud IoT platforms (AWS, GCP)', 'Strong problem-solving under real-world constraints'] },
+  { title: 'Senior AI Curriculum Designer', department: 'Education', location: 'Remote / Flexible', type: 'Full-time', desc: 'Design cutting-edge AI learning modules for K-12 students. You\'ll bridge the gap between industry-level AI concepts and accessible classroom experiences.', requirements: ['3+ years in curriculum design or instructional design', 'Strong understanding of ML/AI concepts', 'Experience with Python, TensorFlow or similar', 'Passion for education and student outcomes'] },
+  { title: 'Robotics Engineer', department: 'Engineering', location: 'Flexible / Remote', type: 'Full-time', desc: 'Design and prototype robotics hardware and software for educational projects and references.', requirements: ['2+ years with Arduino, Raspberry Pi, ROS', 'Experience with servo systems, sensors, actuators', 'Strong Python or C++ skills', 'Ability to translate tech to non-technical educators'] },
+  { title: 'School Partnership Manager', department: 'Partnerships', location: 'Various / Remote', type: 'Full-time', desc: 'Build and nurture relationships with school principals, administrators, and education stakeholders.', requirements: ['3+ years in B2B sales or school partnerships', 'Excellent communication and relationship skills', 'Track record of hitting growth targets', 'Bonus: experience in EdTech or education sector'] },
+  { title: 'Full-Stack Developer', department: 'Product', location: 'Remote / Flexible', type: 'Full-time', desc: 'Build the software platform that supports our education tools and educator workflows.', requirements: ['3+ years with React, TypeScript, Node.js', 'Experience with Supabase or similar databases', 'Strong UX sensibility', 'Passion for clean, performant code'] },
+  { title: 'IoT Systems Specialist', department: 'Engineering', location: 'Remote-friendly', type: 'Full-time', desc: 'Design connected systems and IoT reference designs for education use-cases. You\'ll spec hardware, write firmware, and create deployment guides.', requirements: ['2+ years in IoT or embedded systems', 'ESP32/ESP8266, MQTT experience', 'Familiarity with cloud IoT platforms (AWS, GCP)', 'Strong problem-solving under real-world constraints'] },
   { title: 'Content & Community Lead', department: 'Marketing', location: 'Remote', type: 'Full-time', desc: 'Own Rygen\'s content strategy — from blog and social to educator community forums. Help us become the voice of innovation education globally.', requirements: ['3+ years in content marketing or community building', 'Strong writing and editing skills', 'Interest in STEM and education', 'Experience growing online communities'] },
 ];
 
@@ -134,7 +134,7 @@ export default function CareersPage() {
               transition={{ duration: 0.5, delay: 0.06 * i }}
               className="glass-card rounded-2xl p-6"
             >
-              <div className="text-2xl mb-4">{perk.icon}</div>
+              <div className="text-2xl mb-4"><perk.Icon size={28} /></div>
               <h3 className="font-display font-semibold text-white text-base mb-2">{perk.title}</h3>
               <p className="text-white/40 text-sm leading-relaxed">{perk.desc}</p>
             </motion.div>

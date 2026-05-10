@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Target, Brain, Lightbulb, Edit3, RefreshCw } from 'lucide-react';
 
 export default function Methodology() {
   const methodologySteps = [
@@ -156,14 +157,14 @@ export default function Methodology() {
                 {/* Center */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-6xl mb-4">🎯</div>
+                    <div className="mb-4"><Target size={56} /></div>
                     <p className="text-2xl font-bold">Design<br />Thinking</p>
                     <p className="text-sm text-white/70 mt-4">Problem Solving with Creativity</p>
                   </div>
                 </div>
 
                 {/* Rotating icons */}
-                {['🧠', '💡', '✏️', '🔄'].map((icon, i) => (
+                {[Brain, Lightbulb, Edit3, RefreshCw].map((IconComp, i) => (
                   <motion.div
                     key={i}
                     className="absolute text-3xl"
@@ -176,7 +177,7 @@ export default function Methodology() {
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                   >
-                    {icon}
+                    <IconComp size={28} />
                   </motion.div>
                 ))}
               </div>

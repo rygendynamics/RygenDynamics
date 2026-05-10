@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const projects = [
   {
@@ -11,7 +11,6 @@ const projects = [
     description: 'A robot that navigates obstacles using computer vision and real-time object detection.',
     image: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=800',
     tech: ['Python', 'OpenCV', 'TensorFlow'],
-    award: 'National Science Olympiad Winner',
     color: '#0ea5e9',
   },
   {
@@ -21,7 +20,6 @@ const projects = [
     description: 'Fully automated home control system using ESP32, sensors, and a custom dashboard app.',
     image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800',
     tech: ['ESP32', 'React', 'MQTT'],
-    award: null,
     color: '#10b981',
   },
   {
@@ -31,7 +29,6 @@ const projects = [
     description: 'Wearable device with ML algorithms to detect anomalies in heart rate and predict health events.',
     image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800',
     tech: ['TensorFlow', 'Arduino', 'BLE'],
-    award: 'State Innovation Award',
     color: '#a855f7',
   },
   {
@@ -41,7 +38,6 @@ const projects = [
     description: 'Built from scratch with GPS waypoint navigation, live video feed, and autonomous landing.',
     image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800',
     tech: ['Pixhawk', 'Python', 'GPS'],
-    award: null,
     color: '#06b6d4',
   },
   {
@@ -51,7 +47,6 @@ const projects = [
     description: 'Augmented reality app that brings science textbook diagrams to life in 3D.',
     image: 'https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=800',
     tech: ['Unity', 'ARCore', 'Blender'],
-    award: 'EdTech Innovation Prize',
     color: '#f59e0b',
   },
   {
@@ -61,7 +56,6 @@ const projects = [
     description: 'Servo-driven arm with computer vision to sort objects by color and shape on a conveyor.',
     image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
     tech: ['Raspberry Pi', 'OpenCV', 'Servo'],
-    award: null,
     color: '#0ea5e9',
   },
 ];
@@ -140,14 +134,6 @@ export default function ProjectShowcase() {
                   {project.category}
                 </span>
 
-                {/* Award badge */}
-                {project.award && (
-                  <div className="absolute top-4 right-4 flex items-center gap-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full px-2.5 py-1">
-                    <Star size={10} className="text-yellow-400 fill-yellow-400" />
-                    <span className="text-[9px] text-yellow-400 font-medium">Award</span>
-                  </div>
-                )}
-
                 {/* Grade */}
                 <span className="absolute bottom-4 right-4 text-[10px] text-white/50 bg-navy-950/60 px-2.5 py-1 rounded-full">
                   {project.grade}
@@ -158,13 +144,6 @@ export default function ProjectShowcase() {
               <div className="p-5">
                 <h3 className="font-display font-semibold text-white text-base mb-2">{project.title}</h3>
                 <p className="text-white/45 text-sm leading-relaxed mb-4">{project.description}</p>
-
-                {project.award && (
-                  <div className="flex items-center gap-1.5 mb-4">
-                    <Star size={11} className="text-yellow-400 fill-yellow-400" />
-                    <span className="text-[11px] text-yellow-400/80">{project.award}</span>
-                  </div>
-                )}
 
                 {/* Tech stack */}
                 <div className="flex flex-wrap gap-1.5">

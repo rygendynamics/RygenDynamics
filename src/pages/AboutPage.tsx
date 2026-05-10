@@ -5,19 +5,18 @@ import { ArrowRight, Users, Globe, Award, TrendingUp } from 'lucide-react';
 import CTA from '../components/sections/CTA';
 
 const team = [
-  { name: 'Aryan Verma', role: 'Co-Founder & CEO', expertise: 'AI Education, EdTech Strategy', img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Dr. Kavya Reddy', role: 'Chief Curriculum Officer', expertise: 'Robotics, STEM Education', img: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Rohit Sharma', role: 'CTO', expertise: 'Full-Stack, IoT Systems', img: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400' },
-  { name: 'Meera Iyer', role: 'Head of Partnerships', expertise: 'School Relations, Growth', img: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Leadership Team', role: 'Strategy & Vision', expertise: 'Program direction and long-term planning', img: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Curriculum Team', role: 'Learning Design', expertise: 'STEM curriculum and pedagogical frameworks', img: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Technology Team', role: 'Platform & Tools', expertise: 'Product engineering and classroom technology', img: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400' },
+  { name: 'Program Team', role: 'Training & Support', expertise: 'Educator support and implementation readiness', img: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400' },
 ];
 
 const milestones = [
-  { year: '2019', title: 'Founded in Bangalore', desc: 'Started with a single pilot school and a big vision.' },
-  { year: '2020', title: 'First 50 Schools', desc: 'Rapid growth despite global challenges proved the concept.' },
-  { year: '2021', title: 'National Recognition', desc: 'Received Government of India EdTech Excellence Award.' },
-  { year: '2022', title: 'International Expansion', desc: 'Expanded to 8 countries across Asia, Africa, and the Middle East.' },
-  { year: '2023', title: '500+ Schools', desc: '50,000 students actively learning in Rygen Innovation Labs.' },
-  { year: '2024', title: 'Series B Funding', desc: 'Secured major investment to accelerate global growth.' },
+  { id: 1, title: 'Formed the Team', desc: 'Core team assembly and curriculum research.' },
+  { id: 2, title: 'Curriculum Development', desc: 'Designing hands-on STEM modules and educator resources.' },
+  { id: 3, title: 'Pilot Programs', desc: 'Planning pilot programs with educators and institutions.' },
+  { id: 4, title: 'Platform Build', desc: 'Developing our digital platform for classroom learning.' },
+  { id: 5, title: 'Partnerships', desc: 'Establishing partnerships with schools and education stakeholders.' },
 ];
 
 function Section({ children, className = '' }: { children: React.ReactNode; className?: string }) {
@@ -64,10 +63,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Users, value: '50K+', label: 'Students Trained', color: '#0ea5e9' },
-              { icon: Globe, value: '15+', label: 'Countries', color: '#06b6d4' },
-              { icon: Award, value: '500+', label: 'Schools', color: '#10b981' },
-              { icon: TrendingUp, value: '98%', label: 'Satisfaction', color: '#a855f7' },
+              { icon: Users, value: 'Early Stage', label: 'Startup Phase', color: '#0ea5e9' },
+              { icon: Globe, value: 'Curriculum', label: 'STEM Modules', color: '#06b6d4' },
+              { icon: Award, value: 'Pilots', label: 'Pilot Programs', color: '#10b981' },
+              { icon: TrendingUp, value: 'Focus', label: 'Educator Support', color: '#a855f7' },
             ].map((stat) => (
               <Section key={stat.label} className="text-center">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ background: `${stat.color}15` }}>
@@ -93,10 +92,10 @@ export default function AboutPage() {
               Our mission is to build an ecosystem focused on leveraging technology in education where Robotics, Coding, Artificial Intelligence and AR/VR are utilized as powerful tools to help students think smarter, learn better and solve real-world problems with confidence.
             </p>
             <p className="text-white/50 leading-relaxed mb-8">
-              Through practical labs, educator support, and project-based experiences, we help schools build future-ready learning environments for K-12 students.
+              Through practical modules, educator support, and project-based experiences, we help schools build future-ready learning environments for K-12 students.
             </p>
-            <Link to="/labs" className="btn-primary inline-flex items-center gap-2">
-              <span>Explore Our Labs</span>
+            <Link to="/programs" className="btn-primary inline-flex items-center gap-2">
+              <span>Explore Our Programs</span>
               <ArrowRight size={16} />
             </Link>
           </Section>
@@ -117,7 +116,7 @@ export default function AboutPage() {
           <Section className="text-center mb-16">
             <span className="section-label mb-5 inline-flex">Our Journey</span>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white">
-              From one school to a <span className="text-gradient">global movement</span>
+              Building step by step toward <span className="text-gradient">future-ready learning</span>
             </h2>
           </Section>
           <div className="relative">
@@ -125,10 +124,10 @@ export default function AboutPage() {
             <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-electric-blue/30 via-electric-cyan/20 to-transparent" />
             <div className="space-y-10">
               {milestones.map((m, i) => (
-                <Section key={m.year} className={`flex gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                <Section key={m.id} className={`flex gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   <div className={`flex-1 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'} pl-12 md:pl-0`}>
                     <div className="glass-card rounded-2xl p-5 inline-block text-left">
-                      <div className="text-xs font-mono text-electric-blue mb-1">{m.year}</div>
+                      <div className="text-xs font-mono text-electric-blue mb-1">STEP {m.id}</div>
                       <h3 className="font-display font-semibold text-white text-base mb-1">{m.title}</h3>
                       <p className="text-white/40 text-sm">{m.desc}</p>
                     </div>

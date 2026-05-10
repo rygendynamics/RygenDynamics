@@ -42,9 +42,9 @@ export default function ContactPage() {
           <div className="lg:col-span-2 space-y-6">
             {/* Info cards */}
             {[
-              { icon: Mail, label: 'Email Us', value: 'hello@rygendynamics.com', sub: 'We reply within 24 hours', color: '#0ea5e9' },
-              { icon: Phone, label: 'Call Us', value: '+91 800 000 0000', sub: 'Mon–Fri, 9am–6pm IST', color: '#06b6d4' },
-              { icon: MapPin, label: 'Visit Us', value: 'Bangalore, India', sub: 'By appointment only', color: '#10b981' },
+              { icon: Mail, label: 'Email Us', value: 'rygendynamics@gmail.com', sub: 'We reply within 24 hours', color: '#0ea5e9' },
+              { icon: Phone, label: 'Call Us', value: '+91 8980005452', sub: 'Mon-Fri, 9am-6pm IST', color: '#06b6d4' },
+              { icon: MapPin, label: 'Visit Us', value: 'India (by appointment)', sub: 'Online and onsite meetings available', color: '#10b981' },
               { icon: Calendar, label: 'Book a Demo', value: 'Schedule a call', sub: 'Free 45-min consultation', color: '#a855f7' },
             ].map((item, i) => (
               <motion.div
@@ -76,9 +76,9 @@ export default function ContactPage() {
               <div className="space-y-3">
                 {[
                   'Our team contacts you within 24 hours',
-                  'Free lab design consultation call',
-                  'Custom proposal and pricing shared',
-                  'Lab setup begins within 60 days',
+                  'Program discovery consultation call',
+                  'Custom roadmap and proposal shared',
+                  'Implementation planning and next steps',
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-electric-blue/20 flex items-center justify-center text-[10px] font-bold text-electric-blue shrink-0 mt-0.5">
@@ -159,13 +159,13 @@ export default function ContactPage() {
                         onChange={(e) => setForm({ ...form, interest: e.target.value })}
                         className="w-full bg-white/4 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-electric-blue/50 transition-colors"
                       >
-                        <option value="" className="bg-navy-900">Select a lab...</option>
-                        <option value="ai" className="bg-navy-900">AI Lab</option>
-                        <option value="robotics" className="bg-navy-900">Robotics Lab</option>
-                        <option value="iot" className="bg-navy-900">IoT Lab</option>
-                        <option value="arvr" className="bg-navy-900">AR/VR Lab</option>
-                        <option value="coding" className="bg-navy-900">Coding Lab</option>
-                        <option value="full" className="bg-navy-900">Full Innovation Campus</option>
+                        <option value="" className="bg-navy-900">Select an area...</option>
+                        <option value="ai" className="bg-navy-900">AI & ML Program</option>
+                        <option value="robotics" className="bg-navy-900">Robotics Program</option>
+                        <option value="iot" className="bg-navy-900">IoT Program</option>
+                        <option value="arvr" className="bg-navy-900">AR/VR Program</option>
+                        <option value="coding" className="bg-navy-900">Coding Program</option>
+                        <option value="integrated" className="bg-navy-900">Integrated STEM Pathway</option>
                       </select>
                     </div>
                     <div>

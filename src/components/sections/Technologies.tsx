@@ -2,16 +2,16 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const technologies = [
-  { name: 'Python', emoji: '🐍', color: '#3776AB', desc: 'Programming Foundation' },
-  { name: 'Artificial Intelligence', emoji: '🧠', color: '#0ea5e9', desc: 'Neural Networks & Deep Learning' },
-  { name: 'Robotics', emoji: '🤖', color: '#06b6d4', desc: 'Autonomous Systems' },
-  { name: 'Internet of Things', emoji: '📡', color: '#10b981', desc: 'Connected Devices' },
-  { name: 'Machine Learning', emoji: '⚙️', color: '#a855f7', desc: 'Predictive Models' },
-  { name: 'AR/VR', emoji: '🥽', color: '#f59e0b', desc: 'Immersive Experiences' },
-  { name: 'Automation', emoji: '⚡', color: '#0ea5e9', desc: 'Smart Workflows' },
-  { name: 'Computer Vision', emoji: '👁️', color: '#06b6d4', desc: 'Image Recognition' },
-  { name: 'Drone Technology', emoji: '🚁', color: '#10b981', desc: 'Aerial Systems' },
-  { name: 'Embedded Systems', emoji: '🔌', color: '#a855f7', desc: 'Hardware Programming' },
+  { name: 'Python', color: '#3776AB', desc: 'Programming Foundation' },
+  { name: 'Artificial Intelligence', color: '#0ea5e9', desc: 'Neural Networks & Deep Learning' },
+  { name: 'Robotics', color: '#06b6d4', desc: 'Autonomous Systems' },
+  { name: 'Internet of Things', color: '#10b981', desc: 'Connected Devices' },
+  { name: 'Machine Learning', color: '#a855f7', desc: 'Predictive Models' },
+  { name: 'AR/VR', color: '#f59e0b', desc: 'Immersive Experiences' },
+  { name: 'Automation', color: '#0ea5e9', desc: 'Smart Workflows' },
+  { name: 'Computer Vision', color: '#06b6d4', desc: 'Image Recognition' },
+  { name: 'Drone Technology', color: '#10b981', desc: 'Aerial Systems' },
+  { name: 'Embedded Systems', color: '#a855f7', desc: 'Hardware Programming' },
 ];
 
 export default function Technologies() {
@@ -82,7 +82,9 @@ export default function Technologies() {
                 style={{ background: `linear-gradient(90deg, transparent, ${tech.color}, transparent)` }}
               />
 
-              <div className="text-3xl mb-3">{tech.emoji}</div>
+              <div className="mb-3 flex items-center justify-center">
+                <span className="w-10 h-10 rounded-full" style={{ background: tech.color }} />
+              </div>
               <h3
                 className="font-display font-semibold text-white text-sm mb-1.5 group-hover:text-white transition-colors"
                 style={{ '--tech-color': tech.color } as React.CSSProperties}

@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
+import { Cpu, Code, Glasses, Lightbulb, Clipboard, Hand, Rocket, User, Shield } from 'lucide-react';
 
 const offerings = [
   {
-    icon: '🤖',
+    icon: Cpu,
     title: 'STEAM & ROBOTICS',
     description:
       'Our STEAM & Robotics program helps students explore the world of science, technology, engineering, arts and mathematics through hands-on activities. Students design, build and program their own robots while developing problem-solving, teamwork and engineering skills.',
@@ -10,7 +11,7 @@ const offerings = [
     color: 'bg-stem-blue',
   },
   {
-    icon: '💻',
+    icon: Code,
     title: 'CODING & ARTIFICIAL INTELLIGENCE',
     description:
       'We introduce students to the world of coding and AI through fun, interactive and project-based learning. From block coding to advanced concepts, students create apps, games and smart solutions while building logical thinking and computational skills.',
@@ -18,7 +19,7 @@ const offerings = [
     color: 'bg-stem-orange',
   },
   {
-    icon: '🥽',
+    icon: Glasses,
     title: 'AUGMENTED REALITY & VIRTUAL REALITY',
     description:
       'Our AR/VR solutions create immersive learning experiences that bring concepts to life. Students can explore 3D models, simulations and virtual worlds that make learning more engaging, interactive and easy to understand.',
@@ -26,7 +27,7 @@ const offerings = [
     color: 'bg-stem-teal',
   },
   {
-    icon: '💡',
+    icon: Lightbulb,
     title: 'INNOVATION & MAKER LAB',
     description:
       'Our Innovation & Maker Lab encourages students to ideate, design and prototype their ideas. Through hands-on experiments and open-ended projects, students develop creativity, critical thinking and the confidence to become future innovators.',
@@ -72,9 +73,9 @@ export default function Offerings() {
                   />
                   {/* Circular Icon Badge */}
                   <div
-                    className={`absolute top-4 left-4 ${offering.color} badge-circle w-16 h-16 text-3xl border-4 border-white shadow-lg`}
+                    className={`absolute top-4 left-4 ${offering.color} badge-circle w-16 h-16 text-3xl border-4 border-white shadow-lg flex items-center justify-center`}
                   >
-                    {offering.icon}
+                    <offering.icon size={28} />
                   </div>
                 </div>
 
@@ -98,11 +99,11 @@ export default function Offerings() {
         >
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
             {[
-              { value: 'Curriculum Aligned', icon: '📋' },
-              { value: 'Hands-On Learning', icon: '✋' },
-              { value: 'Future Ready', icon: '🚀' },
-              { value: 'Teacher Support', icon: '👨‍🏫' },
-              { value: 'Safe & Reliable', icon: '🛡️' },
+              { value: 'Curriculum Aligned', Icon: Clipboard },
+              { value: 'Hands-On Learning', Icon: Hand },
+              { value: 'Future Ready', Icon: Rocket },
+              { value: 'Teacher Support', Icon: User },
+              { value: 'Safe & Reliable', Icon: Shield },
             ].map((stat, i) => (
               <motion.div
                 key={stat.value}
@@ -112,7 +113,7 @@ export default function Offerings() {
                 transition={{ delay: 0.4 + i * 0.05 }}
                 className="text-white"
               >
-                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="text-3xl mb-2"><stat.Icon size={24} /></div>
                 <p className="font-semibold text-sm">{stat.value}</p>
               </motion.div>
             ))}

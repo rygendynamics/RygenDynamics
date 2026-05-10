@@ -1,20 +1,20 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { Star, Filter } from 'lucide-react';
+import { Filter } from 'lucide-react';
 import CTA from '../components/sections/CTA';
 
 const categories = ['All', 'AI & ML', 'Robotics', 'IoT', 'AR/VR', 'Drones', 'Automation'];
 
 const projects = [
-  { title: 'Autonomous AI Robot', category: 'AI & ML', grade: 'Grade 11', school: 'Delhi International School', description: 'Robot with YOLO-based object detection, autonomous path planning, and voice command control.', tech: ['Python', 'OpenCV', 'ROS'], award: 'National Science Olympiad — 1st Place', img: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#1FA4E8' },
-  { title: 'AI Health Wearable', category: 'AI & ML', grade: 'Grade 12', school: 'Bangalore Innovation High', description: 'Wearable that monitors vitals and uses LSTM models to predict anomalies in heart rate.', tech: ['TensorFlow', 'Arduino', 'BLE'], award: 'State Innovation Award', img: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#67C7F4' },
-  { title: 'Smart Home IoT Hub', category: 'IoT', grade: 'Grade 9', school: 'Mumbai Tech Academy', description: 'Full home automation system with ESP32, custom PCB, and real-time cloud dashboard.', tech: ['ESP32', 'React', 'MQTT'], award: null, img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#0A1F36' },
-  { title: 'Custom FPV Quad Drone', category: 'Drones', grade: 'Grade 10', school: 'Chennai Smart School', description: 'Built-from-scratch quadcopter with GPS navigation, FPV camera, and autonomous mission planning.', tech: ['Pixhawk', 'Python', 'GPS'], award: null, img: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#2F7BB4' },
-  { title: 'AR Science Explorer', category: 'AR/VR', grade: 'Grade 8', school: 'Cochin Global Academy', description: 'Mobile AR app that overlays 3D science models on textbook pages using marker detection.', tech: ['Unity', 'ARCore', 'Blender'], award: 'EdTech Innovation Prize', img: 'https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#143E6F' },
-  { title: 'Smart Farming Station', category: 'IoT', grade: 'Grade 10', school: 'Pune Innovation School', description: 'IoT system with soil sensors, weather monitoring, and automated irrigation with app control.', tech: ['ESP8266', 'Node-RED', 'AWS'], award: 'Agriculture Innovation Award', img: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#4A8FC2' },
-  { title: 'Robot Sorting Arm', category: 'Robotics', grade: 'Grade 7', school: 'Hyderabad STEM School', description: '6-DOF robotic arm with CV-powered color/shape sorting on a conveyor system.', tech: ['Raspberry Pi', 'OpenCV', 'Servo'], award: null, img: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#67C7F4' },
-  { title: 'Gesture-Controlled Car', category: 'Robotics', grade: 'Grade 8', school: 'Delhi International School', description: 'RC car controlled by hand gestures using MediaPipe hand-tracking and wireless communication.', tech: ['Python', 'MediaPipe', 'Arduino'], award: null, img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#1FA4E8' },
-  { title: 'Smart Traffic System', category: 'Automation', grade: 'Grade 11', school: 'Mumbai Tech Academy', description: 'AI-powered traffic light system that dynamically adjusts timing based on vehicle density.', tech: ['Python', 'YOLO', 'Raspberry Pi'], award: 'Smart City Hackathon — Winner', img: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#1D5A99' },
+  { title: 'Autonomous AI Robot', category: 'AI & ML', grade: 'Grade 11', description: 'Project idea: Robot with object detection, autonomous path planning, and voice command control.', tech: ['Python', 'OpenCV', 'ROS'], img: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#1FA4E8' },
+  { title: 'AI Health Wearable', category: 'AI & ML', grade: 'Grade 12', description: 'Project idea: Wearable that monitors vitals and uses models to predict anomalies.', tech: ['TensorFlow', 'Arduino', 'BLE'], img: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#67C7F4' },
+  { title: 'Smart Home IoT Hub', category: 'IoT', grade: 'Grade 9', description: 'Project idea: Home automation with ESP32, custom PCB, and cloud dashboard.', tech: ['ESP32', 'React', 'MQTT'], img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#0A1F36' },
+  { title: 'Custom FPV Quad Drone', category: 'Drones', grade: 'Grade 10', description: 'Project idea: Quadrotor with GPS navigation, FPV camera, and autonomous missions.', tech: ['Pixhawk', 'Python', 'GPS'], img: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#2F7BB4' },
+  { title: 'AR Science Explorer', category: 'AR/VR', grade: 'Grade 8', description: 'Project idea: Mobile AR app that overlays 3D science models on textbook pages.', tech: ['Unity', 'ARCore', 'Blender'], img: 'https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#143E6F' },
+  { title: 'Smart Farming Station', category: 'IoT', grade: 'Grade 10', description: 'Project idea: IoT system with soil sensors, weather monitoring, and automated irrigation.', tech: ['ESP8266', 'Node-RED', 'AWS'], img: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#4A8FC2' },
+  { title: 'Robot Sorting Arm', category: 'Robotics', grade: 'Grade 7', description: 'Project idea: 6-DOF arm with CV-powered color/shape sorting on a conveyor.', tech: ['Raspberry Pi', 'OpenCV', 'Servo'], img: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#67C7F4' },
+  { title: 'Gesture-Controlled Car', category: 'Robotics', grade: 'Grade 8', description: 'Project idea: RC car controlled by hand gestures using hand-tracking.', tech: ['Python', 'MediaPipe', 'Arduino'], img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#1FA4E8' },
+  { title: 'Smart Traffic System', category: 'Automation', grade: 'Grade 11', description: 'Project idea: AI-powered traffic system that adjusts timings based on density.', tech: ['Python', 'YOLO', 'Raspberry Pi'], img: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800', color: '#1D5A99' },
 ];
 
 function ProjectCard({ project }: { project: typeof projects[0] }) {
@@ -35,20 +35,14 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         <span className="absolute top-3 left-3 text-[10px] font-mono px-2 py-1 rounded-full border" style={{ color: project.color, background: `${project.color}20`, borderColor: `${project.color}30` }}>
           {project.category}
         </span>
-        {project.award && (
-          <div className="absolute top-3 right-3 flex items-center gap-1 bg-stem-light-blue/20 border border-stem-light-blue/30 rounded-full px-2 py-1">
-            <Star size={9} className="text-stem-light-blue fill-stem-light-blue" />
-            <span className="text-[9px] text-stem-light-blue font-medium">Award Winner</span>
-          </div>
-        )}
         <div className="absolute bottom-3 left-3">
-          <span className="text-xs text-white/40">{project.grade} · {project.school}</span>
+          <span className="text-xs text-white/40">{project.grade}</span>
         </div>
       </div>
       <div className="p-5">
         <h3 className="font-display font-semibold text-white text-base mb-2">{project.title}</h3>
         <p className="text-white/45 text-sm leading-relaxed mb-4">{project.description}</p>
-        {project.award && <div className="flex items-center gap-1.5 mb-3"><Star size={10} className="text-stem-light-blue fill-stem-light-blue" /><span className="text-[11px] text-stem-light-blue/80">{project.award}</span></div>}
+        {/* Awards and school names removed: projects shown as example ideas */}
         <div className="flex flex-wrap gap-1.5">
           {project.tech.map((t) => <span key={t} className="text-[11px] text-white/40 bg-white/4 border border-white/7 px-2 py-0.5 rounded-md">{t}</span>)}
         </div>

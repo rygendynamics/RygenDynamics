@@ -15,11 +15,11 @@ const featured = {
 
 const posts = [
   { title: 'Why Robotics Should Be a Core Subject, Not an Extracurricular', excerpt: 'Schools treating robotics as a club activity are falling behind. Here\'s the case for making it part of every student\'s core curriculum.', author: 'Aryan Verma', date: 'March 8, 2025', readTime: '5 min read', category: 'Robotics', img: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#06b6d4' },
-  { title: 'How IoT Labs Are Solving Real Community Problems', excerpt: 'Students at Rygen partner schools are building smart systems that address real local challenges — from water quality to traffic management.', author: 'Meera Iyer', date: 'Feb 28, 2025', readTime: '6 min read', category: 'IoT', img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#10b981' },
+  { title: 'How IoT Labs Are Solving Real Community Problems', excerpt: 'Students and schools are building smart systems that address local challenges — from water quality to traffic management.', author: 'Meera Iyer', date: 'Feb 28, 2025', readTime: '6 min read', category: 'IoT', img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#10b981' },
   { title: 'AR/VR in Education: Beyond the Hype', excerpt: 'A practical guide to what\'s actually working in augmented and virtual reality for learning, and what\'s still mostly marketing speak.', author: 'Rohit Sharma', date: 'Feb 20, 2025', readTime: '7 min read', category: 'AR/VR', img: 'https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#a855f7' },
-  { title: '10 Student Projects That Left Us Speechless in 2024', excerpt: 'From autonomous drones to AI health monitors, the innovation coming out of Rygen labs continues to blow everyone away.', author: 'Dr. Kavya Reddy', date: 'Feb 10, 2025', readTime: '4 min read', category: 'Showcase', img: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#0ea5e9' },
+  { title: '10 Student Projects That Left Us Speechless in 2024', excerpt: 'From autonomous drones to AI health monitors, these student projects showcase the potential of hands-on STEM learning.', author: 'Dr. Kavya Reddy', date: 'Feb 10, 2025', readTime: '4 min read', category: 'Showcase', img: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#0ea5e9' },
   { title: 'The Teacher\'s Guide to Running an AI Lab', excerpt: 'You don\'t need a CS degree to teach AI. Here\'s how educators with zero technical background are leading world-class AI programs.', author: 'Meera Iyer', date: 'Jan 30, 2025', readTime: '9 min read', category: 'Teacher Training', img: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#f59e0b' },
-  { title: 'Measuring ROI: How Schools Justify Innovation Lab Investment', excerpt: 'A data-driven look at how Rygen partner schools demonstrate the academic and financial returns on their technology lab investments.', author: 'Aryan Verma', date: 'Jan 20, 2025', readTime: '6 min read', category: 'For Principals', img: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#ec4899' },
+  { title: 'Measuring ROI: How Schools Justify Innovation Lab Investment', excerpt: 'A data-driven look at how schools can demonstrate academic and financial returns on technology investments.', author: 'Aryan Verma', date: 'Jan 20, 2025', readTime: '6 min read', category: 'For Principals', img: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600', color: '#ec4899' },
 ];
 
 function PostCard({ post }: { post: typeof posts[0] }) {
@@ -73,8 +73,8 @@ export default function BlogPage() {
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-display font-bold text-5xl md:text-6xl text-white mb-6">
             The <span className="text-gradient">Rygen Blog</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/50 text-xl max-w-xl mx-auto">
-            Insights on AI education, robotics, edtech trends, and stories from the schools we partner with.
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/50 text-xl max-w-xl mx-auto">
+            Insights on AI education, robotics, edtech trends, and stories from schools and educators.
           </motion.p>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Beaker, Monitor, Settings, BarChart3 } from 'lucide-react';
 
 const stemItems = [
   {
@@ -6,28 +7,28 @@ const stemItems = [
     title: 'Science',
     description: 'Explore the world through inquiry and experimentation.',
     color: 'bg-stem-pink',
-    icon: '🧪',
+    Icon: Beaker,
   },
   {
     letter: 'T',
     title: 'Technology',
     description: 'Learn coding, automation, and digital systems.',
     color: 'bg-stem-blue',
-    icon: '💻',
+    Icon: Monitor,
   },
   {
     letter: 'E',
     title: 'Engineering',
     description: 'Design solutions and build real-world prototypes.',
     color: 'bg-stem-orange',
-    icon: '⚙️',
+    Icon: Settings,
   },
   {
     letter: 'M',
     title: 'Mathematics',
     description: 'Apply logic and problem-solving in every challenge.',
     color: 'bg-stem-purple',
-    icon: '📊',
+    Icon: BarChart3,
   },
 ];
 
@@ -64,8 +65,8 @@ export default function STEMFocus() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <div className={`${item.color} badge-circle w-20 h-20 mx-auto mb-4 text-3xl`}>
-                {item.icon}
+              <div className={`${item.color} badge-circle w-20 h-20 mx-auto mb-4 flex items-center justify-center`}>
+                <item.Icon size={28} />
               </div>
               <h3 className="font-bold text-xl text-stem-navy mb-2">{item.title}</h3>
               <p className="text-stem-gray text-sm">{item.description}</p>

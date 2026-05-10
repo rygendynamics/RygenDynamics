@@ -3,10 +3,10 @@ import { motion, useInView } from 'framer-motion';
 import { Target, Eye, Lightbulb, Cpu } from 'lucide-react';
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Schools Partnered' },
-  { value: 50, suffix: 'K+', label: 'Students Trained' },
-  { value: 98, suffix: '%', label: 'Satisfaction Rate' },
-  { value: 15, suffix: '+', label: 'Countries' },
+  { value: 'Program-First', label: 'Approach' },
+  { value: 'Hands-On', label: 'Learning Model' },
+  { value: 'Educator Enablement', label: 'Core Focus' },
+  { value: 'Future Ready', label: 'Student Outcome' },
 ];
 
 const pillars = [
@@ -40,7 +40,7 @@ const pillars = [
   },
 ];
 
-function AnimatedStat({ value, suffix, label, delay }: { value: number; suffix: string; label: string; delay: number }) {
+function AnimatedStat({ value, label, delay }: { value: string; label: string; delay: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true });
 
@@ -58,7 +58,7 @@ function AnimatedStat({ value, suffix, label, delay }: { value: number; suffix: 
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.3, delay: delay + 0.2 }}
         >
-          {inView ? value : 0}{suffix}
+          {value}
         </motion.span>
       </div>
       <div className="text-white/40 text-sm">{label}</div>
@@ -106,8 +106,8 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed"
           >
-            Rygen Dynamics partners with schools to deploy world-class technology labs,
-            train educators, and deliver a curriculum that prepares students for the AI-powered world.
+            Rygen Dynamics builds practical STEM learning pathways through curriculum design,
+            educator support, and hands-on technology experiences for K-12 learners.
           </motion.p>
         </div>
 
@@ -161,13 +161,12 @@ export default function About() {
               deserves access to the future
             </h3>
             <p className="text-white/50 leading-relaxed mb-5">
-              Rygen Dynamics was founded with one bold conviction: the gap between what students learn
-              and what the world needs is too large and too dangerous to ignore. We set out to close it.
+              Rygen Dynamics is built on a clear conviction: students should gain practical, future-ready
+              skills through meaningful technology learning experiences.
             </p>
             <p className="text-white/50 leading-relaxed">
-              By combining world-class hardware, AI-driven curriculum, and expert educator training,
-              we've helped hundreds of schools transform into true innovation campuses — places where
-              the next generation of engineers, inventors, and entrepreneurs are being shaped.
+              By combining curriculum, learning tools, and educator enablement, we aim to support schools
+              in building engaging STEM programs that encourage creativity and problem solving.
             </p>
           </motion.div>
 
@@ -188,18 +187,9 @@ export default function About() {
               <div className="absolute inset-0 border border-electric-blue/20 rounded-2xl" />
               <div className="absolute top-4 left-4 section-label text-xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-neon-green animate-pulse" />
-                Live Innovation Campus
+                Hands-On Learning
               </div>
             </div>
-            {/* Floating stat card */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-6 -right-6 glass-blue rounded-2xl p-4 shadow-glow-blue"
-            >
-              <div className="font-display font-bold text-3xl text-gradient">98%</div>
-              <div className="text-white/50 text-xs mt-0.5">Student Engagement</div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

@@ -56,8 +56,8 @@ export default function CTA() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="text-white/50 text-xl max-w-2xl mx-auto leading-relaxed mb-12"
         >
-          Join 500+ forward-thinking schools already running Rygen Dynamics innovation labs.
-          Start your journey today — we handle everything from setup to ongoing support.
+          Start your STEM journey with structured programs, educator enablement, and practical learning pathways.
+          We support your rollout planning from discovery to implementation.
         </motion.p>
 
         <motion.div
@@ -85,9 +85,9 @@ export default function CTA() {
         >
           {[
             '✓ Free consultation',
-            '✓ 60-day implementation',
-            '✓ Ongoing support included',
-            '✓ Custom lab design',
+            '✓ Program planning support',
+            '✓ Ongoing educator support',
+            '✓ Custom learning pathways',
           ].map((item) => (
             <span key={item} className="flex items-center gap-1.5">
               {item}

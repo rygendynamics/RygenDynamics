@@ -26,7 +26,7 @@ const benefits = [
   {
     icon: Users,
     title: 'Teacher Training',
-    description: '100+ hours of educator professional development included with every lab setup.',
+    description: 'Structured educator professional development for program readiness and confidence.',
     color: '#a855f7',
   },
   {
@@ -139,8 +139,8 @@ export default function WhyChooseUs() {
               Ready to transform your school?
             </h3>
             <p className="text-white/50">
-              Join 500+ schools already running Rygen Dynamics innovation labs.
-              Our team handles everything from design to deployment.
+              Build your school\'s STEM roadmap with Rygen Dynamics.
+              Our team supports planning, educator enablement, and phased implementation.
             </p>
           </div>
           <div className="flex flex-col gap-3 md:items-end">
@@ -148,13 +148,13 @@ export default function WhyChooseUs() {
               <div className="w-4 h-4 rounded-full bg-neon-green/20 flex items-center justify-center">
                 <div className="w-1.5 h-1.5 rounded-full bg-neon-green" />
               </div>
-              Free lab design consultation
+              Free program consultation
             </div>
             <div className="flex items-center gap-2 text-sm text-white/60">
               <div className="w-4 h-4 rounded-full bg-neon-green/20 flex items-center justify-center">
                 <div className="w-1.5 h-1.5 rounded-full bg-neon-green" />
               </div>
-              60-day implementation guarantee
+              Implementation planning support
             </div>
             <div className="flex items-center gap-2 text-sm text-white/60">
               <div className="w-4 h-4 rounded-full bg-neon-green/20 flex items-center justify-center">

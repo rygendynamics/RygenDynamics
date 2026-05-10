@@ -4,42 +4,42 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Dr. Priya Sharma',
+    name: 'School Leader',
     role: 'Principal',
-    school: 'Delhi International School',
-    quote: "Rygen Dynamics transformed our school into something we couldn't have imagined. Students who had never touched a circuit board are now building autonomous robots and winning national competitions. It's been absolutely transformational.",
+    school: 'K-12 Institution',
+    quote: 'The curriculum structure and practical format make STEM learning much easier to implement in a school setting.',
     rating: 5,
     avatar: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
   {
-    name: 'Rajesh Kumar',
+    name: 'STEM Coordinator',
     role: 'STEM Coordinator',
-    school: 'Mumbai Tech Academy',
-    quote: "The curriculum depth and teacher training support from Rygen Dynamics is unlike anything we've seen in the market. Within one semester, our students were building IoT systems and deploying machine learning models. Absolutely world-class.",
+    school: 'Secondary School',
+    quote: 'The educator training and hands-on modules gave our team practical clarity on how to run STEM activities effectively.',
     rating: 5,
     avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
   {
-    name: 'Ananya Singh',
-    role: 'Student, Grade 11',
-    school: 'Bangalore Innovation High',
-    quote: "I built my first AI model in 8th grade at our Rygen lab. By Grade 11, I'm training neural networks and presenting at tech conferences. I have a college acceptance with an AI scholarship. None of this would have happened without Rygen.",
+    name: 'Student Voice',
+    role: 'Student',
+    school: 'Middle School',
+    quote: 'I liked learning by building projects. It made coding and robotics feel real and exciting.',
     rating: 5,
     avatar: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
   {
-    name: 'Mrs. Kavitha Nair',
+    name: 'Program Lead',
     role: 'School Administrator',
-    school: 'Cochin Global Academy',
-    quote: "Parents are amazed at what their children are building. Our enrollment increased 40% after launching the Rygen labs — parents want their kids to have access to this level of education. The ROI for our school has been exceptional.",
+    school: 'Learning Program Team',
+    quote: 'We value the clear implementation support and the focus on practical student outcomes.',
     rating: 5,
     avatar: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
   {
-    name: 'Prof. Arun Mehta',
+    name: 'Education Advisor',
     role: 'Education Director',
-    school: 'Chennai Smart School',
-    quote: "The teacher training program alone is worth the entire investment. Our educators feel empowered and excited again. When teachers are energized, students thrive. Rygen understood this and delivered a holistic transformation.",
+    school: 'Academic Team',
+    quote: 'Teacher enablement is a major strength of this approach, especially for schools starting their STEM journey.',
     rating: 5,
     avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
@@ -92,7 +92,7 @@ export default function Testimonials() {
             className="font-display font-bold text-4xl md:text-5xl text-white"
           >
             Trusted by{' '}
-            <span className="text-gradient">educators worldwide</span>
+            <span className="text-gradient">educators and learners</span>
           </motion.h2>
         </div>
 

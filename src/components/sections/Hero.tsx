@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { BookOpen, Plane } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -27,7 +28,7 @@ export default function Hero() {
                 to="/contact"
                 className="btn-primary text-stem-navy flex items-center justify-center gap-2"
               >
-                📘 What's Covered
+                <BookOpen size={16} /> What's Covered
               </Link>
               <Link
                 to="/contact"
@@ -38,7 +39,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-8 text-white/80 flex items-center gap-2">
-              ✈️ <span className="font-semibold">Ships Worldwide</span>
+              <Plane size={16} /> <span className="font-semibold">Program Delivery Support</span>
             </p>
           </motion.div>
 

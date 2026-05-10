@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
+import { Brain, Book, MessageSquare, BookOpen, Lightbulb, Trophy, Check } from 'lucide-react';
 
 export default function Platform() {
   const platforms = [
     {
       title: 'AI CONNECT',
-      subtitle: "The world's first unified AI & ML coding platform",
+      subtitle: 'A unified AI & ML coding platform for schools',
       features: [
         'Easy & User Friendly',
         'Diverse Python Activities',
@@ -15,7 +16,7 @@ export default function Platform() {
       ],
       description: 'Intuitive interface for effortless learning with 200+ interactive AI & ML activities for real-world learning.',
       color: 'bg-stem-blue',
-      icon: '🧠',
+      icon: Brain,
     },
     {
       title: 'STEM LEARN / LMS',
@@ -30,7 +31,7 @@ export default function Platform() {
       ],
       description: 'A powerful Learning Management System built for STEM education with comprehensive tracking and engagement tools.',
       color: 'bg-stem-orange',
-      icon: '📚',
+      icon: Book,
     },
   ];
 
@@ -68,7 +69,7 @@ export default function Platform() {
                   <h3 className="text-3xl font-bold">{platform.title}</h3>
                   <p className="text-white/90 font-semibold mt-1">{platform.subtitle}</p>
                 </div>
-                <div className="text-5xl">{platform.icon}</div>
+                <div className="text-5xl"><platform.icon size={44} /></div>
               </div>
 
               {/* Content */}
@@ -78,7 +79,7 @@ export default function Platform() {
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   {platform.features.map((feature) => (
                     <div key={feature} className="flex items-center gap-2">
-                      <span className="text-stem-yellow font-bold">✓</span>
+                      <Check size={14} className="text-stem-yellow" />
                       <span className="text-sm text-stem-dark font-medium">{feature}</span>
                     </div>
                   ))}
@@ -104,10 +105,10 @@ export default function Platform() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { icon: '💬', title: 'ENGAGE', subtitle: 'Interactive learning that inspires curiosity.' },
-              { icon: '📖', title: 'LEARN', subtitle: 'Build skills with structured and smart content.' },
-              { icon: '💡', title: 'INNOVATE', subtitle: 'Encouraging creativity through real-world applications.' },
-              { icon: '🏆', title: 'SUCCEED', subtitle: 'Empowering learners to achieve and excel.' },
+              { Icon: MessageSquare, title: 'ENGAGE', subtitle: 'Interactive learning that inspires curiosity.' },
+              { Icon: BookOpen, title: 'LEARN', subtitle: 'Build skills with structured and smart content.' },
+              { Icon: Lightbulb, title: 'INNOVATE', subtitle: 'Encouraging creativity through real-world applications.' },
+              { Icon: Trophy, title: 'SUCCEED', subtitle: 'Empowering learners to achieve and excel.' },
             ].map((feature, i) => (
               <motion.div
                 key={feature.title}
@@ -116,7 +117,7 @@ export default function Platform() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="text-4xl mb-2">{feature.icon}</div>
+                <div className="text-4xl mb-2"><feature.Icon size={28} /></div>
                 <h4 className="font-bold mb-1">{feature.title}</h4>
                 <p className="text-white/80 text-xs">{feature.subtitle}</p>
               </motion.div>

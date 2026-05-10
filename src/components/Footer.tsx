@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Facebook, Linkedin, Instagram, Youtube, Phone, Mail, Globe } from 'lucide-react';
 import logo from '../../Logo.png';
 
 export default function Footer() {
@@ -22,17 +23,18 @@ export default function Footer() {
               Future-ready learning solutions for schools
             </p>
             <div className="flex gap-3">
-              {['f', 'in', 'ig', 'yt'].map((icon) => (
-                <button
-                  key={icon}
-                  className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center"
-                >
-                  {icon === 'f' && '📘'}
-                  {icon === 'in' && '🔗'}
-                  {icon === 'ig' && '📷'}
-                  {icon === 'yt' && '📺'}
-                </button>
-              ))}
+              <a aria-label="Facebook" href="#" className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center">
+                <Facebook size={16} />
+              </a>
+              <a aria-label="LinkedIn" href="#" className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center">
+                <Linkedin size={16} />
+              </a>
+              <a aria-label="Instagram" href="#" className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center">
+                <Instagram size={16} />
+              </a>
+              <a aria-label="YouTube" href="#" className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center">
+                <Youtube size={16} />
+              </a>
             </div>
           </motion.div>
 
@@ -112,15 +114,15 @@ export default function Footer() {
         >
           <div>
             <p className="text-white/60 text-sm mb-1">Phone</p>
-            <p className="font-bold">📞 +91 8980005452</p>
+            <p className="font-bold flex items-center gap-2"><Phone size={14} /> +91 8980005452</p>
           </div>
           <div>
             <p className="text-white/60 text-sm mb-1">Email</p>
-            <p className="font-bold">📧 rygendynamics@gmail.com</p>
+            <p className="font-bold flex items-center gap-2"><Mail size={14} /> rygendynamics@gmail.com</p>
           </div>
           <div>
             <p className="text-white/60 text-sm mb-1">Website</p>
-            <p className="font-bold">🌐 www.rygendynamics.com</p>
+            <p className="font-bold flex items-center gap-2"><Globe size={14} /> www.rygendynamics.com</p>
           </div>
         </motion.div>
       </div>
