@@ -73,7 +73,7 @@
   }
 
   .section-subtitle {
-    @apply text-lg text-slate-300 mb-8;
+    @apply text-lg text-slate-600 mb-8;
   }
 
   .card-rounded {

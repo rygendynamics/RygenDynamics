@@ -48,7 +48,7 @@ export default function Platform() {
             Smarter Learning.{' '}
             <span className="text-stem-blue">Stronger Futures.</span>
           </h2>
-          <p className="text-stem-gray text-lg max-w-2xl mx-auto">
+          <p className="text-stem-navy text-lg max-w-2xl mx-auto">
             Digital platforms and learning solutions that empower every student and educator.
           </p>
         </motion.div>
@@ -74,7 +74,7 @@ export default function Platform() {
 
               {/* Content */}
               <div className="p-6 md:p-8">
-                <p className="text-stem-gray leading-relaxed mb-6">{platform.description}</p>
+                <p className="text-slate-700 leading-relaxed mb-6">{platform.description}</p>
 
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   {platform.features.map((feature) => (

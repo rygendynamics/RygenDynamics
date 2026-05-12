@@ -69,7 +69,7 @@ export default function STEMFocus() {
                 <item.Icon size={28} />
               </div>
               <h3 className="font-bold text-xl text-stem-navy mb-2">{item.title}</h3>
-              <p className="text-stem-gray text-sm">{item.description}</p>
+              <p className="text-slate-700 text-sm">{item.description}</p>
             </motion.div>
           ))}
         </div>

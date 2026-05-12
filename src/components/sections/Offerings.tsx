@@ -82,7 +82,7 @@ export default function Offerings() {
                 {/* Content */}
                 <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
                   <h3 className="text-2xl font-bold text-stem-navy mb-4">{offering.title}</h3>
-                  <p className="text-stem-gray leading-relaxed text-sm">{offering.description}</p>
+                  <p className="text-slate-700 leading-relaxed text-sm">{offering.description}</p>
                 </div>
               </div>
             </motion.div>

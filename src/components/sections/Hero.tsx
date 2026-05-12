@@ -15,7 +15,7 @@ export default function Hero() {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Empowering Young Minds.{' '}
-              <span className="text-stem-yellow">Building Tomorrow.</span>
+              <span className="text-stem-navy">Building Tomorrow.</span>
             </h1>
             <p className="text-lg mb-8 text-white/90 leading-relaxed">
               Future-ready learning solutions in{' '}

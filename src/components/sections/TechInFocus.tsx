@@ -79,7 +79,7 @@ export default function TechInFocus() {
               </div>
               <div className="p-6">
                 <h3 className="font-bold text-lg text-stem-navy mb-2">{tech.title}</h3>
-                <p className="text-stem-gray text-sm">{tech.desc}</p>
+                <p className="text-slate-700 text-sm">{tech.desc}</p>
               </div>
             </motion.div>
           ))}
