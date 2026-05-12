@@ -42,7 +42,7 @@ export default function STEMFocus() {
           viewport={{ once: true }}
           className="section-title text-center mb-4"
         >
-          Our <span className="text-stem-blue">STEM Focus</span>
+          <span className="text-stem-navy">Our </span><span className="text-stem-blue">STEM Focus</span>
         </motion.h2>
 
         <motion.p

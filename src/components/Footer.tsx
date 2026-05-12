@@ -5,40 +5,47 @@ import logo from '../../Logo.png';
 
 export default function Footer() {
   return (
-    <footer className="bg-stem-navy text-white py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 pb-12 border-b border-white/20">
-          {/* Company Info */}
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#081728] text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(31,164,232,0.16),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(103,199,244,0.09),transparent_30%)]" />
+      <div className="relative max-w-7xl mx-auto px-4 py-14 md:py-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="lg:col-span-4"
           >
-            <div className="inline-flex items-center rounded-xl bg-white px-3 py-2 mb-4 shadow-md">
+            <div className="inline-flex items-center rounded-2xl bg-white px-4 py-3 shadow-lg shadow-black/20">
               <img src={logo} alt="Rygen Dynamics" className="h-10 w-auto object-contain" />
             </div>
-            <h3 className="font-bold text-lg mb-2">Rygen Dynamics</h3>
-            <p className="text-white/70 text-sm mb-4">
-              Future-ready learning solutions for schools
+            <h3 className="mt-5 text-2xl font-bold tracking-tight">Rygen Dynamics</h3>
+            <p className="mt-3 max-w-sm text-sm leading-6 text-white/70">
+              Future-ready learning solutions for schools, built to feel practical, polished, and easy to adopt.
             </p>
-            <div className="flex gap-3">
-              <a aria-label="Facebook" href="#" className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center">
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link to="/contact" className="rounded-full bg-stem-blue px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stem-light-blue">
+                Book a Call
+              </Link>
+              <a href="mailto:rygendynamics@gmail.com" className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white/85 transition-colors hover:border-white/30 hover:bg-white/5">
+                Email Us
+              </a>
+            </div>
+            <div className="mt-6 flex gap-3">
+              <a aria-label="Facebook" href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
                 <Facebook size={16} />
               </a>
-              <a aria-label="LinkedIn" href="#" className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center">
+              <a aria-label="LinkedIn" href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
                 <Linkedin size={16} />
               </a>
-              <a aria-label="Instagram" href="#" className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center">
+              <a aria-label="Instagram" href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
                 <Instagram size={16} />
               </a>
-              <a aria-label="YouTube" href="#" className="w-8 h-8 rounded-full bg-white/15 hover:bg-stem-blue transition-colors flex items-center justify-center">
+              <a aria-label="YouTube" href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
                 <Youtube size={16} />
               </a>
             </div>
           </motion.div>
 
-          {/* Quick Links */}
           {[
             {
               title: 'Explore',
@@ -74,12 +81,13 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (i + 1) * 0.1 }}
+              className="lg:col-span-2"
             >
-              <h4 className="font-bold mb-4">{column.title}</h4>
-              <ul className="space-y-2">
+              <h4 className="text-base font-bold tracking-wide text-white">{column.title}</h4>
+              <ul className="mt-4 space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.path} className="text-white/70 hover:text-stem-light-blue transition-colors text-sm">
+                    <Link to={link.path} className="text-sm text-white/68 transition-colors hover:text-stem-light-blue">
                       {link.label}
                     </Link>
                   </li>
@@ -89,42 +97,55 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/60 text-sm">
-            &copy; {new Date().getFullYear()} Rygen Dynamics. All rights reserved.
-          </p>
-          <div className="flex gap-4">
-            <Link to="/contact" className="text-white/60 hover:text-stem-light-blue transition-colors text-sm">
-              Privacy Policy
-            </Link>
-            <span className="text-white/30">|</span>
-            <Link to="/contact" className="text-white/60 hover:text-stem-light-blue transition-colors text-sm">
-              Terms of Service
-            </Link>
-          </div>
-        </div>
-
-        {/* Contact Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 pt-12 border-t border-white/20 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left"
+          className="mt-12 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/10 backdrop-blur-sm"
         >
-          <div>
-            <p className="text-white/60 text-sm mb-1">Phone</p>
-            <p className="font-bold flex items-center gap-2"><Phone size={14} /> +91 8980005452</p>
-          </div>
-          <div>
-            <p className="text-white/60 text-sm mb-1">Email</p>
-            <p className="font-bold flex items-center gap-2"><Mail size={14} /> rygendynamics@gmail.com</p>
-          </div>
-          <div>
-            <p className="text-white/60 text-sm mb-1">Website</p>
-            <p className="font-bold flex items-center gap-2"><Globe size={14} /> www.rygendynamics.com</p>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <a href="tel:+918980005452" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 transition-colors hover:border-white/20 hover:bg-white/10">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-stem-blue/20 text-stem-light-blue">
+                <Phone size={16} />
+              </span>
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/45">Phone</p>
+                <p className="font-semibold">+91 8980005452</p>
+              </div>
+            </a>
+            <a href="mailto:rygendynamics@gmail.com" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 transition-colors hover:border-white/20 hover:bg-white/10">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-stem-blue/20 text-stem-light-blue">
+                <Mail size={16} />
+              </span>
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/45">Email</p>
+                <p className="font-semibold">rygendynamics@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://rygendynamics.in" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 transition-colors hover:border-white/20 hover:bg-white/10">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-stem-blue/20 text-stem-light-blue">
+                <Globe size={16} />
+              </span>
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-white/45">Website</p>
+                <p className="font-semibold">rygendynamics.in</p>
+              </div>
+            </a>
           </div>
         </motion.div>
+
+        <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
+          <p>&copy; {new Date().getFullYear()} Rygen Dynamics. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link to="/contact" className="transition-colors hover:text-stem-light-blue">
+              Privacy Policy
+            </Link>
+            <span className="hidden text-white/25 md:inline">|</span>
+            <Link to="/contact" className="transition-colors hover:text-stem-light-blue">
+              Terms of Service
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
