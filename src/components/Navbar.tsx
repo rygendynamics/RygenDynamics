@@ -19,7 +19,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-sky-400/15 bg-white/90 shadow-[0_12px_30px_rgba(2,9,17,0.08)] backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center group">
@@ -40,18 +40,9 @@ export default function Navbar() {
         </div>
 
         {/* Right side */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[#f0a238] px-6 py-3 font-semibold text-slate-900 shadow-[0_10px_24px_rgba(240,162,56,0.28)] transition-transform hover:-translate-y-0.5"
-          >
-            Get Free Demo <Phone size={14} />
-          </Link>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-full border border-stem-blue px-5 py-3 font-semibold text-stem-blue transition-colors hover:bg-stem-blue hover:text-white"
-          >
-            Support
+        <div className="hidden lg:flex items-center gap-4">
+          <Link to="/contact" className="text-stem-blue font-semibold flex items-center gap-1 hover:text-stem-navy transition-colors">
+            <Phone size={14} /> Book a Demo
           </Link>
         </div>
 
@@ -70,7 +61,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="lg:hidden border-t border-slate-200/80 bg-white/98"
+          className="lg:hidden border-t border-sky-400/15 bg-white/95"
         >
           <div className="px-4 py-4 space-y-3">
             {navLinks.map((link) => (
