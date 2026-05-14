@@ -1,83 +1,48 @@
+import heroImage from '../../../bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { BookOpen, Plane } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-r from-stem-light-blue to-stem-blue text-white py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Empowering Young Minds.{' '}
-              <span className="text-stem-navy">Building Tomorrow.</span>
-            </h1>
-            <p className="text-lg mb-8 text-white/90 leading-relaxed">
-              Future-ready learning solutions in{' '}
-              <span className="font-bold">Robotics, AI & ML, AR & VR</span> and Lab
-              Setup for Schools.
-            </p>
+    <section className="relative overflow-hidden py-24 md:py-32">
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Robotics lab background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-950/70" />
+      </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/contact"
-                className="btn-primary text-stem-navy flex items-center justify-center gap-2"
-              >
-                <BookOpen size={16} /> What's Covered
-              </Link>
-              <Link
-                to="/contact"
-                className="btn-secondary flex items-center justify-center gap-2"
-              >
-                Book Demo
-              </Link>
-            </div>
-
-            <p className="mt-8 text-white/80 flex items-center gap-2">
-              <Plane size={16} /> <span className="font-semibold">Program Delivery Support</span>
-            </p>
-          </motion.div>
-
-          {/* Right - Isometric Lab Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative h-96 md:h-full flex items-center justify-center"
-          >
-            <div className="relative w-full h-full flex items-center justify-center">
-              <img
-                src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="AI Lab"
-                className="rounded-3xl shadow-2xl object-cover w-full h-full"
-              />
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-stem-blue/20 to-transparent" />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Bottom Tags */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap gap-3 mt-12 justify-center md:justify-start"
+          transition={{ duration: 0.8 }}
+          className="text-center md:text-left"
         >
-          {['Coding', 'Artificial Intelligence', 'Data Science', 'Robotics', '3D and AR-VR', 'Machine Learning'].map(
-            (tag) => (
-              <span
-                key={tag}
-                className="px-5 py-2 bg-white text-stem-blue font-semibold rounded-full text-sm shadow-md hover:shadow-lg transition-shadow"
-              >
-                {tag}
-              </span>
-            )
-          )}
+          <p className="mb-6 text-sm uppercase tracking-[0.35em] text-sky-300/90">RYGEN Dynamics</p>
+          <h1 className="text-4xl md:text-5xl xl:text-6xl font-semibold leading-tight text-white mb-6">
+            Robotics Labs and AI Education for Schools.
+          </h1>
+          <p className="max-w-2xl mx-auto md:mx-0 text-base md:text-lg text-white/75 leading-relaxed mb-10">
+            A simple, professional solution for robotics lab setup, AI curriculum support, and next-level STEM learning.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:bg-sky-400"
+            >
+              <BookOpen size={16} /> Contact Us
+            </Link>
+            <Link
+              to="/about"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white/90 transition hover:border-white hover:text-white"
+            >
+              Learn More
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

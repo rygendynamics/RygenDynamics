@@ -95,44 +95,37 @@ export default function Footer() {
               </ul>
             </motion.div>
           ))}
-        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/10 backdrop-blur-sm"
-        >
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <a href="tel:+918980005452" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 transition-colors hover:border-white/20 hover:bg-white/10">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-stem-blue/20 text-stem-light-blue">
-                <Phone size={16} />
-              </span>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="lg:col-span-2"
+          >
+            <h4 className="text-base font-bold tracking-wide text-white">Contact Us</h4>
+            <div className="mt-4 space-y-4 text-sm text-white/80">
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Phone</p>
-                <p className="font-semibold">+91 8980005452</p>
+                <a href="tel:+918980005452" className="font-semibold text-white hover:text-stem-light-blue">
+                  +91 8980005452
+                </a>
               </div>
-            </a>
-            <a href="mailto:rygendynamics@gmail.com" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 transition-colors hover:border-white/20 hover:bg-white/10">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-stem-blue/20 text-stem-light-blue">
-                <Mail size={16} />
-              </span>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Email</p>
-                <p className="font-semibold">rygendynamics@gmail.com</p>
+                <a href="mailto:rygendynamics@gmail.com" className="font-semibold text-white hover:text-stem-light-blue">
+                  rygendynamics@gmail.com
+                </a>
               </div>
-            </a>
-            <a href="https://rygendynamics.in" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 transition-colors hover:border-white/20 hover:bg-white/10">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-stem-blue/20 text-stem-light-blue">
-                <Globe size={16} />
-              </span>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Website</p>
-                <p className="font-semibold">rygendynamics.in</p>
+                <a href="https://rygendynamics.in" target="_blank" rel="noreferrer" className="font-semibold text-white hover:text-stem-light-blue">
+                  rygendynamics.in
+                </a>
               </div>
-            </a>
-          </div>
-        </motion.div>
+            </div>
+          </motion.div>
+        </div>
 
         <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
           <p>&copy; {new Date().getFullYear()} Rygen Dynamics. All rights reserved.</p>

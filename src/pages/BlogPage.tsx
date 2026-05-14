@@ -32,28 +32,27 @@ function PostCard({ post }: { post: typeof posts[0] }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="glass-card rounded-2xl overflow-hidden group cursor-pointer"
+      className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
     >
-      <div className="relative h-44 overflow-hidden">
+      <div className="relative h-44 overflow-hidden rounded-2xl mb-4">
         <img src={post.img} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent" />
-        <span className="absolute top-3 left-3 text-[10px] font-mono px-2.5 py-1 rounded-full border" style={{ color: post.color, background: `${post.color}20`, borderColor: `${post.color}30` }}>
+      </div>
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-xs font-mono px-2 py-1 rounded-full border" style={{ color: post.color, background: `${post.color}10`, borderColor: `${post.color}20` }}>
           {post.category}
         </span>
-      </div>
-      <div className="p-5">
-        <div className="flex items-center gap-3 mb-3 text-white/30 text-xs">
+        <div className="flex items-center gap-3 text-slate-500 text-xs">
           <Clock size={11} />
           <span>{post.readTime}</span>
           <span>·</span>
           <span>{post.date}</span>
         </div>
-        <h3 className="font-display font-semibold text-white text-base leading-snug mb-2 group-hover:text-electric-blue transition-colors">{post.title}</h3>
-        <p className="text-white/40 text-sm leading-relaxed mb-4">{post.excerpt}</p>
-        <div className="flex items-center justify-between">
-          <span className="text-white/30 text-xs">By {post.author}</span>
-          <ArrowRight size={14} className="text-electric-blue opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-        </div>
+      </div>
+      <h3 className="font-semibold text-slate-900 text-lg leading-snug mb-2 group-hover:text-sky-600 transition-colors">{post.title}</h3>
+      <p className="text-slate-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+      <div className="flex items-center justify-between">
+        <span className="text-slate-500 text-xs">By {post.author}</span>
+        <ArrowRight size={14} className="text-sky-600 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
       </div>
     </motion.article>
   );
@@ -61,19 +60,18 @@ function PostCard({ post }: { post: typeof posts[0] }) {
 
 export default function BlogPage() {
   return (
-    <div className="bg-navy-950 pt-16">
+    <div className="bg-white text-slate-900">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-electric-blue/6 rounded-full blur-[120px] pointer-events-none" />
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-100" />
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="section-label">Insights & Stories</span>
+            <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-sky-600">Insights & Stories</span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-display font-bold text-5xl md:text-6xl text-white mb-6">
-            The <span className="text-gradient">Rygen Blog</span>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-slate-900 mb-6">
+            The <span className="text-sky-600">Rygen Blog</span>
           </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/50 text-xl max-w-xl mx-auto">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-slate-600 text-xl max-w-xl mx-auto">
             Insights on AI education, robotics, edtech trends, and stories from schools and educators.
           </motion.p>
         </div>
@@ -85,30 +83,29 @@ export default function BlogPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="glass-card rounded-3xl overflow-hidden group cursor-pointer mb-12"
+          className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow group cursor-pointer mb-12"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="relative h-72 lg:h-auto overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="relative h-72 lg:h-auto overflow-hidden rounded-2xl">
               <img src={featured.img} alt={featured.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy-950/60 lg:bg-gradient-to-r" />
             </div>
-            <div className="p-8 md:p-10 flex flex-col justify-center">
+            <div className="flex flex-col justify-center">
               <div className="flex items-center gap-2 mb-4">
-                <Tag size={12} className="text-electric-blue" />
-                <span className="text-xs font-mono text-electric-blue">{featured.category}</span>
-                <span className="text-white/20">·</span>
-                <span className="text-white/40 text-xs font-mono">Featured</span>
+                <Tag size={12} className="text-sky-600" />
+                <span className="text-xs font-mono text-sky-600">{featured.category}</span>
+                <span className="text-slate-300">·</span>
+                <span className="text-slate-500 text-xs font-mono">Featured</span>
               </div>
-              <h2 className="font-display font-bold text-2xl md:text-3xl text-white mb-4 leading-tight group-hover:text-electric-blue transition-colors">
+              <h2 className="font-semibold text-2xl md:text-3xl text-slate-900 mb-4 leading-tight group-hover:text-sky-600 transition-colors">
                 {featured.title}
               </h2>
-              <p className="text-white/50 leading-relaxed mb-6">{featured.excerpt}</p>
+              <p className="text-slate-600 leading-relaxed mb-6">{featured.excerpt}</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-white/60 text-sm font-medium">{featured.author}</div>
-                  <div className="text-white/30 text-xs">{featured.date} · {featured.readTime}</div>
+                  <div className="text-slate-700 text-sm font-medium">{featured.author}</div>
+                  <div className="text-slate-500 text-xs">{featured.date} · {featured.readTime}</div>
                 </div>
-                <span className="btn-outline text-sm flex items-center gap-2">
+                <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-slate-800">
                   Read Article <ArrowRight size={14} />
                 </span>
               </div>
@@ -117,7 +114,7 @@ export default function BlogPage() {
         </motion.article>
 
         {/* Posts grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
             <PostCard key={post.title} post={post} />
           ))}

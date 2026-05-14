@@ -12,24 +12,22 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-navy-950 pt-16">
+    <div className="bg-white text-slate-900">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-electric-blue/6 rounded-full blur-[120px] pointer-events-none" />
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-100" />
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="section-label">
-              <span className="w-1.5 h-1.5 rounded-full bg-neon-green animate-pulse" />
+            <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-sky-600">
               Get in Touch
             </span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6">
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-slate-900 mb-6">
             Let's build the future
             <br />
-            <span className="text-gradient">together</span>
+            <span className="text-sky-600">together</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/50 text-xl max-w-xl mx-auto">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-slate-600 text-xl max-w-xl mx-auto">
             Ready to transform your school? Our team will guide you through every step of the journey.
           </motion.p>
         </div>
@@ -52,15 +50,15 @@ export default function ContactPage() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * i }}
-                className="glass-card rounded-2xl p-5 flex items-start gap-4"
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4"
               >
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${item.color}15` }}>
                   <item.icon size={18} style={{ color: item.color }} />
                 </div>
                 <div>
-                  <div className="text-white/40 text-xs font-mono uppercase tracking-widest mb-0.5">{item.label}</div>
-                  <div className="text-white font-medium text-sm">{item.value}</div>
-                  <div className="text-white/35 text-xs mt-0.5">{item.sub}</div>
+                  <div className="text-slate-500 text-xs font-mono uppercase tracking-widest mb-0.5">{item.label}</div>
+                  <div className="text-slate-900 font-medium text-sm">{item.value}</div>
+                  <div className="text-slate-500 text-xs mt-0.5">{item.sub}</div>
                 </div>
               </motion.div>
             ))}
@@ -70,9 +68,9 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="glass-blue rounded-2xl p-6"
+              className="rounded-3xl border border-sky-200 bg-sky-50 p-6"
             >
-              <h3 className="font-display font-semibold text-white mb-4">What happens next?</h3>
+              <h3 className="font-semibold text-slate-900 mb-4">What happens next?</h3>
               <div className="space-y-3">
                 {[
                   'Our team contacts you within 24 hours',
@@ -81,10 +79,10 @@ export default function ContactPage() {
                   'Implementation planning and next steps',
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-electric-blue/20 flex items-center justify-center text-[10px] font-bold text-electric-blue shrink-0 mt-0.5">
+                    <div className="w-5 h-5 rounded-full bg-sky-100 flex items-center justify-center text-[10px] font-bold text-sky-700 shrink-0 mt-0.5">
                       {i + 1}
                     </div>
-                    <span className="text-white/60 text-sm">{step}</span>
+                    <span className="text-slate-600 text-sm">{step}</span>
                   </div>
                 ))}
               </div>
@@ -98,87 +96,87 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <div className="glass-card rounded-3xl p-8 md:p-10">
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 md:p-10 shadow-lg">
               {!submitted ? (
                 <>
-                  <h2 className="font-display font-bold text-2xl text-white mb-2">Book a Free Demo</h2>
-                  <p className="text-white/40 text-sm mb-8">Fill in your details and we'll get back to you within 24 hours.</p>
+                  <h2 className="font-semibold text-2xl text-slate-900 mb-2">Book a Free Demo</h2>
+                  <p className="text-slate-600 text-sm mb-8">Fill in your details and we'll get back to you within 24 hours.</p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="text-xs text-white/40 font-mono uppercase tracking-widest mb-2 block">Your Name *</label>
+                        <label className="text-xs text-slate-500 font-mono uppercase tracking-widest mb-2 block">Your Name *</label>
                         <input
                           required
                           type="text"
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          className="w-full bg-white/4 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-electric-blue/50 transition-colors"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-300 transition-colors"
                           placeholder="Dr. Priya Sharma"
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-white/40 font-mono uppercase tracking-widest mb-2 block">Email Address *</label>
+                        <label className="text-xs text-slate-500 font-mono uppercase tracking-widest mb-2 block">Email Address *</label>
                         <input
                           required
                           type="email"
                           value={form.email}
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
-                          className="w-full bg-white/4 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-electric-blue/50 transition-colors"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-300 transition-colors"
                           placeholder="principal@school.edu"
                         />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="text-xs text-white/40 font-mono uppercase tracking-widest mb-2 block">School Name *</label>
+                        <label className="text-xs text-slate-500 font-mono uppercase tracking-widest mb-2 block">School Name *</label>
                         <input
                           required
                           type="text"
                           value={form.school}
                           onChange={(e) => setForm({ ...form, school: e.target.value })}
-                          className="w-full bg-white/4 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-electric-blue/50 transition-colors"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-300 transition-colors"
                           placeholder="Your school name"
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-white/40 font-mono uppercase tracking-widest mb-2 block">Phone Number</label>
+                        <label className="text-xs text-slate-500 font-mono uppercase tracking-widest mb-2 block">Phone Number</label>
                         <input
                           type="tel"
                           value={form.phone}
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                          className="w-full bg-white/4 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-electric-blue/50 transition-colors"
+                          className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-300 transition-colors"
                           placeholder="+91 9000000000"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="text-xs text-white/40 font-mono uppercase tracking-widest mb-2 block">Primary Interest</label>
+                      <label className="text-xs text-slate-500 font-mono uppercase tracking-widest mb-2 block">Primary Interest</label>
                       <select
                         value={form.interest}
                         onChange={(e) => setForm({ ...form, interest: e.target.value })}
-                        className="w-full bg-white/4 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-electric-blue/50 transition-colors"
+                        className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-sky-300 transition-colors"
                       >
-                        <option value="" className="bg-navy-900">Select an area...</option>
-                        <option value="ai" className="bg-navy-900">AI & ML Program</option>
-                        <option value="robotics" className="bg-navy-900">Robotics Program</option>
-                        <option value="iot" className="bg-navy-900">IoT Program</option>
-                        <option value="arvr" className="bg-navy-900">AR/VR Program</option>
-                        <option value="coding" className="bg-navy-900">Coding Program</option>
-                        <option value="integrated" className="bg-navy-900">Integrated STEM Pathway</option>
+                        <option value="">Select an area...</option>
+                        <option value="ai">AI & ML Program</option>
+                        <option value="robotics">Robotics Program</option>
+                        <option value="iot">IoT Program</option>
+                        <option value="arvr">AR/VR Program</option>
+                        <option value="coding">Coding Program</option>
+                        <option value="integrated">Integrated STEM Pathway</option>
                       </select>
                     </div>
                     <div>
-                      <label className="text-xs text-white/40 font-mono uppercase tracking-widest mb-2 block">Message</label>
+                      <label className="text-xs text-slate-500 font-mono uppercase tracking-widest mb-2 block">Message</label>
                       <textarea
                         rows={4}
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        className="w-full bg-white/4 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-electric-blue/50 transition-colors resize-none"
+                        className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-300 transition-colors resize-none"
                         placeholder="Tell us about your school, student count, and goals..."
                       />
                     </div>
-                    <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2 py-4">
+                    <button type="submit" className="w-full rounded-full bg-slate-900 px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-slate-800 flex items-center justify-center gap-2">
                       <Send size={16} />
                       <span>Send Message & Book Demo</span>
                     </button>
@@ -190,16 +188,14 @@ export default function ContactPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <div className="w-16 h-16 rounded-full bg-neon-green/10 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 size={32} className="text-neon-green" />
+                  <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 size={32} className="text-green-600" />
                   </div>
-                  <h3 className="font-display font-bold text-2xl text-white mb-3">Message Sent!</h3>
-                  <p className="text-white/50 max-w-sm mx-auto mb-6">
+                  <h3 className="font-semibold text-2xl text-slate-900 mb-3">Message Sent!</h3>
+                  <p className="text-slate-600 max-w-sm mx-auto mb-6">
                     Thank you! Our team will reach out within 24 hours to schedule your free consultation.
                   </p>
-                  <button onClick={() => setSubmitted(false)} className="btn-outline text-sm">
-                    Send Another Message
-                  </button>
+                  <button onClick={() => setSubmitted(false)} className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-slate-800">Send Another Message</button>
                 </motion.div>
               )}
             </div>

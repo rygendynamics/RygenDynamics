@@ -26,19 +26,18 @@ export default function GalleryPage() {
   const filtered = activeFilter === 'All' ? gallery : gallery.filter((g) => g.category === activeFilter);
 
   return (
-    <div className="bg-navy-950 pt-16">
+    <div className="bg-white text-slate-900">
       {/* Hero */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-electric-blue/6 rounded-full blur-[120px] pointer-events-none" />
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-100" />
         <div className="relative max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="section-label">Gallery</span>
+            <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-sky-600">Gallery</span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6">
-            Inside the <span className="text-gradient">Innovation Campus</span>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-slate-900 mb-6">
+            Inside the <span className="text-sky-600">Innovation Campus</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/50 text-xl max-w-2xl mx-auto">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-slate-600 text-xl max-w-2xl mx-auto">
             A glimpse into the classrooms, labs, and events that are shaping the future of education.
           </motion.p>
         </div>
@@ -54,8 +53,8 @@ export default function GalleryPage() {
               onClick={() => setActiveFilter(c)}
               className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                 activeFilter === c
-                  ? 'bg-electric-blue/20 text-electric-blue border border-electric-blue/30'
-                  : 'text-white/50 hover:text-white border border-white/8 hover:border-white/20'
+                  ? 'bg-sky-100 text-sky-700 border border-sky-200'
+                  : 'text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-300'
               }`}
             >
               {c}
@@ -82,19 +81,19 @@ export default function GalleryPage() {
                 onClick={() => setLightbox(item)}
               >
                 <img src={item.thumb} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute inset-0 border border-white/5 rounded-2xl group-hover:border-electric-blue/20 transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 border border-slate-200 rounded-2xl group-hover:border-sky-300 transition-colors" />
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <div className="w-10 h-10 rounded-full glass flex items-center justify-center mb-2">
-                    <ZoomIn size={18} className="text-white" />
+                  <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center mb-2">
+                    <ZoomIn size={18} className="text-slate-700" />
                   </div>
-                  <span className="text-white text-xs font-medium px-3 py-1 rounded-full bg-navy-950/60">{item.title}</span>
+                  <span className="text-white text-xs font-medium px-3 py-1 rounded-full bg-slate-900/80">{item.title}</span>
                 </div>
 
                 {/* Category badge */}
-                <span className="absolute top-3 left-3 text-[10px] font-mono text-electric-blue/80 bg-electric-blue/10 border border-electric-blue/15 px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="absolute top-3 left-3 text-[10px] font-mono text-sky-600 bg-sky-50 border border-sky-200 px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                   {item.category}
                 </span>
               </motion.div>
@@ -110,7 +109,7 @@ export default function GalleryPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-navy-950/95 backdrop-blur-xl p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/95 backdrop-blur-xl p-6"
             onClick={() => setLightbox(null)}
           >
             <motion.div
@@ -122,15 +121,15 @@ export default function GalleryPage() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute -top-12 right-0 w-10 h-10 rounded-full glass flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
                 onClick={() => setLightbox(null)}
               >
                 <X size={18} />
               </button>
               <img src={lightbox.src} alt={lightbox.title} className="w-full rounded-2xl border border-white/10" />
               <div className="mt-4 text-center">
-                <div className="text-white font-display font-medium">{lightbox.title}</div>
-                <div className="text-white/40 text-sm">{lightbox.category}</div>
+                <div className="text-white font-semibold">{lightbox.title}</div>
+                <div className="text-white/60 text-sm">{lightbox.category}</div>
               </div>
             </motion.div>
           </motion.div>

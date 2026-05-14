@@ -46,8 +46,8 @@ export default function Offerings() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="section-title mb-4">Our Offerings for Educators & Partners</h2>
-          <p className="section-subtitle">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Our Offerings for Educators & Partners</h2>
+          <p className="text-slate-600 text-lg max-w-3xl mx-auto">
             Empowering educators, institutions, and organizations to inspire the next generation of
             innovators.
           </p>
@@ -111,10 +111,10 @@ export default function Offerings() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 + i * 0.05 }}
-                className="text-white"
+                className="text-white flex flex-col items-center justify-center"
               >
-                <div className="text-3xl mb-2"><stat.Icon size={24} /></div>
-                <p className="font-semibold text-sm">{stat.value}</p>
+                <div className="text-3xl mb-2 flex items-center justify-center"><stat.Icon size={24} /></div>
+                <p className="font-semibold text-sm text-center">{stat.value}</p>
               </motion.div>
             ))}
           </div>
