@@ -1,4 +1,4 @@
-import heroImage from '../../../bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
+import heroImage from '../../assets/bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { BookOpen } from 'lucide-react';
