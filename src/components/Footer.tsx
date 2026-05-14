@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#081728] text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(31,164,232,0.16),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(103,199,244,0.09),transparent_30%)]" />
       <div className="relative max-w-7xl mx-auto px-4 py-14 md:py-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,25 +101,25 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 min-w-0"
           >
             <h4 className="text-base font-bold tracking-wide text-white">Contact Us</h4>
             <div className="mt-4 space-y-4 text-sm text-white/80">
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Phone</p>
-                <a href="tel:+918980005452" className="font-semibold text-white hover:text-stem-light-blue">
+                <a href="tel:+918980005452" className="font-semibold text-white hover:text-stem-light-blue whitespace-normal break-words">
                   +91 8980005452
                 </a>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Email</p>
-                <a href="mailto:rygendynamics@gmail.com" className="font-semibold text-white hover:text-stem-light-blue">
+                <a href="mailto:rygendynamics@gmail.com" className="font-semibold text-white hover:text-stem-light-blue whitespace-normal break-words">
                   rygendynamics@gmail.com
                 </a>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Website</p>
-                <a href="https://rygendynamics.in" target="_blank" rel="noreferrer" className="font-semibold text-white hover:text-stem-light-blue">
+                <a href="https://rygendynamics.in" target="_blank" rel="noreferrer" className="font-semibold text-white hover:text-stem-light-blue whitespace-normal break-words">
                   rygendynamics.in
                 </a>
               </div>
