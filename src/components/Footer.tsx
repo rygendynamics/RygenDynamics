@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Linkedin, Instagram, MessageSquare, Phone, Mail, Globe } from 'lucide-react';
-import logo from '../../Logo.png';
+import logo from '../assets/Logo.png';
 
 export default function Footer() {
   return (
