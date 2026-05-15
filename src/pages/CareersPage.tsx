@@ -55,7 +55,12 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
             </div>
           </div>
           <div className="flex items-center gap-3 shrink-0">
-            <span className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal hidden sm:flex">Apply Now</span>
+            <Link 
+              to={`/apply?role=${encodeURIComponent(job.title)}`}
+              className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal hidden sm:flex"
+            >
+              Apply Now
+            </Link>
             {open ? <ChevronUp size={18} className="text-stem-gray" /> : <ChevronDown size={18} className="text-stem-gray" />}
           </div>
         </div>
@@ -81,10 +86,13 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
                   </li>
                 ))}
               </ul>
-              <button className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal">
+              <Link 
+                to={`/apply?role=${encodeURIComponent(job.title)}`}
+                className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal"
+              >
                 <span>Apply for this Role</span>
                 <ArrowRight size={14} />
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}
@@ -180,10 +188,13 @@ export default function CareersPage() {
           <p className="text-white/90 mb-8 max-w-md mx-auto text-sm leading-relaxed relative z-10">
             We're always looking for exceptional people. Send us your story and what you'd like to build at Rygen.
           </p>
-          <a href="mailto:careers@rygendynamics.com" className="inline-flex items-center gap-2 rounded-full bg-white text-stem-blue px-8 py-3 text-sm font-bold shadow-lg transition hover:bg-sky-50 relative z-10">
+          <Link 
+            to="/apply?role=Speculative Application" 
+            className="inline-flex items-center gap-2 rounded-full bg-white text-stem-blue px-8 py-3 text-sm font-bold shadow-lg transition hover:bg-sky-50 relative z-10"
+          >
             Send Speculative Application
             <ArrowRight size={14} />
-          </a>
+          </Link>
         </motion.div>
       </section>
 

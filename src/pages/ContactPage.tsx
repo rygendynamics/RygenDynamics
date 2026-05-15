@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Calendar, Send, CheckCircle2 } from 'lucide-react';
 import heroImage from '../assets/bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', school: '', phone: '', message: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -46,54 +46,65 @@ export default function ContactPage() {
 
       {/* Main content */}
       <section className="pt-24 pb-32 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-8">
+            <div className="mb-10">
+              <h2 className="text-3xl font-bold text-stem-navy mb-4">Get in Touch</h2>
+              <p className="text-slate-600 leading-relaxed">
+                Have questions about setting up a robotics lab at your school? We're here to help you navigate the entire process.
+              </p>
+            </div>
+
             {/* Info cards */}
-            {[
-              { icon: Mail, label: 'Email Us', value: 'rygendynamics@gmail.com', sub: 'We reply within 24 hours', color: '#0ea5e9' },
-              { icon: Phone, label: 'Call Us', value: '+91 8980005452', sub: 'Mon-Fri, 9am-6pm IST', color: '#06b6d4' },
-              { icon: MapPin, label: 'Visit Us', value: 'India (by appointment)', sub: 'Online and onsite meetings available', color: '#10b981' },
-              { icon: Calendar, label: 'Book a Demo', value: 'Schedule a call', sub: 'Free 45-min consultation', color: '#a855f7' },
-            ].map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * i }}
-                className="rounded-3xl border border-stem-light-gray bg-white p-6 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4"
-              >
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${item.color}15` }}>
-                  <item.icon size={18} style={{ color: item.color }} />
-                </div>
-                <div>
-                  <div className="text-stem-gray text-xs font-mono uppercase tracking-widest mb-0.5">{item.label}</div>
-                  <div className="text-stem-navy font-medium text-sm">{item.value}</div>
-                  <div className="text-stem-gray text-xs mt-0.5">{item.sub}</div>
-                </div>
-              </motion.div>
-            ))}
+            <div className="grid gap-6">
+              {[
+                { icon: Mail, label: 'Email Us', value: 'rygendynamics@gmail.com', sub: 'We reply within 24 hours' },
+                { icon: Phone, label: 'Call Us', value: '+91 8980005452', sub: 'Mon-Fri, 9am-6pm IST' },
+                { icon: MapPin, label: 'Visit Us', value: 'India (by appointment)', sub: 'Online and onsite meetings available' },
+                { icon: Calendar, label: 'Book a Demo', value: 'Schedule a call', sub: 'Free 45-min consultation' },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 * i }}
+                  className="group flex items-start gap-5"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-sky-50 flex items-center justify-center text-stem-blue shrink-0 group-hover:scale-110 transition-transform">
+                    <item.icon size={22} />
+                  </div>
+                  <div>
+                    <div className="text-stem-navy font-bold text-lg mb-0.5">{item.label}</div>
+                    <div className="text-slate-700 font-medium text-sm">{item.value}</div>
+                    <div className="text-slate-500 text-xs mt-0.5">{item.sub}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
 
             {/* What happens next */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="rounded-3xl border border-stem-blue bg-stem-light-gray p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 p-8 rounded-4xl bg-stem-navy text-white relative overflow-hidden"
             >
-              <h3 className="font-semibold text-stem-navy mb-4">What happens next?</h3>
-              <div className="space-y-3">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-stem-blue/20 rounded-full blur-3xl -mr-16 -mt-16" />
+              <h3 className="text-xl font-bold mb-6 relative z-10">What happens next?</h3>
+              <div className="space-y-4 relative z-10">
                 {[
                   'Our team contacts you within 24 hours',
                   'Program discovery consultation call',
                   'Custom roadmap and proposal shared',
                   'Implementation planning and next steps',
                 ].map((step, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-stem-yellow flex items-center justify-center text-[10px] font-bold text-stem-navy shrink-0 mt-0.5">
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="w-6 h-6 rounded-full bg-stem-blue/20 flex items-center justify-center text-xs font-bold text-stem-blue shrink-0 mt-0.5">
                       {i + 1}
                     </div>
-                    <span className="text-stem-gray text-sm">{step}</span>
+                    <span className="text-white/80 text-sm leading-relaxed">{step}</span>
                   </div>
                 ))}
               </div>
@@ -102,79 +113,97 @@ export default function ContactPage() {
 
           {/* Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="lg:col-span-3"
           >
-            <div className="rounded-3xl border border-stem-light-gray bg-white p-8 md:p-10 shadow-lg">
+            <div className="rounded-4xl border border-sky-100 bg-white p-8 md:p-12 shadow-2xl relative">
               {!submitted ? (
                 <>
-                  <h2 className="font-semibold text-2xl text-stem-navy mb-2">Book a Free Demo</h2>
-                  <p className="text-stem-gray text-sm mb-8">Fill in your details and we'll get back to you within 24 hours.</p>
+                  <div className="mb-10">
+                    <h2 className="font-bold text-3xl text-stem-navy mb-3">Book a Free Demo</h2>
+                    <p className="text-slate-600">Fill in your details and we'll get back to you within 24 hours.</p>
+                  </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <label className="text-xs text-stem-gray font-mono uppercase tracking-widest mb-2 block">Your Name *</label>
+                        <label className="text-sm font-bold text-stem-navy mb-2 block ml-1">Your Name *</label>
                         <input
                           required
+                          name="name"
                           type="text"
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          className="w-full bg-white border border-stem-light-gray rounded-xl px-4 py-3 text-sm text-stem-navy placeholder-stem-gray focus:outline-none focus:border-stem-blue transition-colors"
+                          className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 text-sm text-stem-navy placeholder-slate-400 focus:outline-none focus:border-stem-blue focus:bg-white transition-all shadow-sm"
                           placeholder="Dr. Priya Sharma"
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-stem-gray font-mono uppercase tracking-widest mb-2 block">Email Address *</label>
+                        <label className="text-sm font-bold text-stem-navy mb-2 block ml-1">Email Address *</label>
                         <input
                           required
+                          name="email"
                           type="email"
                           value={form.email}
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
-                          className="w-full bg-white border border-stem-light-gray rounded-xl px-4 py-3 text-sm text-stem-navy placeholder-stem-gray focus:outline-none focus:border-stem-blue transition-colors"
+                          className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 text-sm text-stem-navy placeholder-slate-400 focus:outline-none focus:border-stem-blue focus:bg-white transition-all shadow-sm"
                           placeholder="principal@school.edu"
                         />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <label className="text-xs text-stem-gray font-mono uppercase tracking-widest mb-2 block">School Name *</label>
+                        <label className="text-sm font-bold text-stem-navy mb-2 block ml-1">School Name *</label>
                         <input
                           required
+                          name="school"
                           type="text"
                           value={form.school}
                           onChange={(e) => setForm({ ...form, school: e.target.value })}
-                          className="w-full bg-white border border-stem-light-gray rounded-xl px-4 py-3 text-sm text-stem-navy placeholder-stem-gray focus:outline-none focus:border-stem-blue transition-colors"
+                          className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 text-sm text-stem-navy placeholder-slate-400 focus:outline-none focus:border-stem-blue focus:bg-white transition-all shadow-sm"
                           placeholder="Your school name"
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-stem-gray font-mono uppercase tracking-widest mb-2 block">Phone Number</label>
+                        <label className="text-sm font-bold text-stem-navy mb-2 block ml-1">Phone Number</label>
                         <input
+                          name="phone"
                           type="tel"
                           value={form.phone}
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                          className="w-full bg-white border border-stem-light-gray rounded-xl px-4 py-3 text-sm text-stem-navy placeholder-stem-gray focus:outline-none focus:border-stem-blue transition-colors"
+                          className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 text-sm text-stem-navy placeholder-slate-400 focus:outline-none focus:border-stem-blue focus:bg-white transition-all shadow-sm"
                           placeholder="+91 9000000000"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="text-xs text-stem-gray font-mono uppercase tracking-widest mb-2 block">Message</label>
+                      <label className="text-sm font-bold text-stem-navy mb-2 block ml-1">Message</label>
                       <textarea
+                        required
+                        name="message"
                         rows={4}
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        className="w-full bg-white border border-stem-light-gray rounded-xl px-4 py-3 text-sm text-stem-navy placeholder-stem-gray focus:outline-none focus:border-stem-blue transition-colors resize-none"
-                        placeholder="Tell us about your school, student count, and goals..."
+                        className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 text-sm text-stem-navy placeholder-slate-400 focus:outline-none focus:border-stem-blue focus:bg-white transition-all shadow-sm resize-none"
+                        placeholder="Tell us about your school and goals..."
                       />
                     </div>
-                    <button type="submit" className="w-full rounded-full bg-stem-navy px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal flex items-center justify-center gap-2">
-                      <Send size={16} />
-                      <span>Send Message & Book Demo</span>
+                    <button 
+                      type="submit" 
+                      disabled={loading}
+                      className="w-full rounded-full bg-stem-navy px-8 py-5 text-sm font-bold text-white shadow-xl shadow-stem-navy/20 transition hover:bg-stem-teal flex items-center justify-center gap-2 group disabled:opacity-70"
+                    >
+                      {loading ? (
+                        <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      ) : (
+                        <>
+                          <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                          <span>Send Message & Book Demo</span>
+                        </>
+                      )}
                     </button>
                   </form>
                 </>
@@ -184,14 +213,14 @@ export default function ContactPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 size={32} className="text-green-600" />
+                  <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle2 size={40} className="text-green-500" />
                   </div>
-                  <h3 className="font-semibold text-2xl text-stem-navy mb-3">Message Sent!</h3>
-                  <p className="text-stem-gray max-w-sm mx-auto mb-6">
+                  <h3 className="font-bold text-3xl text-stem-navy mb-4">Message Sent!</h3>
+                  <p className="text-slate-600 max-w-sm mx-auto mb-8 text-lg">
                     Thank you! Our team will reach out within 24 hours to schedule your free consultation.
                   </p>
-                  <button onClick={() => setSubmitted(false)} className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal">Send Another Message</button>
+                  <button onClick={() => setSubmitted(false)} className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-8 py-4 text-sm font-bold text-white shadow-lg transition hover:bg-stem-teal">Send Another Message</button>
                 </motion.div>
               )}
             </div>
