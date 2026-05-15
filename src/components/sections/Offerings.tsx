@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import { Cpu, Code, Glasses, Lightbulb, Clipboard, Hand, Rocket, User, Shield } from 'lucide-react';
+import imgSTEAM from '../../assets/STEAM & ROBOTICS.png';
+import imgCODING from '../../assets/CODING & ARTIFICIAL INTELLIGENCE.png';
+import imgARVR from '../../assets/AUGMENTED REALITY & VIRTUAL REALITY.png';
+import imgINNOVATION from '../../assets/INNOVATION & MAKER LAB.png';
 
 const offerings = [
   {
@@ -7,7 +11,7 @@ const offerings = [
     title: 'STEAM & ROBOTICS',
     description:
       'Our STEAM & Robotics program helps students explore the world of science, technology, engineering, arts and mathematics through hands-on activities. Students design, build and program their own robots while developing problem-solving, teamwork and engineering skills.',
-    img: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: imgSTEAM,
     color: 'bg-stem-blue',
   },
   {
@@ -15,7 +19,7 @@ const offerings = [
     title: 'CODING & ARTIFICIAL INTELLIGENCE',
     description:
       'We introduce students to the world of coding and AI through fun, interactive and project-based learning. From block coding to advanced concepts, students create apps, games and smart solutions while building logical thinking and computational skills.',
-    img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: imgCODING,
     color: 'bg-stem-orange',
   },
   {
@@ -23,7 +27,7 @@ const offerings = [
     title: 'AUGMENTED REALITY & VIRTUAL REALITY',
     description:
       'Our AR/VR solutions create immersive learning experiences that bring concepts to life. Students can explore 3D models, simulations and virtual worlds that make learning more engaging, interactive and easy to understand.',
-    img: 'https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: imgARVR,
     color: 'bg-stem-teal',
   },
   {
@@ -31,7 +35,7 @@ const offerings = [
     title: 'INNOVATION & MAKER LAB',
     description:
       'Our Innovation & Maker Lab encourages students to ideate, design and prototype their ideas. Through hands-on experiments and open-ended projects, students develop creativity, critical thinking and the confidence to become future innovators.',
-    img: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: imgINNOVATION,
     color: 'bg-stem-pink',
   },
 ];
@@ -95,7 +99,7 @@ export default function Offerings() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-20 bg-stem-light-blue rounded-3xl p-8 md:p-12"
+          className="mt-20 bg-stem-blue rounded-3xl p-8 md:p-12"
         >
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
             {[

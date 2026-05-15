@@ -1,35 +1,41 @@
 import { motion } from 'framer-motion';
+import imgCoding from '../../assets/Coding.png';
+import imgAI from '../../assets/AI.png';
+import imgML from '../../assets/ML.png';
+import imgRobotics from '../../assets/Robotics.png';
+import imgARVR from '../../assets/ARVR.png';
+import imgIOT from '../../assets/IOT.png';
 
 const technologies = [
   {
     title: 'Coding - Graphical & Python',
     desc: 'Learn visual block-based and text-based coding with real-world applications.',
-    img: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=400',
+    img: imgCoding,
   },
   {
-    title: 'Self-Driving Technology',
+    title: 'Artificial Intelligence',
     desc: 'Build autonomous systems with sensors, AI, and computer vision.',
-    img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400',
+    img: imgAI,
   },
   {
-    title: 'Robotics with AI',
-    desc: 'Design and program intelligent robots that solve real problems.',
-    img: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=400',
-  },
-  {
-    title: 'AI & Machine Learning',
+    title: 'Machine Learning',
     desc: 'Train models and build intelligent systems with neural networks.',
-    img: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=400',
+    img: imgML,
   },
   {
-    title: 'AR/VR Experiences',
+    title: 'Robotics',
+    desc: 'Design and program intelligent robots that solve real problems.',
+    img: imgRobotics,
+  },
+  {
+    title: 'AR & VR Tech',
     desc: 'Create immersive learning with augmented and virtual reality.',
-    img: 'https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=400',
+    img: imgARVR,
   },
   {
-    title: 'IoT & Sensors',
+    title: 'Internet of Things (IoT)',
     desc: 'Connect the physical world with smart devices and data.',
-    img: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
+    img: imgIOT,
   },
 ];
 

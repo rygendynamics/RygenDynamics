@@ -18,7 +18,7 @@ export default function CTA() {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-6"
         >
-          <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm uppercase tracking-[0.35em] text-sky-700">
+          <span className="inline-block text-sm font-bold uppercase tracking-widest text-white bg-stem-navy px-6 py-2 rounded-full">
             Ready to Transform?
           </span>
         </motion.div>

@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import { Target, Brain, Lightbulb, Edit3, RefreshCw } from 'lucide-react';
+import imgConsumer from '../../assets/CONSUMER.png';
+import imgInnovator from '../../assets/INNOVATOR.png';
+import imgCreator from '../../assets/CREATOR.png';
+import imgDesignThinking from '../../assets/design_thinking.png';
 
 export default function Methodology() {
   const methodologySteps = [
@@ -46,19 +50,19 @@ export default function Methodology() {
       title: 'CONSUMER',
       subtitle: 'Activity-based Learning (ABL)',
       description: 'Students engage as consumers, working with various DIY kits and coding platforms to perform activities.',
-      img: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400',
+      img: imgConsumer,
     },
     {
       title: 'INNOVATOR',
       subtitle: 'Innovation & Growth',
       description: 'Activity-based Learning assists students in ideation and growth as innovators, encouraging them to think outside the box.',
-      img: 'https://images.pexels.com/photos/3912981/pexels-photo-3912981.jpeg?auto=compress&cs=tinysrgb&w=400',
+      img: imgInnovator,
     },
     {
       title: 'CREATOR',
       subtitle: 'Project-based Learning (PBL)',
-      description: 'Students transform into creators, gaining the capability to innovate and drive change by addressing real-life challenges aligned with UNSDGs.',
-      img: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400',
+      description: 'Students become creators, building innovative solutions to tackle real-world global challenges and drive change.',
+      img: imgCreator,
     },
   ];
 
@@ -141,46 +145,15 @@ export default function Methodology() {
               ))}
             </div>
 
-            {/* Center Circle */}
+            {/* Center Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="flex items-center justify-center"
+              className="flex items-center justify-center mt-8 md:mt-0"
             >
-              <div className="relative w-80 h-80">
-                {/* Outer circle */}
-                <div className="absolute inset-0 rounded-full border-4 border-stem-yellow opacity-30" />
-                {/* Inner circle */}
-                <div className="absolute inset-8 rounded-full border-4 border-stem-blue opacity-30" />
-                {/* Center */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="mb-4"><Target size={56} /></div>
-                    <p className="text-2xl font-bold">Design<br />Thinking</p>
-                    <p className="text-sm text-white/70 mt-4">Problem Solving with Creativity</p>
-                  </div>
-                </div>
-
-                {/* Rotating icons */}
-                {[Brain, Lightbulb, Edit3, RefreshCw].map((IconComp, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute text-3xl"
-                    style={{
-                      top: i === 0 ? '-20px' : i === 1 ? 'auto' : i === 2 ? 'auto' : '-20px',
-                      bottom: i === 1 ? '-20px' : i === 2 ? '-20px' : 'auto',
-                      left: i === 3 ? '-20px' : 'auto',
-                      right: i === 1 ? '-20px' : 'auto',
-                    }}
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                  >
-                    <IconComp size={28} />
-                  </motion.div>
-                ))}
-              </div>
+              <img src={imgDesignThinking} alt="Design Thinking Approach" className="w-full h-auto rounded-3xl object-contain md:scale-110" />
             </motion.div>
           </div>
         </motion.div>

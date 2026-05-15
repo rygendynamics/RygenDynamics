@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { X, ZoomIn } from 'lucide-react';
@@ -32,10 +32,10 @@ export default function GalleryPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy">Gallery</span>
+            <span className="inline-flex rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 text-sm font-bold tracking-wider text-white">Gallery</span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-white mb-6">
-            Inside the <span className="text-stem-blue">Innovation Campus</span>
+            Our <span className="text-stem-blue">Innovation Campus</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/75 text-xl max-w-2xl mx-auto">
             A glimpse into the classrooms, labs, and events that are shaping the future of education.

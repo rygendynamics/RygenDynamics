@@ -15,12 +15,12 @@ const perks = [
 ];
 
 const jobs = [
-  { title: 'Senior AI Curriculum Designer', department: 'Education', location: 'Remote / Flexible', type: 'Full-time', desc: 'Design cutting-edge AI learning modules for K-12 students. You\'ll bridge the gap between industry-level AI concepts and accessible classroom experiences.', requirements: ['3+ years in curriculum design or instructional design', 'Strong understanding of ML/AI concepts', 'Experience with Python, TensorFlow or similar', 'Passion for education and student outcomes'] },
-  { title: 'Robotics Engineer', department: 'Engineering', location: 'Flexible / Remote', type: 'Full-time', desc: 'Design and prototype robotics hardware and software for educational projects and references.', requirements: ['2+ years with Arduino, Raspberry Pi, ROS', 'Experience with servo systems, sensors, actuators', 'Strong Python or C++ skills', 'Ability to translate tech to non-technical educators'] },
-  { title: 'School Partnership Manager', department: 'Partnerships', location: 'Various / Remote', type: 'Full-time', desc: 'Build and nurture relationships with school principals, administrators, and education stakeholders.', requirements: ['3+ years in B2B sales or school partnerships', 'Excellent communication and relationship skills', 'Track record of hitting growth targets', 'Bonus: experience in EdTech or education sector'] },
-  { title: 'Full-Stack Developer', department: 'Product', location: 'Remote / Flexible', type: 'Full-time', desc: 'Build the software platform that supports our education tools and educator workflows.', requirements: ['3+ years with React, TypeScript, Node.js', 'Experience with Supabase or similar databases', 'Strong UX sensibility', 'Passion for clean, performant code'] },
-  { title: 'IoT Systems Specialist', department: 'Engineering', location: 'Remote-friendly', type: 'Full-time', desc: 'Design connected systems and IoT reference designs for education use-cases. You\'ll spec hardware, write firmware, and create deployment guides.', requirements: ['2+ years in IoT or embedded systems', 'ESP32/ESP8266, MQTT experience', 'Familiarity with cloud IoT platforms (AWS, GCP)', 'Strong problem-solving under real-world constraints'] },
-  { title: 'Content & Community Lead', department: 'Marketing', location: 'Remote', type: 'Full-time', desc: 'Own Rygen\'s content strategy — from blog and social to educator community forums. Help us become the voice of innovation education globally.', requirements: ['3+ years in content marketing or community building', 'Strong writing and editing skills', 'Interest in STEM and education', 'Experience growing online communities'] },
+  { title: 'Hardware Engineer', department: 'Engineering', location: 'Office / Hybrid', type: 'Full-time', desc: 'Develop and test high-quality hardware components for our robotics kits and lab equipment.', requirements: ['Degree in Electrical/Electronic Engineering', 'Experience in PCB design and prototyping', 'Knowledge of manufacturing processes', 'Hands-on experience with lab testing tools'] },
+  { title: 'Software Engineer (Full-Stack)', department: 'Engineering', location: 'Remote / Flexible', type: 'Full-time', desc: 'Build and maintain the software platforms and educator tools that power Rygen\'s ecosystem.', requirements: ['3+ years with React, TypeScript, Node.js', 'Experience with cloud architecture and databases', 'Strong problem-solving skills', 'Passion for clean, maintainable code'] },
+  { title: 'Embedded Firmware Engineer', department: 'Engineering', location: 'Remote / Hybrid', type: 'Full-time', desc: 'Write efficient, robust firmware for our robotics controllers and IoT devices.', requirements: ['Strong C/C++ programming skills', 'Experience with RTOS and bare-metal programming', 'Familiarity with I2C, SPI, UART protocols', 'Debugging and optimization skills'] },
+  { title: 'STEM Tutor', department: 'Education', location: 'On-site / Hybrid', type: 'Full-time', desc: 'Deliver engaging STEM and robotics sessions to students and provide support to school educators.', requirements: ['Strong foundation in STEM concepts', 'Teaching or tutoring experience', 'Excellent communication skills', 'Ability to inspire young learners'] },
+  { title: 'Marketing Lead', department: 'Marketing', location: 'Remote', type: 'Full-time', desc: 'Drive growth and brand awareness through strategic marketing campaigns across digital and traditional channels.', requirements: ['3+ years in marketing or brand management', 'Experience with SEO/SEM and social media', 'Creative thinking and data-driven approach', 'Excellent storytelling and content skills'] },
+  { title: 'Mechanical Engineer (CAD Design)', department: 'Engineering', location: 'Office / Hybrid', type: 'Full-time', desc: 'Design and prototype 3D models for robotics components and educational kits using advanced CAD software.', requirements: ['Degree in Mechanical Engineering or related field', 'Proficiency in SolidWorks, Fusion 360, or similar', 'Experience with 3D printing and rapid prototyping', 'Strong understanding of mechanical systems and materials'] },
 ];
 
 function JobCard({ job }: { job: typeof jobs[0] }) {
@@ -43,7 +43,7 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-2">
-              <span className="text-xs font-mono text-stem-blue bg-stem-yellow border border-stem-blue px-2.5 py-0.5 rounded-full">
+              <span className="text-xs font-bold uppercase tracking-widest text-white bg-stem-navy px-4 py-1.5 rounded-full">
                 {job.department}
               </span>
               <span className="text-xs font-mono text-stem-gray">{job.type}</span>
@@ -104,14 +104,12 @@ export default function CareersPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy">
+            <span className="inline-flex rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 text-sm font-bold tracking-wider text-white">
               We're Hiring
             </span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-white mb-6">
-            Help us build
-            <br />
-            <span className="text-stem-blue">the future of education</span>
+            Build the Future of <span className="text-stem-blue">Education</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/75 text-xl max-w-2xl mx-auto">
             We're looking for passionate builders, educators, and innovators to join our mission of transforming schools globally.
@@ -128,9 +126,9 @@ export default function CareersPage() {
       </section>
 
       {/* Perks */}
-      <section className="pb-24 max-w-7xl mx-auto px-6">
+      <section className="pt-24 pb-24 max-w-7xl mx-auto px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-12">
-          <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-sky-600 mb-5">Why Rygen</span>
+          <span className="inline-flex rounded-full bg-stem-navy/5 border border-stem-navy/10 px-5 py-2 text-sm font-bold tracking-wider text-stem-navy mb-5">Why Rygen</span>
           <h2 className="font-semibold text-3xl md:text-4xl text-slate-900">
             Work that <span className="text-sky-600">matters</span>
           </h2>
@@ -155,7 +153,7 @@ export default function CareersPage() {
         {/* Open roles */}
         <div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-10">
-            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy mb-5">Open Positions</span>
+            <span className="inline-flex rounded-full bg-stem-navy/5 border border-stem-navy/10 px-5 py-2 text-sm font-bold tracking-wider text-stem-navy mb-5">Open Positions</span>
             <h2 className="font-semibold text-3xl md:text-4xl text-stem-navy">
               {jobs.length} open <span className="text-stem-blue">roles</span>
             </h2>
@@ -173,13 +171,16 @@ export default function CareersPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.6 }}
-          className="mt-10 rounded-3xl border border-stem-blue bg-stem-light-gray p-8 text-center"
+          className="mt-10 rounded-3xl bg-stem-blue p-10 text-center text-white shadow-2xl relative overflow-hidden"
         >
-          <h3 className="font-semibold text-xl text-stem-navy mb-2">Don't see the right role?</h3>
-          <p className="text-stem-gray mb-5 max-w-md mx-auto text-sm">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          </div>
+          <h3 className="font-bold text-2xl mb-3 relative z-10">Don't see the right role?</h3>
+          <p className="text-white/90 mb-8 max-w-md mx-auto text-sm leading-relaxed relative z-10">
             We're always looking for exceptional people. Send us your story and what you'd like to build at Rygen.
           </p>
-          <a href="mailto:careers@rygendynamics.com" className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal">
+          <a href="mailto:careers@rygendynamics.com" className="inline-flex items-center gap-2 rounded-full bg-white text-stem-blue px-8 py-3 text-sm font-bold shadow-lg transition hover:bg-sky-50 relative z-10">
             Send Speculative Application
             <ArrowRight size={14} />
           </a>

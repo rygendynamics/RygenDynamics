@@ -40,7 +40,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
       <h3 className="font-semibold text-stem-navy text-lg mb-2">{project.title}</h3>
       <p className="text-stem-gray text-sm leading-relaxed mb-4">{project.description}</p>
       <div className="flex flex-wrap gap-1.5">
-        {project.tech.map((t) => <span key={t} className="text-xs text-stem-gray bg-stem-yellow border border-stem-blue px-2 py-0.5 rounded-md">{t}</span>)}
+        {project.tech.map((t) => <span key={t} className="text-xs font-bold tracking-wider uppercase text-white bg-stem-navy px-3.5 py-1.5 rounded-full">{t}</span>)}
       </div>
     </motion.div>
   );
@@ -57,10 +57,10 @@ export default function ProjectsPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy">Student Projects</span>
+            <span className="inline-flex rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 text-sm font-bold tracking-wider text-white">Innovation Showcase</span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-white mb-6">
-            Real projects by <span className="text-stem-blue">real students</span>
+            Built by <span className="text-stem-blue">Tomorrow's Leaders</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/75 text-xl max-w-2xl mx-auto">
             From Grade 7 to Grade 12 — these aren't school exercises. These are real innovations that solve real problems.

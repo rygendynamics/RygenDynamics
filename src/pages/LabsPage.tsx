@@ -1,8 +1,10 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Cpu, Lightbulb, Shield, Wrench, BookOpen } from 'lucide-react';
 import CTA from '../components/sections/CTA';
 import heroImage from '../assets/bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
+import imgApproach from '../assets/our_approach.png';
+import imgSetupJourney from '../assets/setup_journey.png';
 
 const facilities = [
   { icon: Cpu, title: 'Robotics kits', description: 'High-quality programmable robotics platforms with sensors, motors, and controllers.' },
@@ -28,10 +30,10 @@ export default function LabsPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy">Robotics Lab Setup</span>
+            <span className="inline-flex rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 text-sm font-bold tracking-wider text-white">Robotics Lab Setup</span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-white mb-6">
-            Complete robotics lab setup for <span className="text-stem-blue">modern schools</span>.
+            Premium Robotics & AI Education for <span className="text-stem-blue">Schools</span>.
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/75 text-xl max-w-2xl mx-auto">
             We provide everything required to launch a professional robotics lab: equipment, curriculum, teacher training, and long-term support.
@@ -50,7 +52,7 @@ export default function LabsPage() {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-stem-blue mb-4">What we offer</p>
+            <p className="text-2xl font-bold text-stem-navy tracking-widest uppercase mb-4">What we offer</p>
             <h2 className="text-3xl font-semibold text-stem-navy mb-6">
               A single, focused robotics lab solution for schools.
             </h2>
@@ -81,7 +83,7 @@ export default function LabsPage() {
                   <CheckCircle2 size={20} className="text-stem-blue mt-1" />
                   <div>
                     <h3 className="font-semibold text-stem-navy">Teacher training & support</h3>
-                    <p className="text-stem-gray text-sm leading-relaxed">Hands-on coaching so instructors feel confident in the lab.</p>
+                    <p className="text-stem-gray text-sm leading-relaxed">Hands-on teacher coaching and dedicated expert tutoring support included in our package.</p>
                   </div>
                 </div>
               </div>
@@ -97,33 +99,66 @@ export default function LabsPage() {
             </div>
           </div>
 
-          <div className="rounded-4xl overflow-hidden shadow-xl">
+          <div className="rounded-4xl overflow-hidden bg-white">
             <img src={heroImage} alt="Robotics lab setup" className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-stem-blue text-white">
+        <div className="mx-auto max-w-7xl px-6 text-center mb-16">
+          <p className="inline-block text-sm font-bold uppercase tracking-widest text-white bg-stem-navy px-5 py-2 rounded-full mb-6">Facilities we provide</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Everything your robotics classroom needs</h2>
+        </div>
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 sm:grid-cols-2 lg:grid-cols-4">
+          {facilities.map((item) => (
+            <div key={item.title} className="rounded-3xl bg-sky-50 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-stem-blue shadow-md">
+                <item.icon size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-stem-navy mb-3">{item.title}</h3>
+              <p className="text-slate-700 text-sm leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="inline-block text-sm font-bold uppercase tracking-widest text-white bg-stem-navy px-5 py-2 rounded-full mb-6">Our approach</p>
+              <h2 className="text-3xl md:text-5xl font-bold text-stem-navy mb-8 leading-tight">
+                A calm, professional experience for schools and educators.
+              </h2>
+              <p className="text-slate-700 text-lg leading-relaxed">
+                Our focus is on usability, quality, and long-term adoption. From lab layout and hardware to lesson flow, teacher coaching, and expert tutoring support, everything is built to be easy to use and effortless to maintain.
+              </p>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-sky-50 rounded-3xl blur-3xl" />
+              <img 
+                src={imgApproach} 
+                alt="Our approach" 
+                className="relative rounded-3xl shadow-2xl border border-sky-100"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
 
       <section className="py-20 bg-stem-light-gray">
         <div className="mx-auto max-w-7xl px-6 text-center mb-12">
-          <p className="text-sm uppercase tracking-[0.35em] text-stem-blue mb-3">Facilities we provide</p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-stem-navy">Everything your robotics classroom needs</h2>
-        </div>
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 sm:grid-cols-2 lg:grid-cols-4">
-          {facilities.map((item) => (
-            <div key={item.title} className="rounded-3xl border border-stem-light-gray bg-white p-6 shadow-sm transition hover:shadow-md">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-stem-yellow text-stem-navy">
-                <item.icon size={20} />
-              </div>
-              <h3 className="text-lg font-semibold text-stem-navy mb-2">{item.title}</h3>
-              <p className="text-stem-gray text-sm leading-relaxed">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-20 bg-stem-light-gray">
-        <div className="mx-auto max-w-7xl px-6 text-center mb-12">
-          <p className="text-sm uppercase tracking-[0.35em] text-stem-blue mb-3">One Platform. Endless Possibilities.</p>
+          <p className="inline-block text-sm font-bold uppercase tracking-widest text-white bg-stem-navy px-5 py-2 rounded-full mb-6">One Platform. Endless Possibilities.</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-stem-navy">ENGAGE</h2>
           <p className="text-stem-gray text-lg max-w-2xl mx-auto">Interactive learning that inspires curiosity.</p>
         </div>
@@ -134,6 +169,53 @@ export default function LabsPage() {
               <p className="text-stem-gray text-sm leading-relaxed">{feature.description}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-24 bg-stem-blue text-white overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="inline-block text-sm font-bold uppercase tracking-widest text-white bg-stem-navy px-5 py-2 rounded-full mb-6">Lab Setup Journey</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                From concept to <span className="text-white">classroom</span> in weeks.
+              </h2>
+              <div className="space-y-8">
+                {[
+                  { step: '01', title: 'Consultation', desc: 'We assess your school requirements and space to design a custom lab layout.' },
+                  { step: '02', title: 'Installation', desc: 'Full hardware setup, robotics equipment, and classroom furniture installation.' },
+                  { step: '03', title: 'Training & Tutoring', desc: 'Intensive teacher training and dedicated expert tutoring support from our team to ensure seamless delivery.' }
+                ].map((item) => (
+                  <div key={item.step} className="flex gap-6">
+                    <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 font-bold text-lg">
+                      {item.step}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-1">{item.title}</h3>
+                      <p className="text-white/95 leading-relaxed text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-white/5 rounded-3xl blur-3xl" />
+              <img 
+                src={imgSetupJourney} 
+                alt="Lab installation" 
+                className="relative rounded-3xl shadow-2xl border border-white/10"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 

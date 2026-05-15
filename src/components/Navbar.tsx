@@ -8,9 +8,9 @@ const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Labs & Programs', path: '/labs' },
-  { label: 'Projects', path: '/projects' },
-  { label: 'Gallery', path: '/gallery' },
-  { label: 'Blog', path: '/blog' },
+
+
+  { label: 'ATL Tinkering Lab', path: '/atl' },
   { label: 'Careers', path: '/careers' },
   { label: 'Contact', path: '/contact' },
 ];

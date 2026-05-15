@@ -30,7 +30,7 @@ export default function Platform() {
         'Certification',
       ],
       description: 'A powerful Learning Management System built for STEM education with comprehensive tracking and engagement tools.',
-      color: 'bg-stem-orange',
+      color: 'bg-stem-blue',
       icon: Book,
     },
   ];

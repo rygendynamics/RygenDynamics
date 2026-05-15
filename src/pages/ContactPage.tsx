@@ -6,7 +6,7 @@ import heroImage from '../assets/bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', school: '', phone: '', message: '', interest: '' });
+  const [form, setForm] = useState({ name: '', email: '', school: '', phone: '', message: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,14 +23,12 @@ export default function ContactPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy">
-              Get in Touch
+            <span className="inline-flex rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 text-sm font-bold tracking-wider text-white">
+              Contact Us
             </span>
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-white mb-6">
-            Let's build the future
-            <br />
-            <span className="text-stem-blue">together</span>
+            Contact <span className="text-stem-blue">Our Team</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/75 text-xl max-w-xl mx-auto">
             Ready to transform your school? Our team will guide you through every step of the journey.
@@ -47,7 +45,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main content */}
-      <section className="pb-32 max-w-7xl mx-auto px-6">
+      <section className="pt-24 pb-32 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Contact info */}
           <div className="lg:col-span-2 space-y-6">
@@ -163,22 +161,7 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
-                    <div>
-                      <label className="text-xs text-stem-gray font-mono uppercase tracking-widest mb-2 block">Primary Interest</label>
-                      <select
-                        value={form.interest}
-                        onChange={(e) => setForm({ ...form, interest: e.target.value })}
-                        className="w-full bg-white border border-stem-light-gray rounded-xl px-4 py-3 text-sm text-stem-navy focus:outline-none focus:border-stem-blue transition-colors"
-                      >
-                        <option value="">Select an area...</option>
-                        <option value="ai">AI & ML Program</option>
-                        <option value="robotics">Robotics Program</option>
-                        <option value="iot">IoT Program</option>
-                        <option value="arvr">AR/VR Program</option>
-                        <option value="coding">Coding Program</option>
-                        <option value="integrated">Integrated STEM Pathway</option>
-                      </select>
-                    </div>
+
                     <div>
                       <label className="text-xs text-stem-gray font-mono uppercase tracking-widest mb-2 block">Message</label>
                       <textarea
