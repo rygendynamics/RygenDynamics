@@ -1,7 +1,9 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Clock, ArrowRight, Tag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import CTA from '../components/sections/CTA';
+import heroImage from '../assets/bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
 
 const featured = {
   title: 'The AI Revolution in K-12 Education: What Every School Needs to Know in 2025',
@@ -32,7 +34,7 @@ function PostCard({ post }: { post: typeof posts[0] }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
+      className="rounded-3xl border border-stem-light-gray bg-white p-6 shadow-sm hover:shadow-md transition-shadow group cursor-pointer"
     >
       <div className="relative h-44 overflow-hidden rounded-2xl mb-4">
         <img src={post.img} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -41,18 +43,18 @@ function PostCard({ post }: { post: typeof posts[0] }) {
         <span className="text-xs font-mono px-2 py-1 rounded-full border" style={{ color: post.color, background: `${post.color}10`, borderColor: `${post.color}20` }}>
           {post.category}
         </span>
-        <div className="flex items-center gap-3 text-slate-500 text-xs">
+        <div className="flex items-center gap-3 text-stem-gray text-xs">
           <Clock size={11} />
           <span>{post.readTime}</span>
           <span>·</span>
           <span>{post.date}</span>
         </div>
       </div>
-      <h3 className="font-semibold text-slate-900 text-lg leading-snug mb-2 group-hover:text-sky-600 transition-colors">{post.title}</h3>
-      <p className="text-slate-600 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+      <h3 className="font-semibold text-stem-navy text-lg leading-snug mb-2 group-hover:text-stem-blue transition-colors">{post.title}</h3>
+      <p className="text-stem-gray text-sm leading-relaxed mb-4">{post.excerpt}</p>
       <div className="flex items-center justify-between">
-        <span className="text-slate-500 text-xs">By {post.author}</span>
-        <ArrowRight size={14} className="text-sky-600 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+        <span className="text-stem-gray text-xs">By {post.author}</span>
+        <ArrowRight size={14} className="text-stem-blue opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
       </div>
     </motion.article>
   );
@@ -60,20 +62,31 @@ function PostCard({ post }: { post: typeof posts[0] }) {
 
 export default function BlogPage() {
   return (
-    <div className="bg-white text-slate-900">
+    <div className="bg-transparent text-stem-navy">
       {/* Hero */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-100" />
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+      <section className="relative overflow-hidden py-24 md:py-28">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Robotics lab background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-stem-navy/75" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-sky-600">Insights & Stories</span>
+            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy">Insights & Stories</span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-slate-900 mb-6">
-            The <span className="text-sky-600">Rygen Blog</span>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-white mb-6">
+            The <span className="text-stem-blue">Rygen Blog</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-slate-600 text-xl max-w-xl mx-auto">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/75 text-xl max-w-xl mx-auto">
             Insights on AI education, robotics, edtech trends, and stories from schools and educators.
           </motion.p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-stem-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-stem-blue/20 transition hover:bg-stem-teal">
+              Contact Us
+            </Link>
+            <Link to="/about" className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white/90 transition hover:border-white hover:text-white">
+              Learn More
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -83,7 +96,7 @@ export default function BlogPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg hover:shadow-xl transition-shadow group cursor-pointer mb-12"
+          className="rounded-3xl border border-stem-light-gray bg-white p-8 shadow-lg hover:shadow-xl transition-shadow group cursor-pointer mb-12"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="relative h-72 lg:h-auto overflow-hidden rounded-2xl">
@@ -91,21 +104,21 @@ export default function BlogPage() {
             </div>
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-2 mb-4">
-                <Tag size={12} className="text-sky-600" />
-                <span className="text-xs font-mono text-sky-600">{featured.category}</span>
-                <span className="text-slate-300">·</span>
-                <span className="text-slate-500 text-xs font-mono">Featured</span>
+                <Tag size={12} className="text-stem-blue" />
+                <span className="text-xs font-mono text-stem-blue">{featured.category}</span>
+                <span className="text-stem-light-gray">·</span>
+                <span className="text-stem-gray text-xs font-mono">Featured</span>
               </div>
-              <h2 className="font-semibold text-2xl md:text-3xl text-slate-900 mb-4 leading-tight group-hover:text-sky-600 transition-colors">
+              <h2 className="font-semibold text-2xl md:text-3xl text-stem-navy mb-4 leading-tight group-hover:text-stem-blue transition-colors">
                 {featured.title}
               </h2>
-              <p className="text-slate-600 leading-relaxed mb-6">{featured.excerpt}</p>
+              <p className="text-stem-gray leading-relaxed mb-6">{featured.excerpt}</p>
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-slate-700 text-sm font-medium">{featured.author}</div>
-                  <div className="text-slate-500 text-xs">{featured.date} · {featured.readTime}</div>
+                  <div className="text-stem-navy text-sm font-medium">{featured.author}</div>
+                  <div className="text-stem-gray text-xs">{featured.date} · {featured.readTime}</div>
                 </div>
-                <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-slate-800">
+                <span className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal">
                   Read Article <ArrowRight size={14} />
                 </span>
               </div>

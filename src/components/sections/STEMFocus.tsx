@@ -34,7 +34,7 @@ const stemItems = [
 
 export default function STEMFocus() {
   return (
-    <section className="py-16 md:py-24 bg-stem-light-gray">
+    <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

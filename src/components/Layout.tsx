@@ -22,7 +22,7 @@ export default function Layout({ children }: LayoutProps) {
   const { pathname } = useLocation();
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-stem-light-gray text-stem-navy flex flex-col">
       <ScrollToTop />
       <Navbar />
       <AnimatePresence mode="wait">

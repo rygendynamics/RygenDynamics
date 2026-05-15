@@ -98,7 +98,7 @@ export default function Platform() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-stem-blue to-stem-light-blue text-white rounded-3xl p-8 md:p-12"
+          className="bg-stem-blue text-white rounded-3xl p-8 md:p-12"
         >
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
             One Platform. Endless Possibilities.
@@ -116,10 +116,13 @@ export default function Platform() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
+                className="flex flex-col items-center justify-center rounded-3xl bg-white/10 px-6 py-8"
               >
-                <div className="text-4xl mb-2"><feature.Icon size={28} /></div>
-                <h4 className="font-bold mb-1">{feature.title}</h4>
-                <p className="text-white/80 text-xs">{feature.subtitle}</p>
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white/15 text-white">
+                  <feature.Icon size={28} />
+                </div>
+                <h4 className="font-bold mb-1 text-white">{feature.title}</h4>
+                <p className="text-white/80 text-sm leading-relaxed">{feature.subtitle}</p>
               </motion.div>
             ))}
           </div>

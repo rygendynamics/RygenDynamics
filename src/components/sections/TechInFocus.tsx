@@ -35,16 +35,16 @@ const technologies = [
 
 export default function TechInFocus() {
   return (
-    <section className="py-16 md:py-24 bg-stem-yellow">
+    <section className="py-16 md:py-24 bg-stem-blue">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-6xl font-bold text-center text-stem-navy mb-4"
+          className="text-5xl md:text-6xl font-bold text-center text-white mb-4"
         >
           Technologies in Focus for<br />
-          <span className="text-stem-blue">Inclusive AI Education</span>
+          <span className="text-slate-100">Inclusive AI Education</span>
         </motion.h2>
 
         <motion.p
@@ -52,7 +52,7 @@ export default function TechInFocus() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-center text-stem-dark text-lg max-w-3xl mx-auto mt-6 leading-relaxed"
+          className="text-center text-slate-200 text-lg max-w-3xl mx-auto mt-6 leading-relaxed"
         >
           Get your kids an opportunity to master world-class technological concepts like coding,
           training machine learning models, self-driving cars, natural language processing with

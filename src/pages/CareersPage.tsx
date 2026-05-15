@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { MapPin, Clock, ChevronDown, ChevronUp, ArrowRight, Target, Globe, BookOpen, Zap, Heart, Award } from 'lucide-react';
 import CTA from '../components/sections/CTA';
+import heroImage from '../assets/bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
 
 const perks = [
   { title: 'Mission-Driven Work', desc: 'You\'re not building software for software\'s sake. Every feature you ship shapes future learners\' experiences.', Icon: Target },
@@ -32,7 +34,7 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+      className="rounded-3xl border border-stem-light-gray bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
     >
       <button
         className="w-full text-left group"
@@ -41,20 +43,20 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-2">
-              <span className="text-xs font-mono text-sky-600 bg-sky-50 border border-sky-200 px-2.5 py-0.5 rounded-full">
+              <span className="text-xs font-mono text-stem-blue bg-stem-yellow border border-stem-blue px-2.5 py-0.5 rounded-full">
                 {job.department}
               </span>
-              <span className="text-xs font-mono text-slate-500">{job.type}</span>
+              <span className="text-xs font-mono text-stem-gray">{job.type}</span>
             </div>
-            <h3 className="font-semibold text-slate-900 text-lg group-hover:text-sky-600 transition-colors">{job.title}</h3>
-            <div className="flex items-center gap-3 mt-1.5 text-slate-500 text-xs">
+            <h3 className="font-semibold text-stem-navy text-lg group-hover:text-stem-blue transition-colors">{job.title}</h3>
+            <div className="flex items-center gap-3 mt-1.5 text-stem-gray text-xs">
               <span className="flex items-center gap-1"><MapPin size={11} />{job.location}</span>
               <span className="flex items-center gap-1"><Clock size={11} />{job.type}</span>
             </div>
           </div>
           <div className="flex items-center gap-3 shrink-0">
-            <span className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-slate-800 hidden sm:flex">Apply Now</span>
-            {open ? <ChevronUp size={18} className="text-slate-400" /> : <ChevronDown size={18} className="text-slate-400" />}
+            <span className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal hidden sm:flex">Apply Now</span>
+            {open ? <ChevronUp size={18} className="text-stem-gray" /> : <ChevronDown size={18} className="text-stem-gray" />}
           </div>
         </div>
       </button>
@@ -79,7 +81,7 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
                   </li>
                 ))}
               </ul>
-              <button className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-slate-800">
+              <button className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal">
                 <span>Apply for this Role</span>
                 <ArrowRight size={14} />
               </button>
@@ -93,24 +95,35 @@ function JobCard({ job }: { job: typeof jobs[0] }) {
 
 export default function CareersPage() {
   return (
-    <div className="bg-white text-slate-900">
+    <div className="bg-transparent text-stem-navy">
       {/* Hero */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-100" />
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
+      <section className="relative overflow-hidden py-24 md:py-28">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Robotics lab background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-stem-navy/75" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex justify-center mb-5">
-            <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-sky-600">
+            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy">
               We're Hiring
             </span>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-slate-900 mb-6">
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-semibold text-4xl md:text-5xl xl:text-6xl text-white mb-6">
             Help us build
             <br />
-            <span className="text-sky-600">the future of education</span>
+            <span className="text-stem-blue">the future of education</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-slate-600 text-xl max-w-2xl mx-auto">
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-white/75 text-xl max-w-2xl mx-auto">
             We're looking for passionate builders, educators, and innovators to join our mission of transforming schools globally.
           </motion.p>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-stem-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-stem-blue/20 transition hover:bg-stem-teal">
+              Contact Us
+            </Link>
+            <Link to="/about" className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white/90 transition hover:border-white hover:text-white">
+              About Rygen
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -130,11 +143,11 @@ export default function CareersPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: 0.06 * i }}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="rounded-3xl border border-stem-light-gray bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="text-sky-600 mb-4"><perk.Icon size={28} /></div>
-              <h3 className="font-semibold text-slate-900 text-lg mb-2">{perk.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{perk.desc}</p>
+              <div className="text-stem-blue mb-4"><perk.Icon size={28} /></div>
+              <h3 className="font-semibold text-stem-navy text-lg mb-2">{perk.title}</h3>
+              <p className="text-stem-gray text-sm leading-relaxed">{perk.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -142,9 +155,9 @@ export default function CareersPage() {
         {/* Open roles */}
         <div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-10">
-            <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-sky-600 mb-5">Open Positions</span>
-            <h2 className="font-semibold text-3xl md:text-4xl text-slate-900">
-              {jobs.length} open <span className="text-sky-600">roles</span>
+            <span className="inline-flex rounded-full border border-stem-blue bg-stem-yellow px-4 py-2 text-xs uppercase tracking-[0.35em] text-stem-navy mb-5">Open Positions</span>
+            <h2 className="font-semibold text-3xl md:text-4xl text-stem-navy">
+              {jobs.length} open <span className="text-stem-blue">roles</span>
             </h2>
           </motion.div>
           <div className="space-y-4">
@@ -160,13 +173,13 @@ export default function CareersPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.6 }}
-          className="mt-10 rounded-3xl border border-sky-200 bg-sky-50 p-8 text-center"
+          className="mt-10 rounded-3xl border border-stem-blue bg-stem-light-gray p-8 text-center"
         >
-          <h3 className="font-semibold text-xl text-slate-900 mb-2">Don't see the right role?</h3>
-          <p className="text-slate-600 mb-5 max-w-md mx-auto text-sm">
+          <h3 className="font-semibold text-xl text-stem-navy mb-2">Don't see the right role?</h3>
+          <p className="text-stem-gray mb-5 max-w-md mx-auto text-sm">
             We're always looking for exceptional people. Send us your story and what you'd like to build at Rygen.
           </p>
-          <a href="mailto:careers@rygendynamics.com" className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/10 transition hover:bg-slate-800">
+          <a href="mailto:careers@rygendynamics.com" className="inline-flex items-center gap-2 rounded-full bg-stem-navy px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-stem-navy/10 transition hover:bg-stem-teal">
             Send Speculative Application
             <ArrowRight size={14} />
           </a>

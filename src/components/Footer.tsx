@@ -1,24 +1,22 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Facebook, Linkedin, Instagram, Youtube, Phone, Mail, Globe } from 'lucide-react';
+import { Linkedin, Instagram, MessageSquare, Phone, Mail, Globe } from 'lucide-react';
 import logo from '../../Logo.png';
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#081728] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(31,164,232,0.16),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(103,199,244,0.09),transparent_30%)]" />
       <div className="relative max-w-7xl mx-auto px-4 py-14 md:py-16">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-4"
+            className="lg:col-span-3"
           >
             <div className="inline-flex items-center rounded-2xl bg-white px-4 py-3 shadow-lg shadow-black/20">
               <img src={logo} alt="Rygen Dynamics" className="h-10 w-auto object-contain" />
             </div>
-            <h3 className="mt-5 text-2xl font-bold tracking-tight">Rygen Dynamics</h3>
             <p className="mt-3 max-w-sm text-sm leading-6 text-white/70">
               Future-ready learning solutions for schools, built to feel practical, polished, and easy to adopt.
             </p>
@@ -31,17 +29,14 @@ export default function Footer() {
               </a>
             </div>
             <div className="mt-6 flex gap-3">
-              <a aria-label="Facebook" href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
-                <Facebook size={16} />
-              </a>
-              <a aria-label="LinkedIn" href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/company/rygen-dynamicss/" target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
                 <Linkedin size={16} />
               </a>
-              <a aria-label="Instagram" href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
+              <a aria-label="Instagram" href="https://www.instagram.com/rygendynamics/" target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
                 <Instagram size={16} />
               </a>
-              <a aria-label="YouTube" href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
-                <Youtube size={16} />
+              <a aria-label="WhatsApp" href="https://wa.me/918980005452" target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-stem-blue hover:text-white">
+                <MessageSquare size={16} />
               </a>
             </div>
           </motion.div>
@@ -101,7 +96,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="lg:col-span-2 min-w-0"
+            className="lg:col-span-3 min-w-0"
           >
             <h4 className="text-base font-bold tracking-wide text-white">Contact Us</h4>
             <div className="mt-4 space-y-4 text-sm text-white/80">
@@ -113,7 +108,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Email</p>
-                <a href="mailto:rygendynamics@gmail.com" className="font-semibold text-white hover:text-stem-light-blue whitespace-normal break-words">
+                <a href="mailto:rygendynamics@gmail.com" className="font-semibold text-white hover:text-stem-light-blue break-all">
                   rygendynamics@gmail.com
                 </a>
               </div>
