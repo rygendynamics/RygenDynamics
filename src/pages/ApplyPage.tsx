@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Send, CheckCircle2, ArrowLeft, Upload, User, Briefcase, Mail, Phone, MessageSquare } from 'lucide-react';
 import heroImage from '../assets/bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
+import { fileToBase64, submitForm } from '../lib/submitForm';
 
 export default function ApplyPage() {
   const location = useLocation();
@@ -12,6 +13,7 @@ export default function ApplyPage() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [resume, setResume] = useState<File | null>(null);
   const [form, setForm] = useState({
     name: '',
@@ -23,9 +25,38 @@ export default function ApplyPage() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!resume) {
+      setError('Please upload your resume (PDF).');
+      return;
+    }
+    if (resume.size > 5 * 1024 * 1024) {
+      setError('Resume must be 5MB or smaller.');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+    try {
+      const resumeBase64 = await fileToBase64(resume);
+      await submitForm({
+        type: 'career',
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        role: form.role,
+        linkedin: form.linkedin || undefined,
+        portfolio: form.portfolio || undefined,
+        message: form.message,
+        resume: { filename: resume.name, content: resumeBase64 },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to submit application. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -206,6 +237,12 @@ export default function ApplyPage() {
                     placeholder="Tell us why you're a great fit for Rygen..."
                   />
                 </div>
+
+                {error && (
+                  <p className="text-sm font-medium text-red-600 bg-red-50 border border-red-100 rounded-2xl px-5 py-3">
+                    {error}
+                  </p>
+                )}
 
                 <button 
                   type="submit" 

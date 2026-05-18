@@ -3,15 +3,33 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Calendar, Send, CheckCircle2 } from 'lucide-react';
 import heroImage from '../assets/bcd2f326-709e-485d-8eb4-05d544cca7fb.png';
+import { submitForm } from '../lib/submitForm';
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({ name: '', email: '', school: '', phone: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+    try {
+      await submitForm({
+        type: 'contact',
+        name: form.name,
+        email: form.email,
+        school: form.school,
+        phone: form.phone || undefined,
+        message: form.message,
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -192,6 +210,11 @@ export default function ContactPage() {
                         placeholder="Tell us about your school and goals..."
                       />
                     </div>
+                    {error && (
+                      <p className="text-sm font-medium text-red-600 bg-red-50 border border-red-100 rounded-2xl px-5 py-3">
+                        {error}
+                      </p>
+                    )}
                     <button 
                       type="submit" 
                       disabled={loading}

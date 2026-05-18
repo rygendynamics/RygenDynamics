@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:full": "vercel dev",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
   },
   "dependencies": {
+    "@vercel/node": "^5.0.0",
     "@types/react-router-dom": "^5.3.3",
+    "nodemailer": "^6.9.16",
     "framer-motion": "^12.38.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
@@ -19,6 +22,7 @@
     "react-router-dom": "^7.15.0"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
     "@eslint/js": "^9.9.1",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
