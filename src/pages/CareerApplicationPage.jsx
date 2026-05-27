@@ -102,11 +102,11 @@ const CareerApplicationPage = () => {
         if (fileInput) fileInput.value = ''
         setSubmitted(true)
       } else {
-        alert('Failed to submit application. Please try again or email us at rygendynamics@gmail.com')
+        alert('Failed to submit application. Please try again or email us at info@rygendynamics.com')
       }
     } catch (error) {
       console.error('Error:', error)
-      alert('Network error. Please try again or email us directly at rygendynamics@gmail.com')
+      alert('Network error. Please try again or email us directly at info@rygendynamics.com')
     }
     
     setIsLoading(false)
@@ -179,7 +179,7 @@ const CareerApplicationPage = () => {
                 </div>
                 <div className="contact-info-box">
                   <h3>Questions?</h3>
-                  <p>Email us at: <a href="mailto:rygendynamics@gmail.com">rygendynamics@gmail.com</a></p>
+                  <p>Email us at: <a href="mailto:info@rygendynamics.com">info@rygendynamics.com</a></p>
                 </div>
               </motion.div>
 

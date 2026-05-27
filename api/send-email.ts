@@ -68,7 +68,7 @@ function buildContactAutoReply(name: string): string {
       <p>Thank you for reaching out to <strong>Rygen Dynamics</strong>!</p>
       <p>We have received your demo inquiry and our team will contact you within <strong>24 hours</strong> to schedule your free consultation.</p>
       <p>In the meantime, feel free to explore our programs on our website.</p>
-      <p>Best regards,<br/><strong>Rygen Dynamics Team</strong><br/>rygendynamics@gmail.com<br/>+91 8980005452</p>
+      <p>Best regards,<br/><strong>Rygen Dynamics Team</strong><br/>info@rygendynamics.com<br/>+91 8980005452</p>
     </div>
   `;
 }
@@ -79,7 +79,7 @@ function buildCareerAutoReply(name: string, role: string): string {
       <p>Dear ${escapeHtml(name)},</p>
       <p>Thank you for applying for the <strong>${escapeHtml(role)}</strong> position at <strong>Rygen Dynamics</strong>!</p>
       <p>We have received your application and our talent acquisition team will review it carefully. You can expect to hear from us within <strong>3–5 business days</strong>.</p>
-      <p>Best regards,<br/><strong>Rygen Dynamics Talent Team</strong><br/>rygendynamics@gmail.com</p>
+      <p>Best regards,<br/><strong>Rygen Dynamics Talent Team</strong><br/>info@rygendynamics.com</p>
     </div>
   `;
 }

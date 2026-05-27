@@ -134,7 +134,7 @@ app.post('/api/contact', async (req, res) => {
         </div>
         
         <div style="background: #0E2A47; padding: 15px; text-align: center; color: white; font-size: 12px;">
-          <p style="margin: 0;">rygendynamics@gmail.com</p>
+          <p style="margin: 0;">info@rygendynamics.com</p>
           <p style="margin: 5px 0;">India</p>
           <div style="margin-top: 10px;">
             <a href="https://www.linkedin.com/company/rygendynamics-india" style="color: #2EA3D6; text-decoration: none; margin: 0 10px;">LinkedIn</a>

@@ -56,7 +56,7 @@ export default function ContactPage() {
             <Link to="/about" className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white/90 transition hover:border-white hover:text-white">
               Learn More
             </Link>
-            <a href="mailto:rygendynamics@gmail.com" className="inline-flex items-center justify-center gap-2 rounded-full bg-stem-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-stem-blue/20 transition hover:bg-stem-teal">
+            <a href="mailto:info@rygendynamics.com" className="inline-flex items-center justify-center gap-2 rounded-full bg-stem-blue px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-stem-blue/20 transition hover:bg-stem-teal">
               Send Email
             </a>
           </motion.div>
@@ -78,7 +78,7 @@ export default function ContactPage() {
             {/* Info cards */}
             <div className="grid gap-6">
               {[
-                { icon: Mail, label: 'Email Us', value: 'rygendynamics@gmail.com', sub: 'We reply within 24 hours' },
+                { icon: Mail, label: 'Email Us', value: 'info@rygendynamics.com', sub: 'We reply within 24 hours' },
                 { icon: Phone, label: 'Call Us', value: '+91 8980005452', sub: 'Mon-Fri, 9am-6pm IST' },
                 { icon: MapPin, label: 'Visit Us', value: 'India (by appointment)', sub: 'Online and onsite meetings available' },
                 { icon: Calendar, label: 'Book a Demo', value: 'Schedule a call', sub: 'Free 45-min consultation' },

@@ -32,7 +32,7 @@ export async function submitForm(data: ContactFormData | CareerFormData): Promis
     throw new Error(
       typeof result.error === 'string'
         ? result.error
-        : 'Failed to send. Please try again or email rygendynamics@gmail.com directly.'
+        : 'Failed to send. Please try again or email info@rygendynamics.com directly.'
     );
   }
 }

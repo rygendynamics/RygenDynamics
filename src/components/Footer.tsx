@@ -24,7 +24,7 @@ export default function Footer() {
               <Link to="/contact" className="rounded-full bg-stem-blue px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-stem-light-blue">
                 Book a Call
               </Link>
-              <a href="mailto:rygendynamics@gmail.com" className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white/85 transition-colors hover:border-white/30 hover:bg-white/5">
+              <a href="mailto:info@rygendynamics.com" className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-white/85 transition-colors hover:border-white/30 hover:bg-white/5">
                 Email Us
               </a>
             </div>
@@ -108,14 +108,14 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Email</p>
-                <a href="mailto:rygendynamics@gmail.com" className="font-semibold text-white hover:text-stem-light-blue break-all">
-                  rygendynamics@gmail.com
+                <a href="mailto:info@rygendynamics.com" className="font-semibold text-white hover:text-stem-light-blue break-all">
+                  info@rygendynamics.com
                 </a>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-white/45">Website</p>
-                <a href="https://rygendynamics.in" target="_blank" rel="noreferrer" className="font-semibold text-white hover:text-stem-light-blue whitespace-normal break-words">
-                  rygendynamics.in
+                <a href="https://rygendynamics.com" target="_blank" rel="noreferrer" className="font-semibold text-white hover:text-stem-light-blue whitespace-normal break-words">
+                  rygendynamics.com
                 </a>
               </div>
             </div>

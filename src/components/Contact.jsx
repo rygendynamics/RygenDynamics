@@ -57,12 +57,12 @@ const Contact = () => {
         const fileInput = document.getElementById('attachment')
         if (fileInput) fileInput.value = ''
       } else {
-        alert('Failed to send message. Please try again or contact us directly at rygendynamics@gmail.com')
+        alert('Failed to send message. Please try again or contact us directly at info@rygendynamics.com')
         setSubmitted(false)
       }
     } catch (error) {
       console.error('Error:', error)
-      alert('Network error. Please check that the backend server is running or contact us at rygendynamics@gmail.com')
+      alert('Network error. Please check that the backend server is running or contact us at info@rygendynamics.com')
       setSubmitted(false)
     }
     
